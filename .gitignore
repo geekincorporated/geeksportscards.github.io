@@ -3,7 +3,9 @@
 *.bat
 *.py
 *.log
+^.env
 
 # ignore directories
 config/
 logs/
+static/pyscripts
