@@ -3,7 +3,7 @@
 *.bat
 *.py
 *.log
-^.env
+*.env
 
 # ignore directories
 config/
