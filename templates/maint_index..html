@@ -55,16 +55,6 @@ padding: 10px;
 </style>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5R11Z2BEKW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-5R11Z2BEKW');
-</script>
-
 <body>
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -131,74 +121,16 @@ info@geeksportscards.com
 </div>
 </header> -->
 
-<!-- Main Section-->
-<section class="py-5">
-<div class="container px-4 px-lg-5 mt-5">
-
-<!-- Search-->
-<div class="search-container w-80 d-flex align-items-center" style="font-size: 13px;">
-<select id="searchCategory" class="form-control" style="height: 35px; width: 130px; font-size: 13px; appearance: none; border: 1px solid #ced4da; border-right: none; border-top-right-radius: 0; border-bottom-right-radius: 0; outline: none; box-shadow: none; padding-right: 40px; background-color: #f2f2f2; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' width=\'24\' height=\'24\' fill=\'none\' stroke=\'%23333\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><path d=\'M6 9l6 6 6-6\' /></svg>'); background-repeat: no-repeat; background-position: calc(100% - 10px) center;">
-<option value="Any" style="font-weight: 600;">CATEGORY</option>
-<option value="Basketball">BASKETBALL</option>
-
-<!-- <option value="Football">FOOTBALL</option>
-<option value="Baseball">BASEBALL</option>
-<option value="Hockey">HOCKEY</option>
-<option value="Non-Sport">NON-SPORT</option> -->
-
-</select>
-<input id="searchInput" type="text" placeholder="Search player, brand, year, card name or number" style="width: 400px; border-radius: 0; outline: none;" onclick="clearInput()" onkeydown="checkEnter(event)">
-<button onclick="search(); showFilter()">Search</button>
-</div>
-
-<!-- listing format filter -->
-<div class="search-container" id="resultsfilterContainer" style="margin-bottom: 20px; font-size: 13px;">
-<!-- Add hidden radio button for default listing type -->
-
-<label class="radio-label" style="margin-right: 10px;">
-<input type="radio" name="condition" value="Any" id="conditionAny" style="vertical-align: middle; transform: scale(1.3);" checked> &nbsp; ALL
-</label>
-<label class="radio-label" style="margin-right: 10px;">
-<input type="radio" name="condition" value="Ungraded" style="vertical-align: middle; transform: scale(1.3);"> &nbsp; UNGRADED
-</label>
-<label class="radio-label" style="margin-right: 10px;">
-<input type="radio" name="condition" value="Graded" style="vertical-align: middle; transform: scale(1.3);"> &nbsp; GRADED
-</label>
-<span style="font-weight: 700;">|</span>
-<input type="radio" name="listingType" value="Any" id="listingTypeAny" checked style="display: none;">
-<!-- Add radio buttons for filtering listing type -->
-<label class="radio-label" style="margin-right: 10px; margin-left: 10px;">
-<input type="radio" name="listingType" value="Chinese" style="vertical-align: middle; transform: scale(1.3);">&nbsp; AUCTION
-</label>
-<label class="radio-label" style="margin-right: 10px;">
-<input type="radio" name="listingType" value="FixedPriceItem" style="vertical-align: middle; transform: scale(1.3);"> &nbsp; BUY NOW
-</label>
-<br><br>
-</div>
-<!-- Total Items Count -->
-<div style="margin-bottom: 10px; margin-top: 5px;" id="totalItems"></div>
-<!-- Condition / Attribute filter -->
-<div id="resultsfilterContainer" style="margin-bottom: 5px; font-size: 13px;">
-<label class="checkbox-label" style="margin-right: 10px;">
-<input type="checkbox" name="attribute" value="RC" style="vertical-align: middle; transform: scale(1.3);"> &nbsp; ROOKIE CARD
-</label>
-<label class="checkbox-label" style="margin-right: 10px;">
-<input type="checkbox" name="attribute" value="HOF" style="vertical-align: middle; transform: scale(1.3);"> &nbsp; HALL OF FAME
-</label>
-<label class="checkbox-label" style="margin-right: 10px;">
-<input type="checkbox" name="attribute" value="UER" style="vertical-align: middle; transform: scale(1.3);"> &nbsp; ERROR
-</label>
-</div>
-<br>
-
-  <div class="row gx-4 gx-lg-4 row-cols-1 row-cols-md-2 row-cols-xl-4 justify-content-center" id="results">
-      <!-- This is where search results will be displayed -->
-  </div>
-</div>
-
-
-</div>
+<!-- maint section-->
+<section class="py-5" style="background: #e64e3d !important;">
+    <div class="container px-4 px-lg-5 mt-5 d-flex justify-content-center align-items-center" style="background: #e64e3d !important; height: 100vh;">
+        <div class="w-100 d-flex justify-content-center align-items-center" style="background: #e64e3d !important;">
+            <img src="assets/img/maint.webp" class="img-fluid" alt="Maintenance">
+        </div>
+    </div>
 </section>
+
+
 <!-- Start Footer -->
 <footer id="footer">
 <div class="container">

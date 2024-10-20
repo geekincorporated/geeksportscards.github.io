@@ -1,0 +1,460 @@
+/* Global styles */
+:root {
+  --gold: #d9b310;
+  --white: #fff;
+  --black: #000;
+  --danger: #dc3545;
+}
+
+/* Global styles */
+body {
+  scroll-snap-type: y mandatory;
+  /* Enable mandatory snap scrolling */
+  overflow-y: auto;
+  /* Allow vertical scrolling */
+  height: 100vh;
+  /* Full height of the viewport */
+  margin: 0;
+  /* Remove default margin */
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 16px;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbars in WebKit browsers */
+}
+
+/* Section styles */
+section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  /* Minimum height for each section */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+section p {
+  margin: 10px 0;
+  /* Spacing between paragraphs */
+}
+
+#section1 {
+  padding: 20px 0;
+  background-color: #1d2731;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Align content to the top */
+  align-items: center;
+  min-height: 100vh;
+  /* Allow section to be at least the height of the viewport */
+  position: relative;
+  /* Establish positioning context for absolute children */
+  overflow: hidden;
+  /* Prevent overflow */
+}
+
+.footer {
+  position: fixed;
+  /* Fix the footer to the bottom of the viewport */
+  bottom: 0;
+  /* Align it to the bottom of the viewport */
+  left: 0;
+  /* Align it to the left of the viewport */
+  width: 100vw;
+  /* Full width of the viewport */
+  padding: 10px 0;
+  /* Add some padding for spacing */
+  background-color: #000;
+  /* Set background color to black */
+  color: #fff;
+  /* White text for contrast */
+  text-align: center;
+  /* Center the text inside on larger screens */
+  display: flex;
+  /* Use flexbox */
+  flex-direction: column;
+  /* Stack items vertically */
+  align-items: center;
+  /* Center items horizontally */
+  z-index: 10;
+  /* Ensure it stays above other content */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .footer {
+    text-align: left;
+    /* Align text to the left on smaller screens */
+    padding: 10px 20px;
+    /* Add side padding for better readability */
+  }
+}
+
+/* Ensure the row behaves as a Flexbox container */
+#section1 .row {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allow cards to wrap to the next line on smaller screens */
+  justify-content: space-between;
+  /* Space out cards evenly */
+}
+
+/* Ensure all cards have the same width and height */
+#section1 .card {
+  height: 100%;
+  /* Make all cards have equal height */
+  flex: 1;
+  /* Cards take up equal space in the row */
+  margin: 10px;
+  /* Add spacing between cards */
+  min-width: 250px;
+  /* Optional: Set a minimum width to prevent cards from becoming too narrow */
+  max-width: 500px;
+  /* Optional: Set a maximum width to ensure they don't become too wide */
+  background-color: #1d2731;
+}
+
+#section1 .card hr {
+  color: lightgray;
+}
+
+/* Flexbox for card body to push the button to the bottom */
+#section1 .card-body {
+  display: flex;
+  flex-direction: column;
+  /* Stack content vertically */
+}
+
+#section1 .card-body .btn {
+  margin-top: auto;
+  /* Push the button to the bottom of the card */
+}
+
+.section1-card1 {
+  background-color: #1d2731;
+  /* Change background color */
+  border: none
+}
+
+.section1-card1 .card-title {
+  color: #d9b310;
+  /* Change title color */
+  font-weight: 500;
+  /* Make title bold */
+  font-size: 25px;
+}
+
+.section1-card1 .card-text {
+  font-size: 18px;
+  /* Change text size */
+  color: #fff;
+  /* Change text color */
+  text-align: left;
+  padding-left: 20px;
+}
+
+.section1-card2 {
+  background-color: #1d2731;
+  /* Change background color */
+  border: none
+}
+
+.section1-card2 .card-title {
+  color: #FFF;
+  /* Change title color */
+  font-weight: 500;
+  /* Make title bold */
+  font-size: 25px;
+}
+
+.section1-card2 .card-text {
+  font-size: 18px;
+  /* Change text size */
+  color: #fff;
+  /* Change text color */
+  text-align: left;
+  padding-left: 20px;
+}
+
+.section1-card2 .two-column-list {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  list-style-type: none;
+  /* Optional: to remove bullet points */
+  color: #fff;
+  text-align: left;
+  padding-left: 30px;
+
+}
+
+.section1-card2 .two-column-list li {
+  margin-bottom: 5px;
+}
+
+.section1-card2 .brand {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Keep original text color */
+}
+
+.section1-card2 .brand,
+.section1-card2 .brand:hover, 
+.section1-card2 .brand:active {
+  text-decoration: none; /* Remove underline on hover and active */
+  color: #fff; /* Keep the same color on hover and active */
+}
+
+
+.section1-card2 .cardrank-brand {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-left: 0;
+  font-size: 1.40rem;
+  color: #FFF;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif !important;
+  transform: scaleY(1.25); /* Stretches the text vertically */
+  display: inline-block; /* Ensures transform works properly on inline elements */
+}
+
+.section1-card2 a {
+  text-decoration: none;
+  color: #FFF;
+}
+.section1-card2 :hover {
+  color: #edb518; /* Change text color on hover */
+}
+
+.section1-card2 .ai-box {
+  padding-top: 2px;
+  padding-right: 3px;
+  padding-bottom: 2px; /* Decreased bottom padding */
+  padding-left: 3px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  display: inline-block;
+  background-color: #edb518;
+  font-size: 1.25rem;
+  color: black;
+  margin: 0 0 0px;
+  letter-spacing: 0 !important; 
+}
+
+
+
+.section1-card3 {
+  background-color: #1d2731;
+  /* Change background color */
+  border: none
+}
+
+.section1-card3 .card-title {
+  color: #fff;
+  /* Change title color */
+  font-weight: 500;
+  /* Make title bold */
+  font-size: 25px;
+}
+
+.section1-card3 .card-text {
+  font-size: 18px;
+  /* Change text size */
+  color: #fff;
+  /* Change text color */
+  text-align: left;
+  padding-left: 20px;
+}
+
+.section1-card3 .icon-circle {
+  display: inline-flex; /* Align items in the center */
+  justify-content: center; /* Center the icon horizontally */
+  align-items: center; /* Center the icon vertically */
+  width: 30px; /* Decrease the width for a smaller circle */
+  height: 30px; /* Decrease the height for a smaller circle */
+  border: 2px solid white; /* Border color */
+  border-radius: 50%; /* Makes the border circular */
+  transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.section1-card3 .icon-circle:hover {
+  background-color: #d9b310; /* Change hover color to #d9b310 */
+  color: #d9b310;
+}
+
+.section1-card3 .list-inline-item {
+  padding-right: 15px; /* Add padding to the left of each icon */
+}
+
+.section1-card3 .icon-circle:hover i {
+  color: black; /* Change icon color to black on hover */
+}
+
+.section1-card3 .form-control {
+  padding: 6px 10px; /* Reduce padding to decrease height */
+  font-size: 18px; /* Optional: Reduce font size if desired */
+  height: auto; /* Ensure height adapts to padding */
+}
+
+/* Media query to make cards stack on smaller screens */
+@media (max-width: 768px) {
+  #section1 .row {
+    flex-direction: column;
+    /* Stack cards vertically */
+    align-items: center;
+    /* Center the cards when stacked */
+  }
+
+  #section1 .card {
+    max-width: 100%;
+    /* Ensure the cards take the full width */
+  }
+}
+
+/* Additional media query for Pixel 6 and similar devices */
+@media (max-width: 412px) {
+  #section1 .row {
+    flex-direction: column;
+    /* Stack cards vertically */
+    align-items: center;
+    /* Center the cards */
+  }
+
+  #section1 .card {
+    max-width: 95%;
+    /* Use a percentage to allow for some margin */
+  }
+}
+
+#section2 {
+  background-color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 80px;
+}
+
+#section3 {
+  background-color: var(--danger);
+  /* Bootstrap danger color */
+}
+
+#section4 {
+  background-color: var(--black);
+  /* Black background */
+}
+
+/* DataTables styles */
+.dataTables_filter input {
+  width: 800px;
+  font-size: 16px;
+  padding: 8px;
+  margin-bottom: 25px;
+}
+
+#cardsTable_wrapper {
+  width: 100%;
+  /* Full width of the container */
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Title and text styles */
+.main-title {
+  font-size: 100px;
+  padding-top: 100px;
+  margin-bottom: 0;
+  letter-spacing: -1px;
+}
+
+.sub-title,
+.lead {
+  font-size: 20px;
+  margin-bottom: 0;
+  color: var(--white);
+}
+
+section p a {
+  margin-right: 10px;
+  /* Spacing between buttons */
+}
+
+/* Navbar styles */
+.nav-masthead .nav-link {
+  color: var(--white);
+  border-bottom: .25rem solid transparent;
+  padding: .25rem 1.5rem;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  color: var(--gold);
+}
+
+.nav-masthead .nav-link+.nav-link {
+  margin-left: 1rem;
+}
+
+.navbar-brand {
+  visibility: visible;
+  height: 50px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.navbar-brand-placeholder {
+  visibility: hidden;
+  height: 50px;
+}
+
+/* Button styles */
+.btn {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.btn-sm {
+  padding: 8px 15px;
+  font-size: 14px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 60px;
+    padding-top: 40px;
+  }
+
+  .sub-title,
+  .lead {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 14px;
+  }
+
+  .btn-sm {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .dataTables_filter input {
+    width: 300px;
+  }
+}
