@@ -8,4 +8,4 @@
 # ignore directories
 config/
 logs/
-static/pyscripts
+__pycache__
