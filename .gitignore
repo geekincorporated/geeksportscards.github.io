@@ -1,11 +1,12 @@
 # ignore .sh .bat .py
 *.sh
 *.bat
-*.py
 *.log
 *.env
+
 
 # ignore directories
 config/
 logs/
 __pycache__
+scrips
