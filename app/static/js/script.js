@@ -60,8 +60,13 @@ $(document).ready(function () {
 
     // Load data from JSON and populate DataTable
     function loadData() {
-        fetch('data/ebay_active_item.json')
-            .then(response => response.json())
+        fetch('/data/active_items')  // Updated to fetch from the Flask route
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
                 table.clear();
                 data.forEach(item => {
@@ -99,9 +104,8 @@ $(document).ready(function () {
         if (event.key === 'Enter') performSearch();
     });
 
-    // Load data initially and update every 5 hours
     loadData();
-    setInterval(loadData, 18000000);
+    setInterval(loadData, 60000);
 
     // Show modal with the clicked image
     $('#imageModal').on('show.bs.modal', function (event) {
@@ -131,6 +135,7 @@ const observer = new IntersectionObserver((entries) => {
 // Start observing section1
 observer.observe(section1);
 
+// Handle Slack form submission
 document.getElementById('slackForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
 
@@ -166,4 +171,3 @@ document.getElementById('slackForm').addEventListener('submit', function(event) 
         responseMessage.style.display = 'block'; // Show the response message
     });
 });
-

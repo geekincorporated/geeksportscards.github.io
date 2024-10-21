@@ -421,6 +421,18 @@ section p a {
   height: 50px;
 }
 
+.icon-container {
+  display: flex;          /* Use flexbox to center the icon */
+  justify-content: center; /* Center horizontally */
+  align-items: center;    /* Center vertically */
+  height: 100%;           /* Ensure it takes up the full height of the navbar */
+}
+
+.large-icon {
+  font-size: 1.15rem;       /* Adjust the size as needed */
+  color: gray;        /* Match the icon color with your theme */
+}
+
 /* Button styles */
 .btn {
   font-size: 16px;

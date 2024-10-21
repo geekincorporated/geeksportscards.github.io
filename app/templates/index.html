@@ -8,33 +8,60 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
     <title>GeekSportsCards - Geek Sports Cards</title>
-    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+
+    <!-- External Stylesheets -->
     <link href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="css/cover.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
+    <!-- Local Stylesheet (via Flask) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cover.css') }}">
 </head>
+
+
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top nav-masthead">
-        <div class="container"> <a class="navbar-brand" href="#section1"><span>GEEK</span><span
-                    style="color: #edb518;">SPORTS</span><span>CARDS</span><span>.com</span></a> <span
-                class="navbar-brand-placeholder"></span> <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <div class="container">
+            <a class="navbar-brand" href="#section1">
+                <span>GEEK</span>
+                <span style="color: #edb518;">SPORTS</span>
+                <span>CARDS</span>
+                <span>.com</span>
+            </a>
+            <span class="navbar-brand-placeholder"></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" style="color: #edb518;" href="#section2">Search Available
-                            Cards</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#section3">FAQs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#section4">Customer feedback</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color: #edb518;" href="#section2">Search Available Cards</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section3">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section4">Customer feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cart"><i class="fas fa-shopping-cart large-icon"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#signin"><i class="fas fa-sign-in large-icon"></i></a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+
 
 
 
@@ -101,6 +128,8 @@
                         <p class="card-text">
                         <ul class="two-column-list">
                             <li><a href="#">All Cards</a></li>
+                            <li><a href="#">Auctions</a></li>
+                            <li><a href="#">Buy It Now</a></li>
                             <li><a href="#">Basketball</a></li>
                             <li><a href="#">Football</a></li>
                             <li><a href="#">Baseball</a></li>
@@ -110,16 +139,13 @@
                             <li><a href="#">Non-Sport</a></li>
                         </ul>
                         <ul class="two-column-list">
-                            <li><a href="#">Auctions</a></li>
-                            <li><a href="#">Buy It Now</a></li>
-                            <li><a href="#">Recently Sold</a></li>
-                            <li><a href="#">FAQs</a></li>
                             <li><a href="#">Track Order</a></li>
+                            <li><a href="#">FAQs</a></li>
                             <li><a href="#">Customer Feedback</a></li>
                         </ul>
                         <ul class="two-column-list">
-                            <li><a href="#">Beckett Cert Verification</a></li>
-                            <li><a href="#">Beckett Grading Standards</a></li>
+                            <li><a href="#">BGS Cert Verification</a></li>
+                            <li><a href="#">BGS Grading Standards</a></li>
                             <li><a href="#">CSG Cert Verification</a></li>
                             <li><a href="#">PSA Cert Verification</a></li>
                             <li><a href="#">PSA Grading Standards</a></li>
@@ -131,9 +157,9 @@
                                         style="color: #17408B;">Cards</span>.com</a>
                             </li>
                             <li>
-                                <a class="brand" href="#"><span class="cardrank-brand" style="color: #861010;">card</span><span
-                                        class="cardrank-brand" style="color: white;">rank</span><span
-                                        class="ai-box">Ai</span>
+                                <a class="brand" href="#"><span class="cardrank-brand"
+                                        style="color: #861010;">card</span><span class="cardrank-brand"
+                                        style="color: white;">rank</span><span class="ai-box">Ai</span>
                                 </a>
                             </li>
                         </ul>
@@ -306,28 +332,21 @@
         </div>
     </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- jQuery -->
+    <!-- jQuery and Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="js/script.js"></script>
-    <script> function checkSectionVisibility() { const section1 = document.getElementById('section1'); const isSection1Visible = section1.offsetTop <= window.scrollY && section1.offsetTop + section1.offsetHeight > window.scrollY; if (isSection1Visible) { document.querySelector('link[rel="icon"]').href = 'assets/img/favicon.ico'; } } window.addEventListener('scroll', checkSectionVisibility); </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        function checkSectionVisibility() {
+            const section1 = document.getElementById('section1');
+            const isSection1Visible = section1.offsetTop <= window.scrollY && section1.offsetTop + section1.offsetHeight > window.scrollY;
+            if (isSection1Visible) {
+                document.querySelector('link[rel="icon"]').href = '{{ url_for("static", filename="img/favicon.ico") }}';
+            }
+        }
+        window.addEventListener('scroll', checkSectionVisibility);
+    </script>
 </body>
 
 </html>

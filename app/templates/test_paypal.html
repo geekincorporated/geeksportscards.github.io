@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart with PayPal Checkout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://www.paypal.com/sdk/js?client-id=your-client-id&currency=USD"></script>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Shopping Cart</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <!-- Shopping Cart Items -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Items in Cart</h5>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Remove</th>
+                        </tr>
+                        </thead>
+                        <tbody id="cart-items">
+                        <!-- Cart items will be dynamically inserted here -->
+                        </tbody>
+                    </table>
+                    <button class="btn btn-outline-primary" id="add-item">Add Random Item</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <!-- Cart Total and PayPal Button -->
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Cart Total</h5>
+                    <p id="cart-total" class="fs-4">$0.00</p>
+                    <!-- PayPal button -->
+                    <div id="paypal-button-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Sample items (in a real app, this could be dynamic data)
+    const items = [
+        {name: 'Product 1', price: 15.99},
+        {name: 'Product 2', price: 9.99},
+        {name: 'Product 3', price: 12.49}
+    ];
+
+    // Cart and total setup
+    let cart = [];
+    let total = 0;
+
+    const cartItemsEl = document.getElementById('cart-items');
+    const cartTotalEl = document.getElementById('cart-total');
+
+    // Function to add items to cart
+    function addItemToCart(item) {
+        cart.push({...item, quantity: 1});
+        renderCart();
+    }
+
+    // Function to remove items from cart
+    function removeItemFromCart(index) {
+        cart.splice(index, 1);
+        renderCart();
+    }
+
+    // Function to render the cart
+    function renderCart() {
+        cartItemsEl.innerHTML = '';
+        total = 0;
+
+        cart.forEach((item, index) => {
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+
+            cartItemsEl.innerHTML += `
+                <tr>
+                    <td>${item.name}</td>
+                    <td>$${item.price.toFixed(2)}</td>
+                    <td>${item.quantity}</td>
+                    <td>$${itemTotal.toFixed(2)}</td>
+                    <td><button class="btn btn-danger btn-sm" onclick="removeItemFromCart(${index})">Remove</button></td>
+                </tr>
+            `;
+        });
+
+        cartTotalEl.textContent = `$${total.toFixed(2)}`;
+    }
+
+    // Add random item to the cart when button is clicked
+    document.getElementById('add-item').addEventListener('click', function () {
+        const randomItem = items[Math.floor(Math.random() * items.length)];
+        addItemToCart(randomItem);
+    });
+
+    // PayPal Button Rendering
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: total.toFixed(2) // Total amount for the order
+                    }
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                alert('Transaction completed by ' + details.payer.name.given_name);
+                // Clear the cart after successful payment
+                cart = [];
+                renderCart();
+            });
+        }
+    }).render('#paypal-button-container');
+</script>
+</body>
+</html>
