@@ -8,5 +8,5 @@
 # ignore directories
 config/
 logs/
-__pycache__
-scrips
+app/__pycache__
+app/scripts
