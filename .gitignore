@@ -3,10 +3,11 @@
 *.bat
 *.log
 *.env
+app/data/get_ip.json
 
 
 # ignore directories
 config/
 logs/
 **/__pycache__/
-app/scripts
+**/scripts/
