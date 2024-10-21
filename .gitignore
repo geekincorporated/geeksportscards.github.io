@@ -3,7 +3,7 @@
 *.bat
 *.log
 *.env
-app/data/get_ip.json
+get_ip.json
 
 
 # ignore directories
