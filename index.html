@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <meta charset="UTF-8">
     <title>eBay Active Items Viewer</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
@@ -48,6 +49,16 @@
         #backToTopBtn:hover {
             background: #e0e0e0;
             border-color: #888;
+        }
+        .custom-footer-yellow {
+            background: #011b25;
+            color: #fff;
+            border: none;
+            margin: 0 auto;
+            width: 100%;
+            font-family: inherit;
+            letter-spacing: 0.03em;
+            font-size: 1.05em;
         }
     </style>
 </head>
@@ -101,6 +112,11 @@
         </div>
         <button id="backToTopBtn" title="Back to top" aria-label="Back to top">&#8593;</button>
         <!-- Footer removed -->
+        <footer class="custom-footer-yellow">
+            <div style="max-width:1600px;margin:0 auto;padding:16px 0;text-align:center;color:#222;font-size:1.05em;letter-spacing:0.03em;">
+                &copy; 2025 GSC eBay Viewer &mdash; All Rights Reserved
+            </div>
+        </footer>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
