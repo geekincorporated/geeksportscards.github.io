@@ -1,0 +1,14 @@
+{
+  "shipping": {
+    "description": "The following outlines our shipping policy unless otherwise stated in the item listing or an alternative method is agreed upon with the purchaser prior to payment completion.",
+    "policy": "Once an order has been successfully placed and completed with payment, the transaction is considered FINAL! We will not add or modify items to an order or shipment once payment is made and being processed by eBay.",
+    "combinedPolicy": "Combined shipping is available on purchases of 3 or more items. A flat shipping fee of $6 applies to orders containing up to 40 Items Per eBay invoice.",
+    "shippingMethod": "Shipped USPS with tracking.",
+    "ebayshippinglink": "https://www.ebay.com/help/ship-track/ship-track-buying"
+  },
+  "about": {
+    "description": "Geek Sports Cards is dedicated to providing authentic high-quality sports cards and collectibles. We are passionate collectors and sellers with years of experience.",
+    "refunds": "Returns are accepted within 30 days of delivery. Items must be returned in original condition for a full refund.",
+    "ungraded": "If you have any questions or concerns, please contact us via eBay messaging."
+  }
+}
