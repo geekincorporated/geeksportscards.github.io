@@ -1412,7 +1412,12 @@
                     : 'https://d3mop092koehdk.cloudfront.net/images/no-image-new.jpg';
                 const isSetsCategory = row['Category'] && String(row['Category']).trim().toLowerCase() === 'sets';
                 const isSetOrLot = row['Category'] && (String(row['Category']).trim().toLowerCase() === 'sets' || String(row['Category']).trim().toLowerCase() === 'lots');
-                const title = isSetOrLot ? (row['Brand'] || '') : (row['Card Name'] || '');
+                let title;
+                if (row['CategoryID'] == '261329' || row['CategoryID'] == '261330') {
+                    title = `${row['Year'] || ''} ${row['Brand'] || ''}`.trim();
+                } else {
+                    title = isSetOrLot ? (row['Brand'] || '') : (row['Card Name'] || '');
+                }
                 let link = row['ebay listing URL'] || '#';
                 const affiliateParams = 'mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001&mkevt=1';
                 if (link.includes('ebay.com')) {
