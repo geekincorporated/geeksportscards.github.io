@@ -208,16 +208,23 @@
         }
 
         .su-card-bids-time {
-            font-size: .85em;
+            font-size: 1em;
             color: #555;
             display: flex;
             flex-direction: column;
             text-align: left;
             align-items: flex-start;
+            overflow: hidden;
         }
 
         .su-card-timeleft {
             margin-left: 8px;
+        }
+
+        .su-card-bids-time div {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .su-card-action-btn {
@@ -1404,7 +1411,8 @@
                     ? row['ebay Image URL 1']
                     : 'https://d3mop092koehdk.cloudfront.net/images/no-image-new.jpg';
                 const isSetsCategory = row['Category'] && String(row['Category']).trim().toLowerCase() === 'sets';
-                const title = isSetsCategory ? (row['Set Name'] || row['Card Name'] || '') : (row['Card Name'] || '');
+                const isSetOrLot = row['Category'] && (String(row['Category']).trim().toLowerCase() === 'sets' || String(row['Category']).trim().toLowerCase() === 'lots');
+                const title = isSetOrLot ? (row['Brand'] || '') : (row['Card Name'] || '');
                 let link = row['ebay listing URL'] || '#';
                 const affiliateParams = 'mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001&mkevt=1';
                 if (link.includes('ebay.com')) {
@@ -1486,7 +1494,7 @@
           <span class="su-card-label">Sport:</span> ${row['Sport'] || ''}<br>
           ${!isSetsCategory ? `<span class="su-card-label">Set:</span> ${row['Set Name'] || ''}<br>` : ''}
           ${row['Manufacturer'] ? `<span class="su-card-label">Manufacturer:</span> ${row['Manufacturer']}<br>` : ''}
-          ${row['Brand'] ? `<span class="su-card-label">Brand:</span> ${row['Brand']}<br>` : ''}
+          ${row['Brand'] && !isSetOrLot ? `<span class="su-card-label">Brand:</span> ${row['Brand']}<br>` : ''}
           ${row['Features'] && row['Features'].trim() !== '' ? `<span class="su-card-label">Features:</span> ${row['Features']}<br>` : ''}
           <!-- Features removed as requested -->
           ${row['Additional Information']
@@ -1494,15 +1502,25 @@
                         : `<div class='su-card-spacer'></div>`}
           ${(() => {
                         let formatHtml = '';
-                        // Determine Quantity Available value and always show it.
-                        let quantityDisplay = '';
+                        // Determine quantity label and value
+                        let quantityLabel = 'Quantity Available:';
+                        let quantityValue = '';
                         if (row['Variation'] == 0) {
-                            quantityDisplay = '1';
+                            quantityValue = '1';
                         } else if (row['Quantity Available'] !== undefined && row['Quantity Available'] !== null && String(row['Quantity Available']).trim() !== '') {
-                            quantityDisplay = String(row['Quantity Available']);
+                            quantityValue = String(row['Quantity Available']);
                         } else {
                             // default to 1 when no explicit quantity is provided
-                            quantityDisplay = '1';
+                            quantityValue = '1';
+                        }
+                        // Check CategoryID for specific categories
+                        if (row['CategoryID'] == '261329' || row['CategoryID'] == '261330') {
+                            quantityLabel = 'Number of Cards:';
+                            if (row['Number of Cards'] !== undefined && row['Number of Cards'] !== null && String(row['Number of Cards']).trim() !== '') {
+                                quantityValue = String(row['Number of Cards']);
+                            } else {
+                                quantityValue = null; // do not show if not present
+                            }
                         }
 
                         if (row['Variation'] == 1) {
@@ -1518,11 +1536,19 @@
                                 formatHtml += `<span class="su-card-category">${catDisplay}</span><br>`;
                             }
                         } else {
-                            formatHtml += `<span class="su-card-label"></span> ${(row['Category'] && row['Category'].toLowerCase() === 'singles') ? 'Single' : (row['Category'] || '')}<br>`;
+                            const rawCat = row['Category'] ? String(row['Category']).trim().toLowerCase() : '';
+                            let catDisplay = '';
+                            if (rawCat === 'sets') catDisplay = 'Set';
+                            else if (rawCat === 'singles') catDisplay = 'Single';
+                            else if (rawCat === 'lots') catDisplay = 'Lot';
+                            else if (row['Category']) catDisplay = row['Category'];
+                            formatHtml += `<span class="su-card-label"></span> ${catDisplay}<br>`;
                         }
 
-                        // Always show Quantity Available
-                        formatHtml += `<span class="su-card-label">Quantity Available:</span> ${quantityDisplay}<br>`;
+                        // Show quantity only if value is present
+                        if (quantityValue !== null) {
+                            formatHtml += `<span class="su-card-label">${quantityLabel}</span> ${quantityValue}<br>`;
+                        }
                         if (row['Format'] && row['Format'].toLowerCase() === 'bin') {
                             formatHtml += `<span class="su-card-label">Selling Format:</span> Buy It Now`;
                         } else if (row['Format'] && row['Format'].toLowerCase() === 'auction') {
