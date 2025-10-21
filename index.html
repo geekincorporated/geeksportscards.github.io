@@ -1580,8 +1580,8 @@
             <span class="su-card-shipping">${shipping}</span>
           </div>
           <div class="s-card__attribute-row su-card-bids-time">
-            <div>Bids: ${bids}</div>
-            <div>Time Left: <span${timeLeftColor ? ` style="color: ${timeLeftColor};"` : ''}>${timeLeft}</span></div>
+            <div><strong>Bid Count:</strong> <span style="color: ${parseInt(bids) == 0 ? 'red' : 'black'}; ${parseInt(bids) == 0 ? 'font-weight: bold;' : ''}">${parseInt(bids)}</span></div>
+            <div><strong>Time Left:</strong> <span${timeLeftColor ? ` style="color: ${timeLeftColor};"` : ''}>${timeLeft}</span></div>
           </div>
         </div>
       </div>
