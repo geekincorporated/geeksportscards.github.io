@@ -1108,6 +1108,12 @@
                                             for="filter_err">Errors</label></div>
                                     <div><input type="checkbox" name="filter" value="cor" id="filter_cor"> <label
                                             for="filter_cor">Corrected</label></div>
+                                    <div class="sidebar-section-title">View</div>
+                                    <div><input type="radio" name="view_filter" value="most_bids" id="filter_view_most_bids"> <label for="filter_view_most_bids">Most Bids</label></div>
+                                    <div><input type="radio" name="view_filter" value="ending_soonest" id="filter_view_ending_soonest"> <label for="filter_view_ending_soonest">Ending Soonest</label></div>
+                                    <div><input type="radio" name="view_filter" value="most_recent" id="filter_view_most_recent"> <label for="filter_view_most_recent">Most Recent</label></div>
+                                    <div><input type="radio" name="view_filter" value="highest_price" id="filter_view_highest_price"> <label for="filter_view_highest_price">Highest Price</label></div>
+                                    <div><input type="radio" name="view_filter" value="lowest_price" id="filter_view_lowest_price"> <label for="filter_view_lowest_price">Lowest Price</label></div>
                                     <div class="sidebar-clear-btn"><button type="button" id="clearAllFilters">Clear
                                             Filters</button></div>
                                 </form>
@@ -1682,13 +1688,49 @@
             renderList(data);
             updateResultsCount(data.length);
             function updateFilters() {
-                const filtered = filterData(data);
+                let filtered = filterData(data);
+                const selectedViews = $('#filterForm input[type=radio][name=view_filter]:checked').map(function () { return this.value; }).get();
+                if (selectedViews.length > 0) {
+                    const sortBy = selectedViews[0]; // take the first one
+                    if (sortBy === 'most_bids') {
+                        filtered = filtered.filter(item => {
+                            const bids = parseInt(item['Bid Count'] || 0);
+                            return bids > 0;
+                        });
+                    }
+                    filtered.sort((a, b) => {
+                        if (sortBy === 'most_bids') {
+                            const aBids = parseInt(a['Bid Count'] || 0);
+                            const bBids = parseInt(b['Bid Count'] || 0);
+                            return bBids - aBids;
+                        } else if (sortBy === 'ending_soonest') {
+                            const aDate = new Date(a['End Date']);
+                            const bDate = new Date(b['End Date']);
+                            return aDate - bDate;
+                        } else if (sortBy === 'most_recent') {
+                            // Assuming higher ItemID is more recent
+                            const aId = parseInt(a['ItemID'] || 0);
+                            const bId = parseInt(b['ItemID'] || 0);
+                            return bId - aId;
+                        } else if (sortBy === 'highest_price') {
+                            const aPrice = parseFloat(a['Current Price'] || 0);
+                            const bPrice = parseFloat(b['Current Price'] || 0);
+                            return bPrice - aPrice;
+                        } else if (sortBy === 'lowest_price') {
+                            const aPrice = parseFloat(a['Current Price'] || 0);
+                            const bPrice = parseFloat(b['Current Price'] || 0);
+                            return aPrice - bPrice;
+                        }
+                        return 0;
+                    });
+                }
                 updateResultsCount(filtered.length);
                 renderList(filtered);
             }
             $('#filterForm input[type=checkbox][name=filter]').on('change', updateFilters);
             $('#filterForm input[type=checkbox][name=category_filter]').on('change', updateFilters);
             $('#filterForm input[type=checkbox][name=sport_filter]').on('change', updateFilters);
+            $('#filterForm input[type=radio][name=view_filter]').on('change', updateFilters);
             function updateClearBtn() {
                 const val = $('#keywordSearch').val();
                 if (val) {
@@ -1712,6 +1754,7 @@
                 $('#filterForm input[type=checkbox][name=filter]').prop('checked', false);
                 $('#filterForm input[type=checkbox][name=category_filter]').prop('checked', false);
                 $('#filterForm input[type=checkbox][name=sport_filter]').prop('checked', false);
+                $('#filterForm input[type=radio][name=view_filter]').prop('checked', false);
                 $('#keywordSearch').val('');
                 updateClearBtn();
                 updateResultsCount(data.length);
