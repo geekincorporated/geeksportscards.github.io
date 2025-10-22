@@ -1110,6 +1110,7 @@
                                             for="filter_cor">Corrected</label></div>
                                     <div class="sidebar-section-title">View</div>
                                     <div><input type="radio" name="view_filter" value="most_bids" id="filter_view_most_bids"> <label for="filter_view_most_bids">Most Bids</label></div>
+                                    <div><input type="radio" name="view_filter" value="most_watchers" id="filter_view_most_watchers"> <label for="filter_view_most_watchers">Most Watchers</label></div>
                                     <div><input type="radio" name="view_filter" value="ending_soonest" id="filter_view_ending_soonest"> <label for="filter_view_ending_soonest">Ending Soonest</label></div>
                                     <div><input type="radio" name="view_filter" value="most_recent" id="filter_view_most_recent"> <label for="filter_view_most_recent">Most Recent</label></div>
                                     <div><input type="radio" name="view_filter" value="highest_price" id="filter_view_highest_price"> <label for="filter_view_highest_price">Highest Price</label></div>
@@ -1455,6 +1456,8 @@
                     }
                 }
                 const itemNum = row['ItemID'] || '';
+                const formatLower = row['Format'] ? String(row['Format']).trim().toLowerCase() : '';
+                const watchers = (formatLower === 'auction' && row['Watch Count'] && parseInt(row['Watch Count']) >= 1) ? `${row['Watch Count']}` : '';
                 // Render action button when an eBay listing URL exists.
                 // Button text depends on the selling format:
                 //  - Auction -> "Place Bid Now"
@@ -1466,11 +1469,11 @@
                     if (btnLink.includes('ebay.com')) {
                         btnLink += (btnLink.includes('?') ? '&' : '?') + affiliateParams;
                     }
-                    const formatLower = row['Format'] ? String(row['Format']).trim().toLowerCase() : '';
+                    const formatLowerInner = row['Format'] ? String(row['Format']).trim().toLowerCase() : '';
                     let buttonText = 'Buy It Now';
-                    if (formatLower === 'auction' || formatLower.includes('auction')) {
+                    if (formatLowerInner === 'auction' || formatLowerInner.includes('auction')) {
                         buttonText = 'Place Bid Now';
-                    } else if (formatLower === 'bin' || formatLower.includes('buy')) {
+                    } else if (formatLowerInner === 'bin' || formatLowerInner.includes('buy')) {
                         buttonText = 'Buy It Now';
                     }
                     actionButtonHtml = `<a href="${btnLink}" target="_blank" rel="noopener" style='background:#0d6efd;color:#fff;border:none;border-radius:4px;padding:8px 22px;font-size:1em;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block;'>${buttonText}</a>`;
@@ -1592,6 +1595,7 @@
           </div>
           <div class="s-card__attribute-row su-card-bids-time">
             <div><strong>Bid Count:</strong> <span style="color: ${parseInt(bids) == 0 ? 'red' : 'black'}; ${parseInt(bids) == 0 ? 'font-weight: bold;' : ''}">${parseInt(bids)}</span></div>
+            ${watchers ? `<div><strong>Watchers:</strong> ${watchers}</div>` : ''}
             <div><strong>Time Left:</strong> <span${timeLeftColor ? ` style="color: ${timeLeftColor};"` : ''}>${timeLeft}</span></div>
           </div>
         </div>
@@ -1697,6 +1701,11 @@
                             const bids = parseInt(item['Bid Count'] || 0);
                             return bids > 0;
                         });
+                    } else if (sortBy === 'most_watchers') {
+                        filtered = filtered.filter(item => {
+                            const watchers = parseInt(item['Watch Count'] || 0);
+                            return watchers >= 1;
+                        });
                     }
                     filtered.sort((a, b) => {
                         if (sortBy === 'most_bids') {
@@ -1720,6 +1729,10 @@
                             const aPrice = parseFloat(a['Current Price'] || 0);
                             const bPrice = parseFloat(b['Current Price'] || 0);
                             return aPrice - bPrice;
+                        } else if (sortBy === 'most_watchers') {
+                            const aWatchers = parseInt(a['Watch Count'] || 0);
+                            const bWatchers = parseInt(b['Watch Count'] || 0);
+                            return bWatchers - aWatchers;
                         }
                         return 0;
                     });
