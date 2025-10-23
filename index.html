@@ -1594,9 +1594,9 @@
             <span class="su-card-shipping">${shipping}</span>
           </div>
           <div class="s-card__attribute-row su-card-bids-time">
-            <div><strong>Bid Count:</strong> <span style="color: ${parseInt(bids) == 0 ? 'red' : 'black'}; ${parseInt(bids) == 0 ? 'font-weight: bold;' : ''}">${parseInt(bids)}</span></div>
+            ${(formatLower !== 'bin' && !formatLower.includes('buy')) ? `<div><strong>Bid Count:</strong> <span style="color: ${parseInt(bids) == 0 ? 'red' : 'black'}; ${parseInt(bids) == 0 ? 'font-weight: bold;' : ''}">${parseInt(bids)}</span></div>` : ''}
             ${watchers ? `<div><strong>Watchers:</strong> ${watchers}</div>` : ''}
-            <div><strong>Time Left:</strong> <span${timeLeftColor ? ` style="color: ${timeLeftColor};"` : ''}>${timeLeft}</span></div>
+            ${(formatLower !== 'bin' && !formatLower.includes('buy')) ? `<div><strong>Time Left:</strong> <span${timeLeftColor ? ` style="color: ${timeLeftColor};"` : ''}>${timeLeft}</span></div>` : ''}
           </div>
         </div>
       </div>
