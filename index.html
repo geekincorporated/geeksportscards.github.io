@@ -1438,14 +1438,14 @@
             let timeLeftStr = '';
             if (days >= 1) {
                 let pad = n => n.toString().padStart(2, '0');
-                timeLeftStr = `${pad(days)}:${pad(remHours)}:${pad(minutes)}`;
+                timeLeftStr = `${pad(days)}d:${pad(remHours)}h:${pad(minutes)}m`;
             } else {
-                timeLeftStr = `${hours}h ${minutes}m`;
+                timeLeftStr = `${hours}h:${minutes}m`;
             }
             let endStr = '';
             let endDay = endDate.getDate(), nowDay = now.getDate();
             if (endDate.toDateString() === now.toDateString()) {
-                endStr = endDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                endStr = 'Today @ ' + endDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
             } else {
                 let tomorrow = new Date(now);
                 tomorrow.setDate(now.getDate() + 1);
