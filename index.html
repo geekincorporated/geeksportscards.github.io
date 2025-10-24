@@ -1019,6 +1019,16 @@
                 white-space: nowrap;
             }
         }
+
+        .no-items-message {
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 1.2em;
+            color: #666;
+            background: #f9f9f9;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
     </style>
 </head>
 
@@ -1066,6 +1076,14 @@
                                     </div>
                                     <div><input type="checkbox" name="filter" value="bin" id="filter_bin"> <label
                                             for="filter_bin">Buy It Now</label></div>
+
+                                    <div class="sidebar-section-title" style="color: red;">NEW!</div>
+                                    <div><input type="checkbox" name="filter" value="coming_soon"
+                                            id="filter_coming_soon"> <label for="filter_coming_soon">Coming Soon</label>
+                                    </div>
+                                    <div><input type="checkbox" name="filter" value="upcoming_auctions"
+                                            id="filter_upcoming_auctions"> <label
+                                            for="filter_upcoming_auctions">Upcoming Auctions</label></div>
                                     <div class="sidebar-section-title">Category</div>
                                     <div><input type="checkbox" name="category_filter" value="Singles"
                                             id="filter_category_singles"> <label
@@ -1391,7 +1409,18 @@
 
 
         function updateResultsCount(count) {
-            let total = window._ebayData ? window._ebayData.length : count;
+            let total = 0;
+            const comingSoonSelected = $('#filterForm input[type=checkbox][name=filter][value=coming_soon]:checked').length > 0;
+            const upcomingAuctionsSelected = $('#filterForm input[type=checkbox][name=filter][value=upcoming_auctions]:checked').length > 0;
+
+            if (comingSoonSelected) {
+                total = window._ebayData ? window._ebayData.filter(row => row['isScheduled'] && row['Format'] && (row['Format'].toLowerCase() === 'bin' || row['Format'].toLowerCase() === 'fixedprice')).length : count;
+            } else if (upcomingAuctionsSelected) {
+                total = window._ebayData ? window._ebayData.filter(row => row['isScheduled'] && row['Format'] && row['Format'].toLowerCase() === 'auction').length : count;
+            } else {
+                total = window._ebayData ? window._ebayData.filter(row => !row['isScheduled']).length : count;
+            }
+
             $('#resultsCount').html('<span class="results-count-text">' + count + ' of ' + total + ' matching items</span>');
         }
         function getAuctionTimeLeft(endDateStr) {
@@ -1428,6 +1457,54 @@
             }
             return `${timeLeftStr} (${endStr})`;
         }
+        function getScheduledTimeLeft(startDateStr, format) {
+            if (!startDateStr) return '';
+            let startDate = new Date(startDateStr);
+            if (isNaN(startDate.getTime())) return '';
+            let now = new Date();
+            let diffMs = startDate - now;
+            if (diffMs <= 0) return 'Starting Soon';
+            let diffSec = Math.floor(diffMs / 1000);
+            let hours = Math.floor(diffSec / 3600);
+            let minutes = Math.floor((diffSec % 3600) / 60);
+            let days = Math.floor(hours / 24);
+            let remHours = hours % 24;
+            let timeLeftStr = '';
+            if (days >= 1) {
+                let pad = n => n.toString().padStart(2, '0');
+                timeLeftStr = `${pad(days)}:${pad(remHours)}:${pad(minutes)}`;
+            } else {
+                timeLeftStr = `${hours}h ${minutes}m`;
+            }
+            let startStr = '';
+            let startDay = startDate.getDate(), nowDay = now.getDate();
+            if (startDate.toDateString() === now.toDateString()) {
+                startStr = startDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            } else {
+                let tomorrow = new Date(now);
+                tomorrow.setDate(now.getDate() + 1);
+                if (startDate.toDateString() === tomorrow.toDateString()) {
+                    startStr = 'Tomorrow ' + startDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                } else {
+                    startStr = startDate.toLocaleDateString() + ' ' + startDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                }
+            }
+
+            // Format differently for auctions
+            if (format && format.toLowerCase() === 'auction') {
+                let timeFormatted = '';
+                if (days >= 1) {
+                    timeFormatted = `${days}d:${remHours}h:${minutes}m`;
+                } else {
+                    timeFormatted = `${hours}h:${minutes}m`;
+                }
+                let dateFormatted = startDate.toLocaleDateString('en-US', { weekday: 'short', month: 'numeric', day: 'numeric' });
+                let timeFormattedShort = startDate.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true });
+                return `Starts On: ${dateFormatted} @ ${timeFormattedShort} (${timeFormatted})`;
+            } else {
+                return `Starts in ${timeLeftStr} (${startStr})`;
+            }
+        }
         function renderList(items) {
             $('.search-outer-container').show();
             let html = '<ul class="items-list">';
@@ -1459,17 +1536,32 @@
                         shipping = `+$${row['Shipping Cost']} Shipping`;
                     }
                 }
-                const timeLeft = getAuctionTimeLeft(row['End Date']);
+                const timeLeft = row['isScheduled'] ? getScheduledTimeLeft(row['Start Date'], row['Format']) : getAuctionTimeLeft(row['End Date']);
                 let timeLeftColor = '';
-                if (row['End Date']) {
-                    let endDate = new Date(row['End Date']);
-                    if (!isNaN(endDate.getTime())) {
-                        let now = new Date();
-                        let diffMs = endDate - now;
-                        if (diffMs > 24 * 60 * 60 * 1000) {
-                            timeLeftColor = 'green';
-                        } else if (diffMs > 0) {
-                            timeLeftColor = 'red';
+                if (row['isScheduled']) {
+                    // For scheduled items, show start date
+                    if (row['Start Date']) {
+                        let startDate = new Date(row['Start Date']);
+                        if (!isNaN(startDate.getTime())) {
+                            let now = new Date();
+                            let diffMs = startDate - now;
+                            if (diffMs > 0) {
+                                timeLeftColor = 'blue';
+                            }
+                        }
+                    }
+                } else {
+                    // For active items, show end date
+                    if (row['End Date']) {
+                        let endDate = new Date(row['End Date']);
+                        if (!isNaN(endDate.getTime())) {
+                            let now = new Date();
+                            let diffMs = endDate - now;
+                            if (diffMs > 24 * 60 * 60 * 1000) {
+                                timeLeftColor = 'green';
+                            } else if (diffMs > 0) {
+                                timeLeftColor = 'red';
+                            }
                         }
                     }
                 }
@@ -1489,7 +1581,9 @@
                     }
                     const formatLowerInner = row['Format'] ? String(row['Format']).trim().toLowerCase() : '';
                     let buttonText = 'Buy It Now';
-                    if (formatLowerInner === 'auction' || formatLowerInner.includes('auction')) {
+                    if (row['isScheduled']) {
+                        buttonText = 'View Listing';
+                    } else if (formatLowerInner === 'auction' || formatLowerInner.includes('auction')) {
                         buttonText = 'Place Bid Now';
                     } else if (formatLowerInner === 'bin' || formatLowerInner.includes('buy')) {
                         buttonText = 'Buy It Now';
@@ -1500,14 +1594,14 @@
 <li class="s-card s-card--horizontal">
   <div class="su-card-container su-card-container--horizontal">
     <div class="su-card-container__media">
-      <div class="su-card-external-link">
+      ${!row['isScheduled'] ? `<div class="su-card-external-link">
         <a href="${link}" target="_blank" title="View On eBay">
           <i class="fas fa-external-link"></i>
         </a>
-      </div>
-            <a href="${link}" target="_blank">
+      </div>` : ''}
+            ${!row['isScheduled'] ? `<a href="${link}" target="_blank">` : ''}
                 <img class="lazy-img su-card-img" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="${imgUrl}" alt="${title}">
-            </a>
+            ${!row['isScheduled'] ? `</a>` : ''}
       <div class="su-card-seller-info">
         ${itemNum ? `Item ID: ${itemNum}` : ''}
         ${row['Seller'] ? `<div class='su-card-seller'>Seller: ${row['Seller']}</div>` : ''}
@@ -1515,9 +1609,9 @@
     </div>
     <div class="su-card-container__content">
       <div>
-        <a href="${link}" target="_blank" class="su-card-title-link">
+        ${!row['isScheduled'] ? `<a href="${link}" target="_blank" class="su-card-title-link">` : ''}
           <div class="s-card__title">${title}</div>
-        </a>
+        ${!row['isScheduled'] ? `</a>` : ''}
         <div class="su-card-details">
           ${row['Player/Athlete'] && row['Player/Athlete'].trim() !== '' ? `<span class="su-card-label">Player:</span> ${row['Player/Athlete']}<br>` : ''}
           ${row['Team'] && row['Team'].trim() !== '' ? `<span class="su-card-label">Team:</span> ${row['Team']}<br>` : ''}
@@ -1608,17 +1702,23 @@
       <div class="su-card-container__attributes su-card-container__attributes--has-secondary">
         <div class="su-card-container__attributes__primary">
           <div class="s-card__attribute-row">
-            <span class="su-card-price">${price}</span>
+            <span class="su-card-price" style="${row['isScheduled'] ? 'font-size: 1.0em; font-weight: normal;' : ''}">${row['isScheduled'] ? `<strong>${formatLower === 'auction' ? 'Starting Bid:' : 'Price:'}</strong> ` : ''}${price}</span>
             <span class="su-card-shipping">${shipping}</span>
           </div>
           <div class="s-card__attribute-row su-card-bids-time">
-            ${(formatLower !== 'bin' && !formatLower.includes('buy')) ? `<div><strong>Bid Count:</strong> <span style="color: ${parseInt(bids) == 0 ? 'red' : 'black'}; ${parseInt(bids) == 0 ? 'font-weight: bold;' : ''}">${parseInt(bids)}</span></div>` : ''}
+            ${row['isScheduled'] ? '' : ((formatLower !== 'bin' && !formatLower.includes('buy')) ? `<div><strong>Bid Count:</strong> <span style="color: ${parseInt(bids) == 0 ? 'red' : 'black'}; ${parseInt(bids) == 0 ? 'font-weight: bold;' : ''}">${parseInt(bids)}</span></div>` : '')}
             ${watchers ? `<div><strong>Watchers:</strong> ${watchers}</div>` : ''}
-            ${(formatLower !== 'bin' && !formatLower.includes('buy')) ? `<div><strong>Time Left:</strong> <span${timeLeftColor ? ` style="color: ${timeLeftColor};"` : ''}>${timeLeft}</span></div>` : ''}
+            <div style="display: flex; flex-direction: column;">${row['isScheduled'] ? (timeLeft.startsWith('Starts On:') ? (() => {
+                        const timePart = timeLeft.substring('Starts On:'.length).trim();
+                        const parenIndex = timePart.indexOf(' (');
+                        const timeValue = parenIndex > 0 ? timePart.substring(0, parenIndex) : timePart;
+                        const datePart = parenIndex > 0 ? timePart.substring(parenIndex) : '';
+                        return `<strong style="color: black;">Starts On:</strong><div><span${timeLeftColor ? ` style="color: ${timeLeftColor};"` : ''}>${timeValue}</span>${datePart ? `<br><span style="padding-left: 0px;${timeLeftColor ? ` color: ${timeLeftColor};` : ''}">${datePart}</span>` : ''}</div>`;
+                    })() : '') : (formatLower === 'bin' ? '' : `<strong>Time Left:</strong> <span${timeLeftColor ? ` style="color: ${timeLeftColor};"` : ''}>${timeLeft}</span>`)}</div>
           </div>
         </div>
       </div>
-      ${actionButtonHtml ? `<div class='su-card-action-btn'>${actionButtonHtml}</div>` : ''}
+      ${actionButtonHtml && !row['isScheduled'] ? `<div class='su-card-action-btn'>${actionButtonHtml}</div>` : ''}
     </div>
   </div>
 </li>
@@ -1633,8 +1733,34 @@
             const selectedCategories = $('#filterForm input[type=checkbox][name=category_filter]:checked').map(function () { return this.value; }).get();
             const selectedSports = $('#filterForm input[type=checkbox][name=sport_filter]:checked').map(function () { return this.value; }).get();
             const keyword = $('#keywordSearch').val().trim().toLowerCase();
-            if (!selected.length && !selectedCategories.length && !selectedSports.length && !keyword) return data;
-            return data.filter(row => {
+
+            // If "coming_soon" or "upcoming_auctions" is selected, show scheduled items, otherwise show active items
+            let filteredData = data;
+            if (selected.includes('coming_soon') || selected.includes('upcoming_auctions')) {
+                filteredData = data.filter(row => row['isScheduled']);
+                // For "coming_soon", further filter to only BIN format
+                if (selected.includes('coming_soon')) {
+                    filteredData = filteredData.filter(row => row['Format'] && (row['Format'].toLowerCase() === 'bin' || row['Format'].toLowerCase() === 'fixedprice'));
+                }
+                // For "upcoming_auctions", further filter to only auction format
+                if (selected.includes('upcoming_auctions')) {
+                    filteredData = filteredData.filter(row => row['Format'] && row['Format'].toLowerCase() === 'auction');
+                }
+            } else {
+                filteredData = data.filter(row => !row['isScheduled']);
+            }
+
+            if (!selected.length && !selectedCategories.length && !selectedSports.length && !keyword) return filteredData;
+
+            return filteredData.filter(row => {
+                if (keyword) {
+                    let found = false;
+                    const fields = ['Title', 'Player/Athlete', 'Team', 'Card Name', 'Features', 'Attributes', 'Category', 'Sport', 'Current Price', 'ItemID', 'Format'];
+                    for (let f of fields) {
+                        if (row[f] && String(row[f]).toLowerCase().includes(keyword)) { found = true; break; }
+                    }
+                    if (!found) return false;
+                }
                 if (keyword) {
                     let found = false;
                     const fields = ['Title', 'Player/Athlete', 'Team', 'Card Name', 'Features', 'Attributes', 'Category', 'Sport', 'Current Price', 'ItemID', 'Format'];
@@ -1695,112 +1821,131 @@
             return array;
         }
 
-        $.getJSON('data/ebay_active_items.json', function (data) {
-            // Randomize the order of cards
-            shuffleArray(data);
+        $.getJSON('data/ebay_active_items.json', function (activeItemsData) {
+            $.getJSON('data/ebay_scheduled_items.json', function (scheduledData) {
+                // Combine active and scheduled data
+                const data = [...activeItemsData, ...scheduledData.map(item => ({ ...item, isScheduled: true }))];
 
-            window._ebayData = data;
-            if (!data.length) {
-                $('#itemsGrid').html('<div>No data found.</div>');
-                updateResultsCount(0);
-                return;
-            }
-            $('#listViewBtn').addClass('active');
-            $('#gridViewBtn').remove();
-            renderList(data);
-            updateResultsCount(data.length);
-            function updateFilters() {
-                let filtered = filterData(data);
-                const selectedViews = $('#filterForm input[type=radio][name=view_filter]:checked').map(function () { return this.value; }).get();
-                if (selectedViews.length > 0) {
-                    const sortBy = selectedViews[0]; // take the first one
-                    if (sortBy === 'most_bids') {
-                        filtered = filtered.filter(item => {
-                            const bids = parseInt(item['Bid Count'] || 0);
-                            return bids > 0;
-                        });
-                    } else if (sortBy === 'most_watchers') {
-                        filtered = filtered.filter(item => {
-                            const watchers = parseInt(item['Watch Count'] || 0);
-                            return watchers >= 1;
-                        });
-                    } else if (sortBy === 'ending_today') {
-                        const today = new Date();
-                        const todayStr = today.toDateString();
-                        filtered = filtered.filter(item => {
-                            const endDate = new Date(item['End Date']);
-                            return endDate.toDateString() === todayStr;
+                // Randomize the order of cards
+                shuffleArray(data);
+
+                window._ebayData = data;
+                if (!data.length) {
+                    $('#itemsGrid').html('<div>No data found.</div>');
+                    updateResultsCount(0);
+                    return;
+                }
+                $('#listViewBtn').addClass('active');
+                $('#gridViewBtn').remove();
+                // Default to showing active items
+                const activeData = data.filter(row => !row['isScheduled']);
+                renderList(activeData);
+                updateResultsCount(activeData.length);
+                function updateFilters() {
+                    let filtered = filterData(data);
+                    const selectedViews = $('#filterForm input[type=radio][name=view_filter]:checked').map(function () { return this.value; }).get();
+                    if (selectedViews.length > 0) {
+                        const sortBy = selectedViews[0]; // take the first one
+                        if (sortBy === 'most_bids') {
+                            filtered = filtered.filter(item => {
+                                const bids = parseInt(item['Bid Count'] || 0);
+                                return bids > 0;
+                            });
+                        } else if (sortBy === 'most_watchers') {
+                            filtered = filtered.filter(item => {
+                                const watchers = parseInt(item['Watch Count'] || 0);
+                                return watchers >= 1;
+                            });
+                        } else if (sortBy === 'ending_today') {
+                            const today = new Date();
+                            const todayStr = today.toDateString();
+                            filtered = filtered.filter(item => {
+                                const endDate = new Date(item['End Date']);
+                                return endDate.toDateString() === todayStr;
+                            });
+                        }
+                        filtered.sort((a, b) => {
+                            if (sortBy === 'most_bids') {
+                                const aBids = parseInt(a['Bid Count'] || 0);
+                                const bBids = parseInt(b['Bid Count'] || 0);
+                                return bBids - aBids;
+                            } else if (sortBy === 'ending_soonest') {
+                                const aDate = new Date(a['End Date']);
+                                const bDate = new Date(b['End Date']);
+                                return aDate - bDate;
+                            } else if (sortBy === 'most_recent') {
+                                // Assuming higher ItemID is more recent
+                                const aId = parseInt(a['ItemID'] || 0);
+                                const bId = parseInt(b['ItemID'] || 0);
+                                return bId - aId;
+                            } else if (sortBy === 'highest_price') {
+                                const aPrice = parseFloat(a['Current Price'] || 0);
+                                const bPrice = parseFloat(b['Current Price'] || 0);
+                                return bPrice - aPrice;
+                            } else if (sortBy === 'lowest_price') {
+                                const aPrice = parseFloat(a['Current Price'] || 0);
+                                const bPrice = parseFloat(b['Current Price'] || 0);
+                                return aPrice - bPrice;
+                            } else if (sortBy === 'most_watchers') {
+                                const aWatchers = parseInt(a['Watch Count'] || 0);
+                                const bWatchers = parseInt(b['Watch Count'] || 0);
+                                return bWatchers - aWatchers;
+                            } else if (sortBy === 'ending_today') {
+                                const aDate = new Date(a['End Date']);
+                                const bDate = new Date(b['End Date']);
+                                return aDate - bDate;
+                            }
+                            return 0;
                         });
                     }
-                    filtered.sort((a, b) => {
-                        if (sortBy === 'most_bids') {
-                            const aBids = parseInt(a['Bid Count'] || 0);
-                            const bBids = parseInt(b['Bid Count'] || 0);
-                            return bBids - aBids;
-                        } else if (sortBy === 'ending_soonest') {
-                            const aDate = new Date(a['End Date']);
-                            const bDate = new Date(b['End Date']);
-                            return aDate - bDate;
-                        } else if (sortBy === 'most_recent') {
-                            // Assuming higher ItemID is more recent
-                            const aId = parseInt(a['ItemID'] || 0);
-                            const bId = parseInt(b['ItemID'] || 0);
-                            return bId - aId;
-                        } else if (sortBy === 'highest_price') {
-                            const aPrice = parseFloat(a['Current Price'] || 0);
-                            const bPrice = parseFloat(b['Current Price'] || 0);
-                            return bPrice - aPrice;
-                        } else if (sortBy === 'lowest_price') {
-                            const aPrice = parseFloat(a['Current Price'] || 0);
-                            const bPrice = parseFloat(b['Current Price'] || 0);
-                            return aPrice - bPrice;
-                        } else if (sortBy === 'most_watchers') {
-                            const aWatchers = parseInt(a['Watch Count'] || 0);
-                            const bWatchers = parseInt(b['Watch Count'] || 0);
-                            return bWatchers - aWatchers;
-                        } else if (sortBy === 'ending_today') {
-                            const aDate = new Date(a['End Date']);
-                            const bDate = new Date(b['End Date']);
-                            return aDate - bDate;
-                        }
-                        return 0;
-                    });
+                    updateResultsCount(filtered.length);
+                    renderList(filtered);
                 }
-                updateResultsCount(filtered.length);
-                renderList(filtered);
-            }
-            $('#filterForm input[type=checkbox][name=filter]').on('change', updateFilters);
-            $('#filterForm input[type=checkbox][name=category_filter]').on('change', updateFilters);
-            $('#filterForm input[type=checkbox][name=sport_filter]').on('change', updateFilters);
-            $('#filterForm input[type=radio][name=view_filter]').on('change', updateFilters);
-            function updateClearBtn() {
-                const val = $('#keywordSearch').val();
-                if (val) {
-                    $('#clearSearchBtn').show();
-                } else {
-                    $('#clearSearchBtn').hide();
+                $('#filterForm input[type=checkbox][name=filter]').on('change', function() {
+                    const val = $(this).val();
+                    if ($(this).is(':checked') && ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].includes(val)) {
+                        // Uncheck the other three
+                        const others = ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].filter(v => v !== val);
+                        others.forEach(otherVal => {
+                            $(`#filterForm input[type=checkbox][name=filter][value="${otherVal}"]`).prop('checked', false);
+                        });
+                    }
+                    updateFilters();
+                });
+                $('#filterForm input[type=checkbox][name=category_filter]').on('change', updateFilters);
+                $('#filterForm input[type=checkbox][name=sport_filter]').on('change', updateFilters);
+                $('#filterForm input[type=radio][name=view_filter]').on('change', updateFilters);
+                function updateClearBtn() {
+                    const val = $('#keywordSearch').val();
+                    if (val) {
+                        $('#clearSearchBtn').show();
+                    } else {
+                        $('#clearSearchBtn').hide();
+                    }
                 }
-            }
-            $('#keywordSearch').on('input', function () {
-                updateFilters();
+                $('#keywordSearch').on('input', function () {
+                    updateFilters();
+                    updateClearBtn();
+                });
+                $('#clearSearchBtn').on('click', function () {
+                    $('#keywordSearch').val('');
+                    updateFilters();
+                    updateClearBtn();
+                    $('#keywordSearch').focus();
+                });
                 updateClearBtn();
-            });
-            $('#clearSearchBtn').on('click', function () {
-                $('#keywordSearch').val('');
-                updateFilters();
-                updateClearBtn();
-                $('#keywordSearch').focus();
-            });
-            updateClearBtn();
-            $('#clearAllFilters').on('click', function () {
-                $('#filterForm input[type=checkbox][name=filter]').prop('checked', false);
-                $('#filterForm input[type=checkbox][name=category_filter]').prop('checked', false);
-                $('#filterForm input[type=checkbox][name=sport_filter]').prop('checked', false);
-                $('#filterForm input[type=radio][name=view_filter]').prop('checked', false);
-                $('#keywordSearch').val('');
-                updateClearBtn();
-                updateResultsCount(data.length);
-                renderList(data);
+                $('#clearAllFilters').on('click', function () {
+                    $('#filterForm input[type=checkbox][name=filter]').prop('checked', false);
+                    $('#filterForm input[type=checkbox][name=category_filter]').prop('checked', false);
+                    $('#filterForm input[type=checkbox][name=sport_filter]').prop('checked', false);
+                    $('#filterForm input[type=radio][name=view_filter]').prop('checked', false);
+                    $('#keywordSearch').val('');
+                    updateClearBtn();
+                    // Show active items when all filters are cleared
+                    const activeData = data.filter(row => !row['isScheduled']);
+                    updateResultsCount(activeData.length);
+                    renderList(activeData);
+                });
             });
         });
 
@@ -1857,7 +2002,6 @@
                 style="color:#fff;text-decoration:none;display:flex;align-items:center;gap:6px;font-size:1em;"><i
                     class="fas fa-info-circle"></i> About</a>
         </div>
-
         <div>
             <p style="font-weight:bold;color:#fff;font-size:0.80em;margin:10px 0 0 0;">
 
@@ -1877,7 +2021,6 @@
                 <a href="#" style="text-decoration:none;font-weight:bold;">
                     <span style="color:#ffff;">COLLECTABLES</span>
                 </a>
-
             </p>
         </div>
         <div class="footer-social-icons">
