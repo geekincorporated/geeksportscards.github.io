@@ -1109,12 +1109,27 @@
                                     <div><input type="checkbox" name="filter" value="cor" id="filter_cor"> <label
                                             for="filter_cor">Corrected</label></div>
                                     <div class="sidebar-section-title">View</div>
-                                    <div><input type="radio" name="view_filter" value="most_bids" id="filter_view_most_bids"> <label for="filter_view_most_bids">Most Bids</label></div>
-                                    <div><input type="radio" name="view_filter" value="most_watchers" id="filter_view_most_watchers"> <label for="filter_view_most_watchers">Most Watchers</label></div>
-                                    <div><input type="radio" name="view_filter" value="ending_soonest" id="filter_view_ending_soonest"> <label for="filter_view_ending_soonest">Ending Soonest</label></div>
-                                    <div><input type="radio" name="view_filter" value="most_recent" id="filter_view_most_recent"> <label for="filter_view_most_recent">Most Recent</label></div>
-                                    <div><input type="radio" name="view_filter" value="highest_price" id="filter_view_highest_price"> <label for="filter_view_highest_price">Highest Price</label></div>
-                                    <div><input type="radio" name="view_filter" value="lowest_price" id="filter_view_lowest_price"> <label for="filter_view_lowest_price">Lowest Price</label></div>
+                                    <div><input type="radio" name="view_filter" value="most_bids"
+                                            id="filter_view_most_bids"> <label for="filter_view_most_bids">Most
+                                            Bids</label></div>
+                                    <div><input type="radio" name="view_filter" value="most_watchers"
+                                            id="filter_view_most_watchers"> <label for="filter_view_most_watchers">Most
+                                            Watchers</label></div>
+                                    <div><input type="radio" name="view_filter" value="ending_today"
+                                            id="filter_view_ending_today"> <label for="filter_view_ending_today">Auction
+                                            Ending Today</label></div>
+                                    <div><input type="radio" name="view_filter" value="ending_soonest"
+                                            id="filter_view_ending_soonest"> <label
+                                            for="filter_view_ending_soonest">Ending Soonest</label></div>
+                                    <div><input type="radio" name="view_filter" value="most_recent"
+                                            id="filter_view_most_recent"> <label for="filter_view_most_recent">Most
+                                            Recent</label></div>
+                                    <div><input type="radio" name="view_filter" value="highest_price"
+                                            id="filter_view_highest_price"> <label
+                                            for="filter_view_highest_price">Highest Price</label></div>
+                                    <div><input type="radio" name="view_filter" value="lowest_price"
+                                            id="filter_view_lowest_price"> <label for="filter_view_lowest_price">Lowest
+                                            Price</label></div>
                                     <div class="sidebar-clear-btn"><button type="button" id="clearAllFilters">Clear
                                             Filters</button></div>
                                 </form>
@@ -1134,14 +1149,16 @@
                     </div>
 
                     <div style="text-align:center; margin-top:10px;">
-                        <a href="https://www.ebay.com/sch/i.html?rt=nc&_ssn=lotsofcards-gsc&_dmd=2&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001" target="_blank" rel="noopener">
+                        <a href="https://www.ebay.com/sch/i.html?rt=nc&_ssn=lotsofcards-gsc&_dmd=2&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001"
+                            target="_blank" rel="noopener">
                             <img src="images/gsc-logo.png" alt="Geeksports Cards on Ebay"
                                 style="max-width:100%;width:220px;height:auto;">
                         </a>
                     </div>
 
                     <div style="text-align:center; margin-top:10px;">
-                        <a href="https://www.ebay.com/sch/i.html?rt=nc&_ssn=lotsofcards-gsc&_dmd=2&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001&LH_BIN=1" target="_blank" rel="noopener">
+                        <a href="https://www.ebay.com/sch/i.html?rt=nc&_ssn=lotsofcards-gsc&_dmd=2&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001&LH_BIN=1"
+                            target="_blank" rel="noopener">
                             <img src="images/gsc-bin.png" alt="Geeksports Cards on Ebay"
                                 style="max-width:100%;width:220px;height:auto;">
                         </a>
@@ -1169,7 +1186,8 @@
                     <hr style="border:0;border-top:1px solid #eee;margin:8px 0;">
 
                     <div style="text-align:left; margin-top:6px; padding-left:8px;">
-                        <h3 style="margin:0 0 8px 0;font-size:1.20em;font-weight:bold;line-height:1.1;">Social Media</h3>
+                        <h3 style="margin:0 0 8px 0;font-size:1.20em;font-weight:bold;line-height:1.1;">Social Media
+                        </h3>
                     </div>
                     <div style="text-align:center; margin-top:10px;">
                         <a href="https://www.facebook.com/geeksportscards" target="_blank" rel="noopener">
@@ -1706,6 +1724,13 @@
                             const watchers = parseInt(item['Watch Count'] || 0);
                             return watchers >= 1;
                         });
+                    } else if (sortBy === 'ending_today') {
+                        const today = new Date();
+                        const todayStr = today.toDateString();
+                        filtered = filtered.filter(item => {
+                            const endDate = new Date(item['End Date']);
+                            return endDate.toDateString() === todayStr;
+                        });
                     }
                     filtered.sort((a, b) => {
                         if (sortBy === 'most_bids') {
@@ -1733,6 +1758,10 @@
                             const aWatchers = parseInt(a['Watch Count'] || 0);
                             const bWatchers = parseInt(b['Watch Count'] || 0);
                             return bWatchers - aWatchers;
+                        } else if (sortBy === 'ending_today') {
+                            const aDate = new Date(a['End Date']);
+                            const bDate = new Date(b['End Date']);
+                            return aDate - bDate;
                         }
                         return 0;
                     });
@@ -1816,7 +1845,8 @@
 
         <div style="display:flex;justify-content:center;align-items:center;gap:0;flex-wrap:wrap;margin-bottom:6px;">
             <a href="https://www.ebay.com/sch/i.html?rt=nc&_ssn=lotsofcards-gsc&_dmd=2&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001"
-                target=_blank" style="color:#fff;text-decoration:none;display:flex;align-items:center;gap:6px;font-size:1em;"><i
+                target=_blank"
+                style="color:#fff;text-decoration:none;display:flex;align-items:center;gap:6px;font-size:1em;"><i
                     class="fa-brands fa-ebay fa-xl" style="font-size:2em;"></i></a>
             <span style="color:#fff;font-size:1.3em;padding:0 16px;">|</span>
             <a href="#"
@@ -1864,8 +1894,9 @@
                 <i class="fa-solid fa-envelope" style="font-size:1.40em; padding-top:2px;"></i>
             </a>
         </div>
-    
-        <span style="display:block;font-size:0.80em;margin-top:2px;">&copy; 2025 Geek Sports Cards and Collectables</span>
+
+        <span style="display:block;font-size:0.80em;margin-top:2px;">&copy; 2025 Geek Sports Cards and
+            Collectables</span>
         <button id="backToTopBtn" aria-label="Back to Top" type="button"><i class="fas fa-arrow-up"
                 style="font-size:1.1em;color:#fff;"></i></button>
     </div>
