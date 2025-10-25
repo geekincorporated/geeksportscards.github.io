@@ -5,1031 +5,15 @@
 
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
     <meta charset="UTF-8">
     <title>Geek Sports Cards and Collectables</title>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdn.counter.dev/script.js" data-id="18805968-c523-41d4-a5fc-6a39864fa88e"
         data-utcoffset="-6"></script>
-    <style>
-        /* enable smooth scrolling for anchor and programmatic scrolls */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .su-card-seller a {
-            color: #111 !important;
-            text-decoration: none !important;
-        }
-
-        /* Back to Top button (hidden until header is out of view) */
-        #backToTopBtn {
-            position: fixed;
-            right: 24px;
-            bottom: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            background: #1d2731;
-            color: #fff;
-            border-radius: 50%;
-            /* flat button - no shadow and no border */
-            border: none;
-            outline: none;
-            appearance: none;
-            -webkit-appearance: none;
-            font-size: 1.4em;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.25s, transform 0.25s;
-            transform: translateY(8px);
-            text-decoration: none;
-            z-index: 9999;
-        }
-
-        #backToTopBtn.visible {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateY(0);
-        }
-
-        .items-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .s-card.s-card--horizontal {
-            display: flex;
-            /* stretch children so containers are equal height and absolute action button aligns */
-            align-items: stretch;
-            /* a sensible desktop min-height to align action buttons across cards */
-            min-height: 420px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin-bottom: 18px;
-            padding: 0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-        }
-
-        .su-card-container.su-card-container--horizontal {
-            display: flex;
-            width: 100%;
-            /* allow absolutely positioned actions inside the card container */
-            position: relative;
-            /* provide room at the bottom so absolute action button doesn't overlap content */
-            padding-bottom: 64px;
-            box-sizing: border-box;
-        }
-
-        .su-card-container__media {
-            flex: 0 0 220px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 16px;
-            position: relative;
-        }
-
-        .su-card-external-link {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            gap: 7px;
-            align-items: flex-end;
-        }
-
-        .su-card-external-link a {
-            text-decoration: none;
-        }
-
-        .su-card-external-link i.fas.fa-external-link {
-            font-size: 0.98em;
-            color: #222;
-            background: #fff;
-            border-radius: 50%;
-            padding: 3.5px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.10);
-        }
-
-        .su-card-img {
-            width: 240px;
-            height: 240px;
-            object-fit: contain;
-            border-radius: 4px;
-            background: #f8f8f8;
-        }
-
-        .su-card-seller-info {
-            color: #888;
-            font-size: 0.75em;
-            margin-top: 8px;
-            text-align: center;
-            width: 100%;
-        }
-
-        .su-card-seller {
-            margin-top: 2px;
-        }
-
-        .su-card-container__content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 16px 0;
-        }
-
-        .su-card-title-link {
-            text-decoration: none;
-            color: #222;
-        }
-
-        .s-card__title {
-            font-size: 1em;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
-
-        .su-card-details {
-            font-size: 0.80em !important;
-            color: #444;
-            margin-bottom: 8px;
-        }
-
-        .su-card-label {
-            font-weight: bold;
-        }
-
-        .su-card-category {
-            font-weight: normal;
-        }
-
-        .su-card-spacer {
-            height: 8px;
-        }
-
-        .su-card-ebay {
-            font-family: sans-serif;
-            font-weight: bold;
-            vertical-align: middle;
-            color: #e53238;
-        }
-
-        .su-card-container__attributes {
-            margin-top: 8px;
-        }
-
-        /* removed empty ruleset for .su-card-container__attributes__primary */
-        .s-card__attribute-row {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .su-card-price {
-            font-size: 1.75em;
-            font-weight: bold;
-            color: #111;
-        }
-
-        .su-card-shipping {
-            font-size: 0.95em !important;
-            font-weight: normal;
-            color: #555;
-        }
-
-        .su-card-bids-time {
-            font-size: 1em;
-            color: #555;
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-            align-items: flex-start;
-            overflow: hidden;
-        }
-
-        .su-card-timeleft {
-            margin-left: 8px;
-        }
-
-        .su-card-bids-time div {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .su-card-action-btn {
-            /* center the action button horizontally under the image */
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            justify-content: center;
-            width: auto;
-            z-index: 3;
-        }
-
-        .shipping-info-box {
-            width: 100%;
-            max-width: 100vw;
-            background: #fff;
-            border-radius: 0;
-            box-shadow: none;
-            margin: 0;
-            padding: 32px 24px 24px 24px;
-            box-sizing: border-box;
-        }
-
-        .shipping-info-box .shipping-info-title,
-        .shipping-info-box .shipping-info-section {
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-        .shipping-info-title {
-            margin-top: 0;
-            font-size: 1.5em;
-            color: #1d2731;
-            text-align: left;
-        }
-
-        .shipping-info-section {
-            margin-bottom: 14px;
-        }
-
-        @media (max-width: 1000px) {
-            .s-card__title {
-                font-size: 1.22em !important;
-            }
-
-            .su-card-details {
-                font-size: 1.08em !important;
-            }
-
-            .shipping-info-box {
-                padding: 10px 5px 10px 5px !important;
-            }
-
-            /* Removed all #backToTopBtn logic for small/mobile screens */
-            .custom-footer {
-                display: block;
-            }
-
-            #shippingModalContent {
-                position: fixed !important;
-                left: 5px !important;
-                right: 5px !important;
-                top: 50% !important;
-                transform: translateY(-50%) !important;
-                margin: 0 !important;
-                padding: 5px !important;
-                width: auto !important;
-                max-width: none !important;
-                min-width: 0 !important;
-                border-radius: 14px !important;
-                box-shadow: none !important;
-            }
-
-            a[style*='background:#0d6efd'] {
-                font-size: 1.12em !important;
-                padding: 11px 22px !important;
-            }
-        }
-
-        @media (max-width: 500px) {
-
-            .custom-footer,
-            .footer-bar,
-            .footer-p,
-            .footer-copyright {
-                font-size: 1.50em !important;
-            }
-        }
-
-        @media (max-width: 600px) {
-            #backToTopBtn {
-                bottom: 35vh !important;
-                /* Force much higher above footer for small screens */
-                right: 10vw !important;
-                z-index: 9999 !important;
-                width: 40px !important;
-                height: 40px !important;
-                font-size: 1.0em !important;
-            }
-
-            #backToTopBtn i {
-                font-size: 0.95em !important;
-            }
-
-            .shipping-info-box {
-                padding: 4px 2px 4px 2px !important;
-            }
-
-            /* Allow cards to size naturally on mobile; remove desktop min-height */
-            .s-card.s-card--horizontal {
-                min-height: 0 !important;
-                align-items: flex-start !important;
-            }
-        }
-
-        #sideMenuLinks {
-            margin-top: 24px;
-        }
-
-        #sideMenuLinks ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        #sideMenuLinks ul li {
-            border-bottom: 1px solid #eee;
-        }
-
-        #sideMenuLinks ul li:last-child {
-            border-bottom: none;
-        }
-
-        #sideMenuLinks ul li a {
-            display: flex;
-            align-items: center;
-            color: #222;
-            text-decoration: none;
-            font-size: 1em;
-            padding: 10px 0;
-            transition: background 0.2s, color 0.2s;
-        }
-
-        /* Increase size for Filters link and icon */
-        #sideMenuLinks ul li.sidebar-filters-menu>a {
-            font-size: 1.15em;
-            font-weight: bold;
-        }
-
-        #sideMenuLinks ul li.sidebar-filters-menu>a i.fa-filter {
-            font-size: 1.5em;
-            margin-right: 14px;
-        }
-
-        #sideMenuLinks ul li a i {
-            margin-right: 10px;
-            font-size: 1.1em;
-            color: #888;
-        }
-
-        #sideMenuLinks ul li a:hover {
-            background: #f2f2f2;
-            color: #0d6efd;
-        }
-
-        #resultsCount,
-        .results-count-text {
-            font-size: 1em;
-        }
-
-        #resultsCount {
-            padding-left: 25px;
-        }
-
-        html,
-        body {
-            height: 100%;
-            min-height: 100%;
-        }
-
-        html,
-        body {
-            width: 100vw !important;
-            overflow-x: hidden !important;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #fff;
-            font-size: 1em;
-            line-height: 1.4;
-            word-break: break-word;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            /* Reserve space at the bottom equal to footer height so fixed footer doesn't overlap content
-                    This uses the CSS variable defined on .custom-footer which may be adjusted via JS. */
-            padding-bottom: var(--footer-height, 64px);
-        }
-
-        img,
-        picture,
-        video,
-        canvas,
-        svg {
-            display: block;
-            max-width: 100%;
-            height: auto;
-        }
-
-        .container-main {
-            max-width: 1600px;
-            width: 100%;
-            margin: 0 auto;
-            /* Use the footer height CSS variable so the fixed footer does not cover content
-               and allow a small extra gap (16px) for breathing room */
-            padding: 0 18px calc(var(--footer-height, 64px) + 16px) 18px;
-            box-sizing: border-box;
-            display: block;
-            flex: 1 0 auto;
-        }
-
-        .custom-header {
-            background: #1d2731;
-            color: #fff;
-            font-family: 'Bebas Neue', Arial, Helvetica, sans-serif !important;
-            border: none;
-            padding: 16px 0 8px 0 !important;
-            width: 100vw !important;
-            min-width: 100vw !important;
-            max-width: 100vw !important;
-            margin: 0 !important;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 125px;
-        }
-
-        .header-title {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            font-size: 4em;
-            font-weight: bold;
-            letter-spacing: 0.04em;
-            width: 100%;
-            text-align: center;
-            user-select: none;
-            padding-bottom: 0 !important;
-            margin-bottom: 0 !important;
-        }
-
-        .header-geek {
-            color: #fff;
-        }
-
-        .header-sports {
-            color: #D9B310;
-            margin: 0 0.08em;
-        }
-
-        .header-cards {
-            color: #fff;
-        }
-
-        .custom-header img {
-            width: 60%;
-            height: 90px;
-            display: block;
-            margin: 0;
-            padding-left: 0;
-            max-width: 100%;
-            object-fit: contain;
-        }
-
-        .search-outer-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            padding: 18px 0 24px 0;
-            background: transparent;
-            box-sizing: border-box;
-        }
-
-        #customSearchContainer {
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-            max-width: 420px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            box-sizing: border-box;
-        }
-
-        #customSearchContainer input[type="text"] {
-            width: 100% !important;
-            min-width: 0 !important;
-            max-width: 100% !important;
-            box-sizing: border-box !important;
-            margin-left: 0 !important;
-            margin-right: 0 !important;
-            font-size: 1em !important;
-            height: 30px !important;
-            padding-right: 38px;
-            padding-left: 5px;
-        }
-
-        .search-icon-inside {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #888;
-            font-size: 0.90em;
-            pointer-events: none;
-        }
-
-        #clearSearchBtn {
-            position: absolute;
-            right: 38px;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 22px;
-            width: 22px;
-            border: none;
-            background: transparent;
-            font-size: 0.90em;
-            line-height: 1;
-            color: #888;
-            cursor: pointer;
-            display: none;
-            padding: 0;
-        }
-
-        #sidebar {
-            display: block;
-            min-width: 220px;
-            max-width: 220px;
-            padding: 20px 10px 10px 60px;
-            margin-right: 20px;
-            border-right: 1px solid #ccc;
-            font-size: 0.80em;
-            box-sizing: border-box;
-            word-break: break-word;
-        }
-
-        #itemsGrid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px 2.5%;
-            margin-top: 18px;
-        }
-
-        #itemsGrid ul {
-            display: contents;
-        }
-
-        .s-card.s-card--horizontal {
-            width: calc(50% - 1.25%);
-            min-width: 340px;
-            box-sizing: border-box;
-            transition: width 0.2s;
-            word-break: break-word;
-        }
-
-        .su-card-container__media img {
-            width: 100%;
-            height: auto;
-            max-width: 100%;
-            object-fit: contain;
-            display: block;
-        }
-
-        .s-card__title,
-        .su-card-container__content,
-        .su-card-container__attributes {
-            word-break: break-word;
-        }
-
-        table.dataTable {
-            width: 100% !important;
-            table-layout: auto !important;
-            word-break: break-word;
-        }
-
-        @media (max-width: 1100px) {
-            .custom-header img {
-                width: 80vw !important;
-                max-width: 80vw !important;
-                height: 60px !important;
-            }
-
-            #sidebar {
-                min-width: 160px;
-                max-width: 160px;
-                padding-left: 30px;
-            }
-
-            .s-card.s-card--horizontal {
-                min-width: 220px;
-                width: 100% !important;
-            }
-        }
-
-        @media (max-width: 1000px) {
-            #shippingModalContent {
-                position: fixed !important;
-                left: 5px !important;
-                right: 5px !important;
-                top: 50% !important;
-                transform: translateY(-50%) !important;
-                margin: 0 !important;
-                padding: 5px !important;
-                width: auto !important;
-                max-width: none !important;
-                min-width: 0 !important;
-                border-radius: 14px !important;
-                box-shadow: none !important;
-            }
-
-            .s-card__attribute-row {
-                flex-wrap: nowrap !important;
-                white-space: nowrap !important;
-            }
-
-            .search-icon-inside {
-                font-size: 1.5em !important;
-                right: 18px !important;
-            }
-
-            body {
-                font-size: 0.90em;
-            }
-
-            .container-main {
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-                width: 100vw !important;
-                max-width: 100vw !important;
-                margin: 0 !important;
-            }
-
-            .custom-header img {
-                width: 90vw !important;
-                max-width: 90vw !important;
-                min-width: 0 !important;
-                height: 48px !important;
-                padding-left: 0 !important;
-                padding-top: 0 !important;
-                margin-left: 0 !important;
-            }
-
-            #sidebar {
-                display: none !important;
-                min-width: 0 !important;
-                max-width: 100% !important;
-                border-right: none !important;
-                margin-right: 0 !important;
-                padding: 10px 0 0 0 !important;
-            }
-
-            #sidebar form {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 8px 0;
-            }
-
-            #sidebar>* {
-                width: 100%;
-            }
-
-            .container-main>div[style*="display: flex;"] {
-                flex-direction: column !important;
-            }
-
-            #itemsGrid {
-                display: block !important;
-            }
-
-            #itemsGrid ul {
-                flex-direction: column !important;
-                gap: 12px 0 !important;
-            }
-
-            .s-card.s-card--horizontal {
-                width: auto !important;
-                max-width: calc(100vw - 5px) !important;
-                min-width: 0 !important;
-                margin-left: 10px !important;
-                margin-right: 15px !important;
-                box-sizing: border-box !important;
-                padding: 0 !important;
-            }
-
-            .su-card-container__media img {
-                width: 100% !important;
-                height: auto !important;
-                max-width: 100vw !important;
-            }
-
-            #customSearchContainer {
-                max-width: 94vw !important;
-                width: 94vw !important;
-                margin-left: auto !important;
-                margin-right: auto !important;
-                padding-left: 20px !important;
-                padding-right: 5px !important;
-                padding-top: 5px !important;
-                display: flex !important;
-                justify-content: center !important;
-                box-sizing: border-box !important;
-            }
-
-            #customSearchContainer input[type="text"] {
-                width: 94vw !important;
-                min-width: 0 !important;
-                max-width: 94vw !important;
-                box-sizing: border-box !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                font-size: 1.5em !important;
-                height: 44px !important;
-                padding-left: 5px !important;
-            }
-
-            a[style*='background:#0d6efd'] {
-                font-size: 1.12em !important;
-                padding: 11px 22px !important;
-            }
-
-            .search-outer-container {
-                padding: 8px 0 32px 0;
-            }
-
-            #resultsCount,
-            .results-count-text {
-                font-size: 1.10em;
-            }
-        }
-
-        .sidebar-section-title {
-            margin-top: 10px;
-            margin-bottom: 2px;
-            font-weight: bold;
-        }
-
-        .sidebar-clear-btn {
-            margin-top: 14px;
-            margin-bottom: 14px;
-        }
-
-        .main-content-flex {
-            flex: 1;
-        }
-
-        .custom-footer {
-            background: #1d2731;
-            color: #fff;
-            text-align: center;
-            font-size: 1em;
-            padding: 16px 0 12px 0;
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 200;
-            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.10);
-            /* expose a footer height variable so floating elements can position relative to it */
-            --footer-height: 64px;
-        }
-
-        #shippingModal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.45);
-            align-items: center;
-            justify-content: center;
-        }
-
-        #shippingModalContent {
-            background: #fff;
-            max-width: 480px;
-            width: 92vw;
-            min-width: 0;
-            padding: 32px 24px 24px 24px;
-            border-radius: 14px;
-            box-shadow: 0 4px 32px rgba(0, 0, 0, 0.18);
-            margin: auto;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-sizing: border-box;
-        }
-
-        @media (max-width: 600px) {
-            #shippingModalContent {
-                width: 98vw !important;
-                max-width: 98vw !important;
-                min-width: 0 !important;
-                left: 1vw !important;
-                right: 1vw !important;
-                padding: 10px 5px 10px 5px !important;
-                border-radius: 12px !important;
-            }
-        }
-
-        @media (max-width: 400px) {
-            #shippingModalContent {
-                width: 100vw !important;
-                max-width: 100vw !important;
-                min-width: 0 !important;
-                left: 0 !important;
-                right: 0 !important;
-                padding: 4px 2px 4px 2px !important;
-                border-radius: 8px !important;
-            }
-        }
-
-        /* On very small screens increase bottom padding to ensure fixed footer doesn't cover content
-           and give extra space for mobile browser UI (address bar / soft nav) */
-        @media (max-width: 600px) {
-            .container-main {
-                padding-bottom: calc(var(--footer-height, 64px) + 32px) !important;
-            }
-
-            body {
-                padding-bottom: calc(var(--footer-height, 64px) + 32px) !important;
-            }
-        }
-
-        @media (max-width: 600px) {
-            #backToTopBtn {
-                bottom: calc(var(--footer-height, 64px) + 5px) !important;
-                right: 10vw !important;
-                width: 40px !important;
-                height: 40px !important;
-                font-size: 1.0em !important;
-            }
-
-            #backToTopBtn i {
-                font-size: 0.95em !important;
-            }
-        }
-
-        /* Make the back-to-top button smaller on very small mobile screens */
-        @media (max-width: 400px) {
-            #backToTopBtn {
-                width: 40px !important;
-                height: 40px !important;
-                font-size: 1.0em !important;
-                right: 12vw !important;
-                bottom: calc(var(--footer-height, 64px) + 5px) !important;
-            }
-
-            #backToTopBtn i {
-                font-size: 0.95em !important;
-            }
-        }
-
-        #shippingModalBody {
-            width: 100%;
-            text-align: left;
-        }
-
-        #closeShippingModal {
-            margin-top: 32px;
-            background: #1d2731;
-            color: #fff;
-            font-size: 1.1em;
-            padding: 10px 32px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        .footer-social-icons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-            margin-top: 5px;
-        }
-
-        .footer-social-icons a {
-            color: #fff !important;
-            text-decoration: none !important;
-            font-size: .90em;
-            padding: 0 6px;
-            transition: color 0.2s;
-        }
-
-        .footer-social-icons a i,
-        .footer-social-icons a:visited i,
-        .footer-social-icons a:active i,
-        .footer-social-icons a:focus i {
-            color: #fff !important;
-        }
-
-        .header-subtitle {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1em;
-            font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
-            margin-top: 0 !important;
-            padding-top: 0 !important;
-            letter-spacing: 0.04em;
-            text-align: center;
-            user-select: none;
-        }
-
-        .header-subtitle-main {
-            color: #fff;
-        }
-
-        .header-subtitle-since {
-            color: #D9B310;
-            margin-left: 0.5em;
-        }
-
-        @media (max-width: 500px) {
-            .s-card__title {
-                font-size: 1.35em !important;
-            }
-
-            /* Restore stacking of card image above content for small/mobile screens */
-            .su-card-container.su-card-container--horizontal {
-                flex-direction: column !important;
-                align-items: stretch !important;
-            }
-
-            .su-card-container__media {
-                width: 100% !important;
-                max-width: 100vw !important;
-                min-width: 0 !important;
-                padding: 10px 0 0 0 !important;
-                margin: 0 auto !important;
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: center !important;
-                justify-content: center !important;
-            }
-
-            .su-card-img,
-            .lazy-img.su-card-img {
-                width: 300px !important;
-                height: 400px !important;
-                max-width: 98vw !important;
-                max-height: 400px !important;
-                object-fit: contain !important;
-                margin: 0 auto !important;
-                display: block !important;
-            }
-
-            .su-card-container__content {
-                padding: 10px 8px 8px 8px !important;
-                font-size: 1.08em !important;
-                word-break: normal !important;
-                white-space: normal !important;
-            }
-
-            .su-card-details {
-                font-size: 1.18em !important;
-            }
-        }
-
-        @media (max-width: 800px) {
-            .collectables {
-                display: none;
-            }
-
-            .header-title {
-                white-space: nowrap;
-            }
-        }
-
-        .no-items-message {
-            text-align: center;
-            padding: 50px 20px;
-            font-size: 1.2em;
-            color: #666;
-            background: #f9f9f9;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="static/css/site.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body id="top">
@@ -1158,69 +142,24 @@
                             <hr style="border:0;border-top:1px solid white;margin:0 0 10px 0;">
                         </li>
                     </ul>
-
-                    <div style="text-align:left; margin-top:6px; padding-left:8px;">
-                        <h3 style="margin:0 0 8px 0;font-size:1.20em;font-weight:bold;line-height:1.1;">on <span
-                                style="color:#e53238;">e</span><span style="color:#0064d2;">B</span><span
-                                style="color:#f5af02;">a</span><span style="color:#86b817;">y</span>
-                        </h3>
-                    </div>
-
-                    <div style="text-align:center; margin-top:10px;">
-                        <a href="https://www.ebay.com/sch/i.html?rt=nc&_ssn=lotsofcards-gsc&_dmd=2&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001"
-                            target="_blank" rel="noopener">
-                            <img src="images/gsc-logo.png" alt="Geeksports Cards on Ebay"
-                                style="max-width:100%;width:220px;height:auto;">
-                        </a>
-                    </div>
-
-                    <div style="text-align:center; margin-top:10px;">
-                        <a href="https://www.ebay.com/sch/i.html?rt=nc&_ssn=lotsofcards-gsc&_dmd=2&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001&LH_BIN=1"
-                            target="_blank" rel="noopener">
-                            <img src="images/gsc-bin.png" alt="Geeksports Cards on Ebay"
-                                style="max-width:100%;width:220px;height:auto;">
-                        </a>
-                    </div>
-
-                    <div style="text-align:center; margin-top:10px;">
-                        <a href="https://www.ebay.com/sch/i.html?rt=nc&_ssn=lotsofcards-gsc&_dmd=2&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001&LH_Auction=1"
-                            target="_blank" rel="noopener">
-                            <img src="images/GSC-AUCTIONS.png" alt="Geeksports Cards Auctions on Ebay"
-                                style="max-width:100%;width:220px;height:auto;">
-                        </a>
-                    </div>
-                    <div style="text-align:center; margin-top:10px;">
-                        <a href="#">
-                            <img src="images/GSC-SLABS.png" alt="Geeksports Slabs Auctions on Ebay"
-                                style="max-width:100%;width:220px;height:auto;">
-                        </a>
-                    </div>
-                    <div style="text-align:center; margin-top:10px;">
-                        <a href="#">
-                            <img src="images/gsc-collectables.png" alt="Geeksports Cards on Ebay"
-                                style="max-width:100%;width:220px;height:auto;">
-                        </a>
-                    </div>
                     <hr style="border:0;border-top:1px solid #eee;margin:8px 0;">
-
                     <div style="text-align:left; margin-top:6px; padding-left:8px;">
                         <h3 style="margin:0 0 8px 0;font-size:1.20em;font-weight:bold;line-height:1.1;">Social Media
                         </h3>
                     </div>
                     <div style="text-align:center; margin-top:10px;">
                         <a href="https://www.facebook.com/geeksportscards" target="_blank" rel="noopener">
-                            <img src="images/facebook_logo.png" alt="Geeksports Cards on facebook"
+                            <img src="static/images/facebook_logo.png" alt="Geeksports Cards on facebook"
                                 style="max-width:100%;width:220px;height:auto;">
                         </a>
                     </div>
 
                     <div style="text-align:center; margin-top:10px;">
                         <a href="https://www.instagram.com/geek_sports_cards/" target="_blank" rel="noopener">
-                            <img src="images/instagram_logo.png" alt="Geeksports Cards on facebook"
+                            <img src="static/images/instagram_logo.png" alt="Geeksports Cards on facebook"
                                 style="max-width:100%;width:220px;height:auto;">
                         </a>
                     </div>
-
                     <hr style="border:0;border-top:1px solid #eee;margin:8px 0;">
 
                 </nav>
@@ -1250,7 +189,7 @@
             }
             // Add cache-busting parameter to force fresh data
             const timestamp = new Date().getTime();
-            $.getJSON(`static/site.json?_=${timestamp}`, function (siteData) {
+            $.getJSON(`static/site_content/site.json?_=${timestamp}`, function (siteData) {
                 if (siteData && siteData.about) {
                     const a = siteData.about;
                     let html = `<div class='shipping-info-box'>`;
@@ -1276,10 +215,10 @@
                             </div>
                             <div style='display:flex;flex-direction:column;align-items:flex-start;gap:10px;'>
                                 <div style='display:flex;flex-direction:row;align-items:center;justify-content:flex-start;min-width:360px;max-width:360px;margin-left:-4px;gap:5px;'>
-                                    <img src='images/GEEKSPORTSCARDS_BIN.png' alt='BIN Icon' style='max-width:90px;max-height:90px;display:block;'>
-                                    <img src='images/GEEKSPORTSCARDS_AUCTIONS.png' alt='Auctions Icon' style='max-width:90px;max-height:90px;display:block;'>
-                                    <img src='images/GEEKSPORTSCARDS_SLABS.png' alt='Slabs Icon' style='max-width:90px;max-height:90px;display:block;'>
-                                    <img src='images/GEEKSPORTSCARDS_COLLECTABLES.png' alt='Collectables Icon' style='max-width:90px;max-height:90px;display:block;'>
+                                    <img src='static/images/GEEKSPORTSCARDS_BIN.png' alt='BIN Icon' style='max-width:90px;max-height:90px;display:block;'>
+                                    <img src='static/images/GEEKSPORTSCARDS_AUCTIONS.png' alt='Auctions Icon' style='max-width:90px;max-height:90px;display:block;'>
+                                    <img src='static/images/GEEKSPORTSCARDS_SLABS.png' alt='Slabs Icon' style='max-width:90px;max-height:90px;display:block;'>
+                                    <img src='static/images/GEEKSPORTSCARDS_COLLECTABLES.png' alt='Collectables Icon' style='max-width:90px;max-height:90px;display:block;'>
                                 </div>
                                 <div style='display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:left;'>
                                     <span style='font-size:1.08em;font-weight:bold;margin-bottom:2px;'>GEEK SPORTS CARDS &amp; COLLECTABLES</span>
@@ -1312,7 +251,7 @@
             }
             // Add cache-busting parameter to force fresh data
             const timestamp = new Date().getTime();
-            $.getJSON(`static/site.json?_=${timestamp}`, function (siteData) {
+            $.getJSON(`static/site_content/site.json?_=${timestamp}`, function (siteData) {
                 if (siteData && siteData.shipping) {
                     const s = siteData.shipping;
                     let html = `<div class='shipping-info-box'>`;
@@ -1443,7 +382,6 @@
                 timeLeftStr = `${hours}h:${minutes}m`;
             }
             let endStr = '';
-            let endDay = endDate.getDate(), nowDay = now.getDate();
             if (endDate.toDateString() === now.toDateString()) {
                 endStr = 'Today @ ' + endDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
             } else {
@@ -1477,7 +415,6 @@
                 timeLeftStr = `${hours}h ${minutes}m`;
             }
             let startStr = '';
-            let startDay = startDate.getDate(), nowDay = now.getDate();
             if (startDate.toDateString() === now.toDateString()) {
                 startStr = startDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
             } else {
@@ -1507,7 +444,8 @@
         }
         function renderList(items) {
             $('.search-outer-container').show();
-            let html = '<ul class="items-list">';
+            const isMobile = window.innerWidth <= 800;
+            let html = '<div class="card-container">';
             items.forEach(row => {
                 const imgUrl = row['ebay Image URL 1'] && (row['ebay Image URL 1'].startsWith('http://') || row['ebay Image URL 1'].startsWith('https://'))
                     ? row['ebay Image URL 1']
@@ -1515,18 +453,13 @@
                 const isSetsCategory = row['Category'] && String(row['Category']).trim().toLowerCase() === 'sets';
                 const isSetOrLot = row['Category'] && (String(row['Category']).trim().toLowerCase() === 'sets' || String(row['Category']).trim().toLowerCase() === 'lots');
                 let title;
-                if (row['CategoryID'] == '261329' || row['CategoryID'] == '261330') {
-                    title = `${row['Year'] || ''} ${row['Brand'] || ''}`.trim();
-                } else {
-                    title = isSetOrLot ? (row['Brand'] || '') : (row['Card Name'] || '');
-                }
+                title = row['Set Name'] || '';
                 let link = row['ebay listing URL'] || '#';
                 const affiliateParams = 'mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001&mkevt=1';
                 if (link.includes('ebay.com')) {
                     link += (link.includes('?') ? '&' : '?') + affiliateParams;
                 }
                 const price = row['Current Price'] ? `$${row['Current Price']}` : '';
-                const bids = row['Bid Count'] ? (parseInt(row['Bid Count']) === 0 ? row['Bid Count'] : `${row['Bid Count']} bid${row['Bid Count'] == 1 ? '' : 's'}`) : '';
                 let shipping = '';
                 if (row['Shipping Cost'] !== undefined && row['Shipping Cost'] !== null && row['Shipping Cost'] !== '') {
                     const shipVal = parseFloat(row['Shipping Cost']);
@@ -1537,6 +470,7 @@
                     }
                 }
                 const timeLeft = row['isScheduled'] ? getScheduledTimeLeft(row['Start Date'], row['Format']) : getAuctionTimeLeft(row['End Date']);
+                let displayTime = timeLeft.replace(/\s*\([^)]*\)$/, '');
                 let timeLeftColor = '';
                 if (row['isScheduled']) {
                     // For scheduled items, show start date
@@ -1567,6 +501,32 @@
                 }
                 const itemNum = row['ItemID'] || '';
                 const formatLower = row['Format'] ? String(row['Format']).trim().toLowerCase() : '';
+                const bids = formatLower === 'bin' 
+                    ? (row['Watch Count'] ? `${row['Watch Count']} Watching` : '0 Watching')
+                    : (row['Bid Count'] ? `${row['Bid Count']} ${parseInt(row['Bid Count']) === 1 ? 'Bid' : 'Bids'}` : '0 Bids');
+                let quantityLabel = 'Quantity Avail:';
+                let quantityValue = '';
+                if (row['Variation'] == 0) {
+                    quantityValue = '1';
+                } else if (row['Quantity Available'] !== undefined && row['Quantity Available'] !== null && String(row['Quantity Available']).trim() !== '') {
+                    quantityValue = String(row['Quantity Available']);
+                } else {
+                    quantityValue = '1';
+                }
+                if (row['CategoryID'] == '261329' || row['CategoryID'] == '261330') {
+                    quantityLabel = 'Number of Cards:';
+                    if (row['Number of Cards'] !== undefined && row['Number of Cards'] !== null && String(row['Number of Cards']).trim() !== '') {
+                        quantityValue = String(row['Number of Cards']);
+                    } else {
+                        quantityValue = null;
+                    }
+                }
+                let catDisplay = '';
+                const rawCat = row['Category'] ? String(row['Category']).trim().toLowerCase() : '';
+                if (rawCat === 'sets') catDisplay = 'Set';
+                else if (rawCat === 'singles') catDisplay = 'Single';
+                else if (rawCat === 'lots') catDisplay = 'Lot';
+                else if (row['Category']) catDisplay = row['Category'];
                 const watchers = (formatLower === 'auction' && row['Watch Count'] && parseInt(row['Watch Count']) >= 1) ? `${row['Watch Count']}` : '';
                 const comingSoonSelected = $('#filterForm input[type=checkbox][name=filter][value=coming_soon]:checked').length > 0;
                 // Render action button when an eBay listing URL exists.
@@ -1592,144 +552,34 @@
                     } else if (formatLowerInner === 'bin' || formatLowerInner.includes('buy')) {
                         buttonText = 'Buy It Now';
                     }
-                    actionButtonHtml = `<a href="${btnLink}" target="_blank" rel="noopener" style='background:#0d6efd;color:#fff;border:none;border-radius:4px;padding:8px 22px;font-size:1em;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block;'>${buttonText}</a>`;
+                    actionButtonHtml = `<button class="btn btn-primary mt-2" onclick="window.open('${btnLink}', '_blank')">${buttonText}</button>`;
                 }
                 html += `
-<li class="s-card s-card--horizontal">
-  <div class="su-card-container su-card-container--horizontal">
-    <div class="su-card-container__media">
-      ${!row['isScheduled'] ? `<div class="su-card-external-link">
-        <a href="${link}" target="_blank" title="View On eBay">
-          <i class="fas fa-external-link"></i>
-        </a>
-      </div>` : ''}
-            ${!row['isScheduled'] ? `<a href="${link}" target="_blank">` : ''}
-                <img class="lazy-img su-card-img" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="${imgUrl}" alt="${title}">
-            ${!row['isScheduled'] ? `</a>` : ''}
-      <div class="su-card-seller-info">
-        ${itemNum ? `Item ID: ${itemNum}` : ''}
-        ${row['Seller'] ? `<div class='su-card-seller'>Seller: ${row['Seller']}</div>` : ''}
-      </div>
-    </div>
-    <div class="su-card-container__content">
-      <div>
-        ${!row['isScheduled'] ? `<a href="${link}" target="_blank" class="su-card-title-link">` : ''}
-          <div class="s-card__title">${title}</div>
-        ${!row['isScheduled'] ? `</a>` : ''}
-        <div class="su-card-details">
-          ${row['Player/Athlete'] && row['Player/Athlete'].trim() !== '' ? `<span class="su-card-label">Player:</span> ${row['Player/Athlete']}<br>` : ''}
-          ${row['Team'] && row['Team'].trim() !== '' ? `<span class="su-card-label">Team:</span> ${row['Team']}<br>` : ''}
-          ${row['Attributes'] && row['Attributes'].trim() !== '' ? `<span class="su-card-label">Attributes:</span> ${row['Attributes']}<br>` : ''}
-          <div class="su-card-spacer"></div>
-          <span class="su-card-label">Sport:</span> ${row['Sport'] || ''}<br>
-          ${!isSetsCategory ? `<span class="su-card-label">Set:</span> ${row['Set Name'] || ''}<br>` : ''}
-          ${row['Manufacturer'] ? `<span class="su-card-label">Manufacturer:</span> ${row['Manufacturer']}<br>` : ''}
-          ${row['Brand'] && !isSetOrLot ? `<span class="su-card-label">Brand:</span> ${row['Brand']}<br>` : ''}
-          ${row['Features'] && row['Features'].trim() !== '' ? `<span class="su-card-label">Features:</span> ${row['Features']}<br>` : ''}
-          <!-- Features removed as requested -->
-          ${row['Additional Information']
-                        ? `<span class="su-card-label">Additional Information:</span> ${row['Additional Information']}<br><div class='su-card-spacer'></div>`
-                        : `<div class='su-card-spacer'></div>`}
-          ${(() => {
-                        let formatHtml = '';
-                        // Determine quantity label and value
-                        let quantityLabel = 'Quantity Available:';
-                        let quantityValue = '';
-                        if (row['Variation'] == 0) {
-                            quantityValue = '1';
-                        } else if (row['Quantity Available'] !== undefined && row['Quantity Available'] !== null && String(row['Quantity Available']).trim() !== '') {
-                            quantityValue = String(row['Quantity Available']);
-                        } else {
-                            // default to 1 when no explicit quantity is provided
-                            quantityValue = '1';
-                        }
-                        // Check CategoryID for specific categories
-                        if (row['CategoryID'] == '261329' || row['CategoryID'] == '261330') {
-                            quantityLabel = 'Number of Cards:';
-                            if (row['Number of Cards'] !== undefined && row['Number of Cards'] !== null && String(row['Number of Cards']).trim() !== '') {
-                                quantityValue = String(row['Number of Cards']);
-                            } else {
-                                quantityValue = null; // do not show if not present
-                            }
-                        }
-
-                        if (row['Variation'] == 1) {
-                            // Show mapped Category (singular form) directly above Quantity Available
-                            const rawCat = row['Category'] ? String(row['Category']).trim().toLowerCase() : '';
-                            let catDisplay = '';
-                            if (rawCat === 'sets') catDisplay = 'Set';
-                            else if (rawCat === 'singles') catDisplay = 'Single';
-                            else if (rawCat === 'lots') catDisplay = 'Lot';
-                            else if (row['Category']) catDisplay = row['Category'];
-                            if (catDisplay) {
-                                // Show only the mapped category term (no 'Category:' label) and not bold
-                                formatHtml += `<span class="su-card-category">${catDisplay}</span><br>`;
-                            }
-                        } else {
-                            const rawCat = row['Category'] ? String(row['Category']).trim().toLowerCase() : '';
-                            let catDisplay = '';
-                            if (rawCat === 'sets') catDisplay = 'Set';
-                            else if (rawCat === 'singles') catDisplay = 'Single';
-                            else if (rawCat === 'lots') catDisplay = 'Lot';
-                            else if (row['Category']) catDisplay = row['Category'];
-                            formatHtml += `<span class="su-card-label"></span> ${catDisplay}<br>`;
-                        }
-
-                        // Show quantity only if value is present
-                        if (quantityValue !== null) {
-                            formatHtml += `<span class="su-card-label">${quantityLabel}</span> ${quantityValue}<br>`;
-                        }
-                        if (row['Format'] && row['Format'].toLowerCase() === 'bin') {
-                            formatHtml += `<span class="su-card-label">Selling Format:</span> Buy It Now`;
-                        } else if (row['Format'] && row['Format'].toLowerCase() === 'auction') {
-                            formatHtml += `<span class="su-card-label">Selling Format:</span> Auction`;
-                        } else if (row['Format']) {
-                            formatHtml += `<span class=\"su-card-label\">Selling Format:</span> ` + row['Format'];
-                        }
-                        formatHtml += '<br>';
-                        // Add eBay Store: SSN below the format line
-                        if (row['SSN']) {
-                            // Build a safe eBay store search URL using the SSN value from the data.
-                            // Normalize for URL: trim, lower-case, replace spaces with '' or '+' as needed,
-                            // but preserve the original value for display.
-                            const ssnRaw = String(row['SSN']).trim();
-                            // For the _ssn param eBay expects a seller store id; remove spaces and make lowercase.
-                            const ssnForUrl = encodeURIComponent(ssnRaw.replace(/\s+/g, ''));
-                            const ssnDisplay = ssnRaw; // keep original for display
-                            const ssnUrl = `https://www.ebay.com/sch/i.html?rt=nc&_ssn=lotsofcards-gsc&_dmd=2&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001&mkevt=1`;
-                            formatHtml += `<div class='su-card-seller'><span style='font-weight:bold;'>eBay Store:</span> <a href='${ssnUrl}' target='_blank' rel='noopener'>${ssnDisplay}</a></div>`;
-                        }
-                        return formatHtml;
-                    })()}
-        </div>
-      </div>
-      <div class="su-card-container__attributes su-card-container__attributes--has-secondary">
-        <div class="su-card-container__attributes__primary">
-          <div class="s-card__attribute-row">
-            <span class="su-card-price" style="${row['isScheduled'] ? 'font-size: 1.0em; font-weight: normal;' : 'font-size: 1.0em; font-weight: normal;'}">${row['isScheduled'] ? `${formatLower === 'auction' ? '<strong>Starting Bid:</strong> ' : '<strong>Price:</strong> '} ` : (formatLower === 'auction' ? `<strong>${parseInt(bids) > 0 ? 'Current Bid:' : 'Starting Bid:'}</strong> ` : (formatLower === 'bin' || formatLower.includes('buy') ? '<strong>Price:</strong> ' : ''))}${price}</span>
-            <span class="su-card-shipping">${shipping}</span>
-          </div>
-          <div class="s-card__attribute-row su-card-bids-time">
-            ${row['isScheduled'] ? '' : ((formatLower !== 'bin' && !formatLower.includes('buy')) ? `<div><strong>Bid Count:</strong> <span style="color: ${parseInt(bids) == 0 ? 'red' : 'black'}; ${parseInt(bids) == 0 ? 'font-weight: bold;' : ''}">${parseInt(bids)}</span></div>` : '')}
-            ${watchers ? `<div><strong>Watchers:</strong> ${watchers}</div>` : ''}
-            <div style="display: flex; flex-direction: column;">${row['isScheduled'] ? (timeLeft.startsWith('Starts On:') ? (() => {
-                        const timePart = timeLeft.substring('Starts On:'.length).trim();
-                        const parenIndex = timePart.indexOf(' (');
-                        const timeValue = parenIndex > 0 ? timePart.substring(0, parenIndex) : timePart;
-                        const datePart = parenIndex > 0 ? timePart.substring(parenIndex) : '';
-                        return `<strong style="color: black;">Starts On:</strong><div><span${timeLeftColor ? ` style="color: ${timeLeftColor};"` : ''}>${timeValue}</span>${datePart ? `<br><span style="padding-left: 0px;${timeLeftColor ? ` color: ${timeLeftColor};` : ''}">${datePart}</span>` : ''}</div>`;
-                    })() : '') : (formatLower === 'bin' ? '' : `<strong>Time Left:</strong> <span${timeLeftColor ? ` style="color: ${timeLeftColor};"` : ''}>${timeLeft}</span>`)}</div>
-          </div>
-        </div>
-      </div>
-      ${actionButtonHtml && (!row['isScheduled'] || comingSoonSelected) ? `<div class='su-card-action-btn'>${actionButtonHtml}</div>` : ''}
+<div class="listing-card">
+  <div class="card-top">
+    ${(formatLower === 'bin' || formatLower === 'auction') ? `<a href="${link}" target="_blank" rel="noopener">` : ''}
+    <img class="lazy-img" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="${imgUrl}" alt="${title}">
+    ${(formatLower === 'bin' || formatLower === 'auction') ? `</a>` : ''}
+    <div class="card-body">
+      ${(formatLower === 'bin' || formatLower === 'auction') ? `<a href="${link}" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">` : ''}
+      <h6>${title}</h6>
+      ${(formatLower === 'bin' || formatLower === 'auction') ? `</a>` : ''}
+      <p class="mb-1"><strong>Player:</strong> ${row['Player/Athlete'] || ''}<br>
+      <strong>Team:</strong> ${row['Team'] || ''}<br>
+      <strong>Card:</strong> #${row['Card Number'] || ''}<br>
+      <strong>Format:</strong> ${formatLower === 'bin' ? 'Buy It Now' : (row['Format'] || '')}<br>
+      <strong>Category:</strong> ${catDisplay}<br>
+      <strong>${quantityLabel}</strong> ${quantityValue}</p>
+      <p class="price">${price}<span class="shipping-text">${shipping}</span></p>
+      <p class="bid-info mb-2">${bids}   <span class="${formatLower === 'auction' ? 'auction-time' : ''}">${displayTime}</span></p>
     </div>
   </div>
-</li>
+  ${actionButtonHtml}
+</div>
                 `;
 
             });
-            html += '</ul>';
+            html += '</div>';
             $('#itemsGrid').html(html);
         }
         function filterData(data) {
@@ -1757,14 +607,6 @@
             if (!selected.length && !selectedCategories.length && !selectedSports.length && !keyword) return filteredData;
 
             return filteredData.filter(row => {
-                if (keyword) {
-                    let found = false;
-                    const fields = ['Title', 'Player/Athlete', 'Team', 'Card Name', 'Features', 'Attributes', 'Category', 'Sport', 'Current Price', 'ItemID', 'Format'];
-                    for (let f of fields) {
-                        if (row[f] && String(row[f]).toLowerCase().includes(keyword)) { found = true; break; }
-                    }
-                    if (!found) return false;
-                }
                 if (keyword) {
                     let found = false;
                     const fields = ['Title', 'Player/Athlete', 'Team', 'Card Name', 'Features', 'Attributes', 'Category', 'Sport', 'Current Price', 'ItemID', 'Format'];
@@ -2176,6 +1018,8 @@
             }
         })();
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
 
