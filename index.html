@@ -700,7 +700,7 @@
                         } else if (sortBy === 'most_watchers') {
                             filtered = filtered.filter(item => {
                                 const watchers = parseInt(item['Watch Count'] || 0);
-                                return watchers >= 1;
+                                return watchers >= 1 && item['Format'] === 'BIN';
                             });
                         } else if (sortBy === 'ending_today') {
                             const today = new Date();
