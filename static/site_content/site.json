@@ -1,0 +1,23 @@
+{
+  "shipping": {
+    "description": "The following outlines our shipping policy unless otherwise stated in the item listing or an alternative method is agreed upon with the purchaser prior to payment completion.",
+    "policy": "Once an order has been successfully placed and completed with payment, the transaction is considered FINAL! We will not add or modify items to an order or shipment once payment is made and being processed by eBay.",
+    "freeshipping": "Available on select listings.",
+    "standardshipping": "$0.75 per Item (up to 9 items)",
+    "standardshippingslabs": "$5 Flat Rate per Item",
+    "combinedshipping": "$5 Flat Rate on purchases of 10 or more items (limit 40 items per invoice)",
+    "lotsnsetsshipping": "$5 Flat Rate (Combined Shipping Not Available)",
+    "lotsnsetsshipping20plus": "$12 Flat Rate (Combined Shipping Not Available)",
+    "shippingMethod": "Shipped USPS with tracking.",
+    "ebayshippinglink": "https://www.ebay.com/help/ship-track/ship-track-buying"
+  },
+  "about": {
+    "description": "Geek Sports Cards and Collectables is an online space dedicated to enthusiasts and collectors of sports cards and memorabilia. We offer a wide range of sports related trading cards and collectables for sale.",
+    "ebayrating": "Top Rated Seller: GeekSportsCards is one of eBay's most reputable sellers. Consistently delivers outstanding customer service",
+    "ebayfeedbackurl": "https://www.ebay.com/fdbk/feedback_profile/lotsofcards-gsc",
+    "sellericon": "static/images/GEEKSPORTSCARDS.png",
+    "ssnicon": "static/images/GEEKSPORTSCARDS_AUCTIONS.png",
+    "ebaystore": "GEEK SPORTS CARDS & COLLECTABLES",
+    "rating": "100% Positive Seller Feedback (last 12 months)"
+  }
+}
