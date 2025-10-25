@@ -1568,10 +1568,12 @@
                 const itemNum = row['ItemID'] || '';
                 const formatLower = row['Format'] ? String(row['Format']).trim().toLowerCase() : '';
                 const watchers = (formatLower === 'auction' && row['Watch Count'] && parseInt(row['Watch Count']) >= 1) ? `${row['Watch Count']}` : '';
+                const comingSoonSelected = $('#filterForm input[type=checkbox][name=filter][value=coming_soon]:checked').length > 0;
                 // Render action button when an eBay listing URL exists.
                 // Button text depends on the selling format:
                 //  - Auction -> "Place Bid Now"
                 //  - BIN / Buy It Now -> "Buy It Now"
+                //  - Coming Soon -> "Pre-Sale Purchase"
                 let actionButtonHtml = '';
                 const btnLinkRaw = row['ebay listing URL'] || '';
                 if (btnLinkRaw) {
@@ -1581,7 +1583,9 @@
                     }
                     const formatLowerInner = row['Format'] ? String(row['Format']).trim().toLowerCase() : '';
                     let buttonText = 'Buy It Now';
-                    if (row['isScheduled']) {
+                    if (comingSoonSelected && row['isScheduled']) {
+                        buttonText = 'Pre-Sale Purchase';
+                    } else if (row['isScheduled']) {
                         buttonText = 'View Listing';
                     } else if (formatLowerInner === 'auction' || formatLowerInner.includes('auction')) {
                         buttonText = 'Place Bid Now';
@@ -1702,7 +1706,7 @@
       <div class="su-card-container__attributes su-card-container__attributes--has-secondary">
         <div class="su-card-container__attributes__primary">
           <div class="s-card__attribute-row">
-            <span class="su-card-price" style="${row['isScheduled'] ? 'font-size: 1.0em; font-weight: normal;' : ''}">${row['isScheduled'] ? `<strong>${formatLower === 'auction' ? 'Starting Bid:' : 'Price:'}</strong> ` : ''}${price}</span>
+            <span class="su-card-price" style="${row['isScheduled'] ? 'font-size: 1.0em; font-weight: normal;' : 'font-size: 1.0em; font-weight: normal;'}">${row['isScheduled'] ? `${formatLower === 'auction' ? '<strong>Starting Bid:</strong> ' : '<strong>Price:</strong> '} ` : (formatLower === 'auction' ? `<strong>${parseInt(bids) > 0 ? 'Current Bid:' : 'Starting Bid:'}</strong> ` : (formatLower === 'bin' || formatLower.includes('buy') ? '<strong>Price:</strong> ' : ''))}${price}</span>
             <span class="su-card-shipping">${shipping}</span>
           </div>
           <div class="s-card__attribute-row su-card-bids-time">
@@ -1718,7 +1722,7 @@
           </div>
         </div>
       </div>
-      ${actionButtonHtml && !row['isScheduled'] ? `<div class='su-card-action-btn'>${actionButtonHtml}</div>` : ''}
+      ${actionButtonHtml && (!row['isScheduled'] || comingSoonSelected) ? `<div class='su-card-action-btn'>${actionButtonHtml}</div>` : ''}
     </div>
   </div>
 </li>
