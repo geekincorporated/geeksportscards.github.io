@@ -1799,7 +1799,7 @@
                     let found = false;
                     for (let catVal of selectedCategories) {
                         let val = catVal.trim().toLowerCase();
-                        if (cat.includes(val)) { found = true; break; }
+                        if (cat === val) { found = true; break; }
                     }
                     if (!found) return false;
                 }
