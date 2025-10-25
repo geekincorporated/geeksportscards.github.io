@@ -1867,6 +1867,10 @@
                                 const endDate = new Date(item['End Date']);
                                 return endDate.toDateString() === todayStr;
                             });
+                        } else if (sortBy === 'ending_soonest') {
+                            filtered = filtered.filter(item => {
+                                return item['Format'] === 'Auction';
+                            });
                         }
                         filtered.sort((a, b) => {
                             if (sortBy === 'most_bids') {
