@@ -198,8 +198,8 @@
         }
 
         .su-card-shipping {
-            font-size: 0.95em !important;
-            font-weight: normal;
+            font-size: 1.25em !important;
+            font-weight: normal !important;
             color: #555;
         }
 
@@ -996,6 +996,7 @@
 
             .su-card-shipping {
                 font-size: 2em;
+                font-weight: normal !important;
             }
 
             .su-card-bids-time {
@@ -1101,12 +1102,12 @@
         margin-bottom: 0.2rem;
       }
       .shipping-text {
-        font-size: 0.8rem;
+        font-size: 1.25rem;
         font-weight: normal;
       }
       .bid-info {
-        font-size: 0.85rem;
-        color: #555;
+        font-size: 1rem;
+        color: #666;
         margin-bottom: 0.5rem;
       }
       .btn-custom {
@@ -1169,16 +1170,16 @@
         margin-bottom: 0.2rem;
       }
       .shipping-text {
-        font-size: 0.8rem;
+        font-size: 1.25rem;
         font-weight: normal;
       }
       .shipping-text {
-        font-size: 0.8rem;
+        font-size: 1.25rem;
         font-weight: normal;
       }
       .bid-info {
-        font-size: 0.85rem;
-        color: #555;
+        font-size: 1rem;
+        color: #666;
         margin-bottom: 0.5rem;
       }
       .btn-custom {
@@ -1269,19 +1270,19 @@
                 margin-bottom: 2px;
             }
             .shipping-text {
-                font-size: 0.85rem;
+                font-size: 1.25rem;
                 font-weight: 400;
                 color: #666;
                 margin-left: 6px;
             }
             /* Auction time in red (already exists in .auction-time) */
             .bid-info {
-                font-size: 0.9rem;
-                color: #555;
+                font-size: 1rem;
+                color: #666;
                 margin-top: 6px;
                 margin-bottom: 6px;
             }
-            .auction-time { color: #d9534f; }
+            .auction-time { color: #d9534f; font-weight: 600; }
 
             /* Make action button full-width and visually dominant */
             .listing-card .btn {
@@ -1302,10 +1303,13 @@
 
 .auction-time {
     color: red;
+    font-weight: 600;
 }
 
 .bid-info {
-    font-weight: 600 !important;
+    font-size: 1rem !important;
+    color: #666 !important;
+    font-weight: normal !important;
 }
 
 /* For screens 390px and smaller, hide card container and show non-compliant message */
