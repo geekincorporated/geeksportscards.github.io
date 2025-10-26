@@ -1035,7 +1035,7 @@
     }
     .price {
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 2rem;
     }
     .btn-custom {
       width: 100%;
@@ -1096,7 +1096,7 @@
         margin-bottom: 0.5rem;
       }
       .price {
-        font-size: 1.25rem;
+        font-size: 2rem;
         font-weight: bold;
         margin-bottom: 0.2rem;
       }
@@ -1164,7 +1164,7 @@
         margin-bottom: 0.5rem;
       }
       .price {
-        font-size: 1.25rem;
+        font-size: 2rem;
         font-weight: bold;
         margin-bottom: 0.2rem;
       }
@@ -1264,7 +1264,7 @@
             /* Price block styling */
             .price {
                 font-weight: 800;
-                font-size: 1.25rem;
+                font-size: 2rem;
                 margin-top: 8px;
                 margin-bottom: 2px;
             }
