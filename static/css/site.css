@@ -1308,8 +1308,8 @@
     font-weight: 600 !important;
 }
 
-/* For screens 450px and smaller, hide card container and show non-compliant message */
-@media (max-width: 450px) {
+/* For screens 399px and smaller, hide card container and show non-compliant message */
+@media (max-width: 399px) {
     .card-container {
         display: none;
     }
