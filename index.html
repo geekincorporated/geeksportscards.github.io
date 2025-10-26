@@ -153,6 +153,13 @@
                     <div id="resultsCount"></div>
                 </div>
                 <div id="itemsGrid"></div>
+                <!-- Message shown only for very small screens (<=499px). Hidden by default, revealed via CSS -->
+                <div class="small-screen-message" aria-hidden="true" style="display:none;">
+                    <div class="small-screen-inner">
+                        <h4>Screen too small</h4>
+                        <p>For the best experience please use a device with a wider screen (minimum 500px) or rotate your device.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -163,6 +170,21 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <script>
+
+        // Reusable affiliate helper (keeps links consistent)
+        const AFFILIATE_PARAMS = 'mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001&mkevt=1';
+        function appendAffiliate(url) {
+            if (!url || typeof url !== 'string') return url;
+            try {
+                if (url.includes('ebay.com')) {
+                    return url + (url.includes('?') ? '&' : '?') + AFFILIATE_PARAMS;
+                }
+            } catch (e) {
+                return url;
+            }
+            return url;
+        }
+
 
         // Show about info in main content, full width, when About link is clicked
         $(document).on('click', '.custom-footer a:contains("About")', function (e) {
@@ -275,10 +297,8 @@
             });
         });
 
-        // Refresh the screen when the back link is clicked
-        $(document).on('click', '#shippingBackLink', function (e) {
-            e.preventDefault();
-            // Restore the main content and update URL
+        // Restore main content (shared by multiple back links)
+        function restoreMainContent() {
             if (window.location.pathname !== '/') {
                 window.history.pushState({}, '', '/');
             }
@@ -289,42 +309,33 @@
             } else {
                 window.location.reload();
             }
+        }
+
+        // Click handlers for back links
+        $(document).on('click', '#shippingBackLink', function (e) {
+            e.preventDefault();
+            restoreMainContent();
         });
         $(document).on('click', '#aboutBackLink', function (e) {
             e.preventDefault();
-            // Restore the main content and update URL
-            if (window.location.pathname !== '/') {
-                window.history.pushState({}, '', '/');
-            }
-            if (window._ebayData) {
-                renderList(window._ebayData);
-                updateResultsCount(window._ebayData.length);
-                $('.search-outer-container').show();
-            } else {
-                window.location.reload();
-            }
-            // Handle browser navigation for /about and /shipping
-            window.addEventListener('popstate', function (event) {
-                if (window.location.pathname === '/about') {
-                    // Only load About if not already showing
-                    if (!$('#itemsGrid .shipping-info-title').text().includes('About')) {
-                        $('.custom-footer a:contains("About")').trigger('click');
-                    }
-                } else if (window.location.pathname === '/shipping') {
-                    if (!$('#itemsGrid .shipping-info-title').text().includes('Shipping')) {
-                        $('.custom-footer a:contains("Shipping")').trigger('click');
-                    }
-                } else {
-                    // Restore main content if not /about or /shipping
-                    if (window._ebayData) {
-                        renderList(window._ebayData);
-                        updateResultsCount(window._ebayData.length);
-                        $('.search-outer-container').show();
-                    } else {
-                        window.location.reload();
-                    }
+            restoreMainContent();
+        });
+
+        // Handle browser navigation for /about and /shipping - attach once
+        window.addEventListener('popstate', function (event) {
+            if (window.location.pathname === '/about') {
+                // Only load About if not already showing
+                if (!$('#itemsGrid .shipping-info-title').text().includes('About')) {
+                    $('.custom-footer a:contains("About")').trigger('click');
                 }
-            });
+            } else if (window.location.pathname === '/shipping') {
+                if (!$('#itemsGrid .shipping-info-title').text().includes('Shipping')) {
+                    $('.custom-footer a:contains("Shipping")').trigger('click');
+                }
+            } else {
+                // Restore main content if not /about or /shipping
+                restoreMainContent();
+            }
         });
 
 
@@ -438,10 +449,8 @@
                 let title;
                 title = row['Set Name'] || '';
                 let link = row['ebay listing URL'] || '#';
-                const affiliateParams = 'mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001&mkevt=1';
-                if (link.includes('ebay.com')) {
-                    link += (link.includes('?') ? '&' : '?') + affiliateParams;
-                }
+                // Append affiliate params when appropriate
+                link = appendAffiliate(link);
                 const price = row['Current Price'] ? `$${row['Current Price']}` : '';
                 let shipping = '';
                 if (row['Shipping Cost'] !== undefined && row['Shipping Cost'] !== null && row['Shipping Cost'] !== '') {
@@ -520,10 +529,7 @@
                 let actionButtonHtml = '';
                 const btnLinkRaw = row['ebay listing URL'] || '';
                 if (btnLinkRaw) {
-                    let btnLink = btnLinkRaw;
-                    if (btnLink.includes('ebay.com')) {
-                        btnLink += (btnLink.includes('?') ? '&' : '?') + affiliateParams;
-                    }
+                    let btnLink = appendAffiliate(btnLinkRaw);
                     const formatLowerInner = row['Format'] ? String(row['Format']).trim().toLowerCase() : '';
                     let buttonText = 'Buy It Now';
                     if (comingSoonSelected && row['isScheduled']) {
