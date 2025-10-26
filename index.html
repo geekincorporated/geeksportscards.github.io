@@ -550,10 +550,11 @@
       <p class="mb-1"><strong>Player:</strong> ${row['Player/Athlete'] || ''}<br>
       <strong>Team:</strong> ${row['Team'] || ''}<br>
       <strong>Card:</strong> #${row['Card Number'] || ''}<br>
+      <strong>Features:</strong> ${row['Features'] || ''}<br>
       <strong>Format:</strong> ${formatLower === 'bin' ? 'Buy It Now' : (row['Format'] || '')}<br>
       <strong>Category:</strong> ${catDisplay}<br>
       <strong>${quantityLabel}</strong> ${quantityValue}</p>
-      <p class="price">${price}<span class="shipping-text">${shipping}</span></p>
+      <p class="price">${price} <span class="shipping-text">${shipping}</span></p>
       ${formatLower === 'auction' ? 
         `<p class="bid-info mb-1">${bids} <span class="auction-time">${displayTime}</span></p>
          <p class="bid-info mb-2">${row['Watch Count'] && parseInt(row['Watch Count']) > 0 ? `${row['Watch Count']} Watching` : '0 Watching'}</p>` :
