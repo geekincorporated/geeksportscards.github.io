@@ -1051,6 +1051,11 @@
     /* Medium screens 800px to 1499px - 1 card per row */
     @media (min-width: 800px) and (max-width: 1499px) {
       .card-container {
+    /* Very small screens: hide card list and show a friendly message */
+    .small-screen-message { display: none; }
+    .small-screen-message .small-screen-inner { max-width: 560px; margin: 14px auto; background: #fff; padding: 18px; border-radius: 8px; border: 1px solid #e6e6e6; box-shadow: 0 1px 6px rgba(0,0,0,0.04); text-align: center; }
+    .small-screen-message h4 { margin: 0 0 8px 0; font-size: 1.05rem; color: #111; }
+    .small-screen-message p { margin: 0; color: #444; font-size: 0.95rem; }
         display: grid;
         grid-template-columns: 1fr;
         gap: 20px;
@@ -1185,68 +1190,115 @@
       }
     }
 
-    /* Mobile layout for screens below 800px - horizontal cards */
-    @media (max-width: 799px) {
-      .card-container {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-      }
-      .listing-card {
-        width: 100%;
-        max-width: none;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        padding: 10px;
-        display: flex;
-        flex-direction: column;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        transition: transform 0.2s ease;
-      }
-      .card-top {
-        display: flex;
-        align-items: flex-start;
-        gap: 15px;
-        flex: 1;
-      }
-      .listing-card .lazy-img {
-        width: 132px;
-        border-radius: 4px;
-        height: auto;
-        flex-shrink: 0;
-      }
-      .card-body {
-        flex: 1;
-        font-size: 0.9rem;
-      }
-      .card-body h6 {
-        font-weight: 600;
-        color: #0d6efd;
-        margin-bottom: 0.5rem;
-      }
-      .price {
-        font-weight: bold;
-        font-size: 1.2rem;
-        margin-bottom: 0.2rem;
-      }
-      .shipping-text {
-        font-size: 0.75rem;
-        font-weight: normal;
-      }
-      .bid-info {
-        font-size: 0.85rem;
-        color: #555;
-        margin-bottom: 0.5rem;
-      }
-      .btn-custom {
-        width: 100%;
-        background-color: #0d6efd;
-        color: #fff;
-        font-weight: 500;
-        border-radius: 6px;
-      }
-    }
+        /* Mobile layout for screens below 800px - stacked cards that match reference image */
+        @media (max-width: 799px) {
+            .card-container {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+            /* Make each card a column so button can sit flush at the bottom
+                 and card-body height is consistent across cards */
+            .listing-card {
+                width: 100%;
+                max-width: none;
+                border: 1px solid #e6e6e6;
+                border-radius: 8px;
+                padding: 14px;
+                display: flex;
+                flex-direction: column;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+                transition: transform 0.18s ease;
+            }
+            /* Top area: image above content */
+            .card-top {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* center the image */
+                gap: 12px;
+                flex: 1 1 auto;
+            }
+            /* Larger centered image like the reference */
+            .listing-card .lazy-img {
+                width: 320px; /* bigger on mobile to match the example */
+                max-width: 100%;
+                height: auto;
+                border-radius: 6px;
+                box-shadow: 0 1px 0 rgba(0,0,0,0.06) inset;
+                flex-shrink: 0;
+            }
+            /* Body: keep left-aligned text, consistent spacing and typography */
+            .card-body {
+                flex: 1 1 auto;
+                font-size: 0.95rem;
+                text-align: left; /* left/start aligned as requested */
+                width: 100%;
+                margin-top: 4px;
+            }
+            /* Title styled as a blue link (matches reference) */
+            .card-body h6 {
+                font-weight: 600;
+                color: #0d6efd; /* bootstrap primary blue */
+                margin: 6px 0 8px 0;
+                font-size: 1.02rem;
+            }
+            .card-body h6 a {
+                color: inherit;
+                text-decoration: none;
+            }
+            /* Field labels should be prominent (e.g., "Player:") */
+            .card-body p {
+                margin: 4px 0;
+                line-height: 1.35;
+                color: #222;
+            }
+            .card-body strong {
+                font-weight: 700;
+                display: inline-block;
+                min-width: 95px; /* align the label column but allow expansion */
+                padding-right: 8px; /* spacing between label and value */
+                white-space: nowrap; /* prevent label from wrapping onto multiple lines */
+                vertical-align: top;
+            }
+            /* Price block styling */
+            .price {
+                font-weight: 800;
+                font-size: 1.25rem;
+                margin-top: 8px;
+                margin-bottom: 2px;
+            }
+            .shipping-text {
+                font-size: 0.85rem;
+                font-weight: 400;
+                color: #666;
+                margin-left: 6px;
+            }
+            /* Auction time in red (already exists in .auction-time) */
+            .bid-info {
+                font-size: 0.9rem;
+                color: #555;
+                margin-top: 6px;
+                margin-bottom: 6px;
+            }
+            .auction-time { color: #d9534f; }
+
+            /* Make action button full-width and visually dominant */
+            .listing-card .btn {
+                width: 100%;
+                border-radius: 8px;
+                padding: 10px 12px;
+                font-size: 1rem;
+            }
+
+            /* Ensure there is consistent spacing and the button sits below content */
+            .listing-card > .btn,
+            .listing-card > .btn-custom,
+            .listing-card > .btn-primary {
+                margin-top: 12px;
+                align-self: stretch;
+            }
+        }
 
 .auction-time {
     color: red;
