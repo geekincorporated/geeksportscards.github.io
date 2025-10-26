@@ -1307,3 +1307,27 @@
 .bid-info {
     font-weight: 600 !important;
 }
+
+/* For screens 499px and smaller, hide card container and show non-compliant message */
+@media (max-width: 499px) {
+    .card-container {
+        display: none;
+    }
+    .small-screen-message {
+        display: block !important;
+        background: red;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin: 20px auto;
+        border-radius: 8px;
+        max-width: 90%;
+    }
+    .small-screen-message h4,
+    .small-screen-message p {
+        color: white;
+    }
+    .results-count-text {
+        display: none;
+    }
+}
