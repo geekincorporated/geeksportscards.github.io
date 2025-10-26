@@ -456,7 +456,7 @@
                 if (row['Shipping Cost'] !== undefined && row['Shipping Cost'] !== null && row['Shipping Cost'] !== '') {
                     const shipVal = parseFloat(row['Shipping Cost']);
                     if (!isNaN(shipVal) && shipVal === 0) {
-                        shipping = '<span style="color:green;font-weight:bold;">+ Free Shipping</span>';
+                        shipping = '<span class="text-success">+ Free Shipping</span>';
                     } else {
                         shipping = `+$${row['Shipping Cost']} Shipping`;
                     }
