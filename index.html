@@ -554,7 +554,11 @@
       <strong>Category:</strong> ${catDisplay}<br>
       <strong>${quantityLabel}</strong> ${quantityValue}</p>
       <p class="price">${price}<span class="shipping-text">${shipping}</span></p>
-      <p class="bid-info mb-2">${bids}   <span class="${formatLower === 'auction' ? 'auction-time' : ''}">${displayTime}</span></p>
+      ${formatLower === 'auction' ? 
+        `<p class="bid-info mb-1">${bids} <span class="auction-time">${displayTime}</span></p>
+         <p class="bid-info mb-2">${row['Watch Count'] && parseInt(row['Watch Count']) > 0 ? `${row['Watch Count']} Watching` : '0 Watching'}</p>` :
+        `<p class="bid-info mb-2">${bids}</p>`
+      }
     </div>
   </div>
   ${actionButtonHtml}
@@ -683,7 +687,7 @@
                         } else if (sortBy === 'most_watchers') {
                             filtered = filtered.filter(item => {
                                 const watchers = parseInt(item['Watch Count'] || 0);
-                                return watchers >= 1 && item['Format'] === 'BIN';
+                                return watchers >= 1;
                             });
                         } else if (sortBy === 'ending_today') {
                             const today = new Date();
