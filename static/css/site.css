@@ -1076,7 +1076,7 @@
         flex: 1;
       }
       .listing-card .lazy-img {
-        width: 180px;
+        width: 198px;
         border-radius: 4px;
         height: auto;
         flex-shrink: 0;
@@ -1144,7 +1144,7 @@
         transform: scale(1.01);
       }
       .listing-card .lazy-img {
-        width: 180px;
+        width: 198px;
         border-radius: 4px;
         height: auto;
         flex-shrink: 0;
@@ -1211,7 +1211,7 @@
         flex: 1;
       }
       .listing-card .lazy-img {
-        width: 120px;
+        width: 132px;
         border-radius: 4px;
         height: auto;
         flex-shrink: 0;
