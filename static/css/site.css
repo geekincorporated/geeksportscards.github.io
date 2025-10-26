@@ -1231,7 +1231,7 @@
             /* Body: keep left-aligned text, consistent spacing and typography */
             .card-body {
                 flex: 1 1 auto;
-                font-size: 0.95rem;
+                font-size: 1.14rem;
                 text-align: left; /* left/start aligned as requested */
                 width: 100%;
                 margin-top: 4px;
@@ -1241,7 +1241,7 @@
                 font-weight: 600;
                 color: #0d6efd; /* bootstrap primary blue */
                 margin: 6px 0 8px 0;
-                font-size: 1.02rem;
+                font-size: 1.22rem;
             }
             .card-body h6 a {
                 color: inherit;
@@ -1288,7 +1288,7 @@
                 width: 100%;
                 border-radius: 8px;
                 padding: 10px 12px;
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
 
             /* Ensure there is consistent spacing and the button sits below content */
