@@ -1329,6 +1329,14 @@
     font-weight: normal !important;
 }
 
+.coming-soon-layout .bid-info.mb-2 {
+    display: none;
+}
+
+.upcoming-layout .bid-info.mb-1 {
+    display: none;
+}
+
 /* For screens 390px and smaller, hide card container and show non-compliant message */
 @media (max-width: 390px) {
     .card-container {
