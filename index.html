@@ -13,7 +13,8 @@
     <script src="https://cdn.counter.dev/script.js" data-id="18805968-c523-41d4-a5fc-6a39864fa88e"
         data-utcoffset="-6"></script>
     <link rel="stylesheet" href="static/css/site.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
 <body id="top">
@@ -62,12 +63,15 @@
                                             for="filter_bin">Buy It Now</label></div>
 
                                     <div class="sidebar-section-title" style="color: red;">NEW!</div>
-                                    <div><input type="checkbox" name="filter" value="coming_soon"
-                                            id="filter_coming_soon"> <label for="filter_coming_soon">Coming Soon</label>
-                                    </div>
                                     <div><input type="checkbox" name="filter" value="upcoming_auctions"
                                             id="filter_upcoming_auctions"> <label
                                             for="filter_upcoming_auctions">Upcoming Auctions</label></div>
+
+                                    <div><input type="checkbox" name="filter" value="coming_soon"
+                                            id="filter_coming_soon"> <label for="filter_coming_soon">Coming Soon (BIN)</label>
+                                    </div>
+
+
                                     <div class="sidebar-section-title">Category</div>
                                     <div><input type="checkbox" name="category_filter" value="Singles"
                                             id="filter_category_singles"> <label
@@ -157,7 +161,8 @@
                 <div class="small-screen-message" aria-hidden="true" style="display:none;">
                     <div class="small-screen-inner">
                         <h4>Screen too small</h4>
-                        <p>For the best experience please use a device with a wider screen (minimum 500px) or rotate your device.</p>
+                        <p>For the best experience please use a device with a wider screen (minimum 500px) or rotate
+                            your device.</p>
                     </div>
                 </div>
             </div>
@@ -493,7 +498,7 @@
                 }
                 const itemNum = row['ItemID'] || '';
                 const formatLower = row['Format'] ? String(row['Format']).trim().toLowerCase() : '';
-                const bids = formatLower === 'bin' 
+                const bids = formatLower === 'bin'
                     ? (row['Watch Count'] ? `${row['Watch Count']} Watching` : '0 Watching')
                     : (row['Bid Count'] ? `${row['Bid Count']} ${parseInt(row['Bid Count']) === 1 ? 'Bid' : 'Bids'}` : '0 Bids');
                 let quantityLabel = 'Quantity Avail:';
@@ -564,11 +569,11 @@
       <strong>Category:</strong> ${catDisplay}<br>
       <strong>${quantityLabel}</strong> ${quantityValue}</p>
       <p class="price">${price} <span class="shipping-text">${shipping}</span></p>
-      ${formatLower === 'auction' ? 
-        `<p class="bid-info mb-1">${bids} <span class="auction-time">${displayTime}</span></p>
+      ${formatLower === 'auction' ?
+                        `<p class="bid-info mb-1">${bids} <span class="auction-time">${displayTime}</span></p>
          <p class="bid-info mb-2">${row['Watch Count'] && parseInt(row['Watch Count']) > 0 ? `${row['Watch Count']} Watching` : '0 Watching'}</p>` :
-        `<p class="bid-info mb-2">${bids}</p>`
-      }
+                        `<p class="bid-info mb-2">${bids}</p>`
+                    }
     </div>
   </div>
   ${actionButtonHtml}
@@ -748,7 +753,7 @@
                     updateResultsCount(filtered.length);
                     renderList(filtered);
                 }
-                $('#filterForm input[type=checkbox][name=filter]').on('change', function() {
+                $('#filterForm input[type=checkbox][name=filter]').on('change', function () {
                     const val = $(this).val();
                     if ($(this).is(':checked') && ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].includes(val)) {
                         // Uncheck the other three
@@ -1016,7 +1021,9 @@
         })();
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
 </body>
 
