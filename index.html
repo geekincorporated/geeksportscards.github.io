@@ -601,20 +601,23 @@
             const selectedSports = $('#filterForm input[type=checkbox][name=sport_filter]:checked').map(function () { return this.value; }).get();
             const keyword = $('#keywordSearch').val().trim().toLowerCase();
 
-            // If "coming_soon" or "upcoming_auctions" is selected, show scheduled items, otherwise show active items
+            // If keyword is present, search all data (both active and scheduled)
+            // Otherwise, filter by scheduled/active status based on format filters
             let filteredData = data;
-            if (selected.includes('coming_soon') || selected.includes('upcoming_auctions')) {
-                filteredData = data.filter(row => row['isScheduled']);
-                // For "coming_soon", further filter to only BIN format
-                if (selected.includes('coming_soon')) {
-                    filteredData = filteredData.filter(row => row['Format'] && (row['Format'].toLowerCase() === 'bin' || row['Format'].toLowerCase() === 'fixedprice'));
+            if (!keyword) {
+                if (selected.includes('coming_soon') || selected.includes('upcoming_auctions')) {
+                    filteredData = data.filter(row => row['isScheduled']);
+                    // For "coming_soon", further filter to only BIN format
+                    if (selected.includes('coming_soon')) {
+                        filteredData = filteredData.filter(row => row['Format'] && (row['Format'].toLowerCase() === 'bin' || row['Format'].toLowerCase() === 'fixedprice'));
+                    }
+                    // For "upcoming_auctions", further filter to only auction format
+                    if (selected.includes('upcoming_auctions')) {
+                        filteredData = filteredData.filter(row => row['Format'] && row['Format'].toLowerCase() === 'auction');
+                    }
+                } else {
+                    filteredData = data.filter(row => !row['isScheduled']);
                 }
-                // For "upcoming_auctions", further filter to only auction format
-                if (selected.includes('upcoming_auctions')) {
-                    filteredData = filteredData.filter(row => row['Format'] && row['Format'].toLowerCase() === 'auction');
-                }
-            } else {
-                filteredData = data.filter(row => !row['isScheduled']);
             }
 
             if (!selected.length && !selectedCategories.length && !selectedSports.length && !keyword) return filteredData;
