@@ -1125,8 +1125,8 @@
         font-weight: 700;
       }
       .coming-soon-layout .listing-card {
-        min-width: 574.5px;
-        min-height: 360.05px;
+        min-width: 623.75px;
+        min-height: 369.05px;
       }
     }
     @media (min-width: 1500px) {
@@ -1150,7 +1150,7 @@
         transition: transform 0.2s ease;
       }
       .coming-soon-layout .listing-card {
-        min-width: 574.5px;
+        min-width: 623.75px;
         min-height: 360.05px;
       }
       .card-top {
