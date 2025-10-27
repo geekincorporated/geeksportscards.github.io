@@ -452,6 +452,9 @@
             if (comingSoonSelected || upcomingAuctionsSelected) {
                 className += ' coming-soon-layout';
             }
+            if (upcomingAuctionsSelected) {
+                className += ' upcoming-layout';
+            }
             let html = `<div class="${className}">`;
             items.forEach(row => {
                 const imgUrl = row['ebay Image URL 1'] && (row['ebay Image URL 1'].startsWith('http://') || row['ebay Image URL 1'].startsWith('https://'))
