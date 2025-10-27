@@ -446,7 +446,13 @@
         function renderList(items) {
             $('.search-outer-container').show();
             const isMobile = window.innerWidth <= 800;
-            let html = '<div class="card-container">';
+            const comingSoonSelected = $('#filterForm input[type=checkbox][name=filter][value=coming_soon]:checked').length > 0;
+            const upcomingAuctionsSelected = $('#filterForm input[type=checkbox][name=filter][value=upcoming_auctions]:checked').length > 0;
+            let className = 'card-container';
+            if (comingSoonSelected || upcomingAuctionsSelected) {
+                className += ' coming-soon-layout';
+            }
+            let html = `<div class="${className}">`;
             items.forEach(row => {
                 const imgUrl = row['ebay Image URL 1'] && (row['ebay Image URL 1'].startsWith('http://') || row['ebay Image URL 1'].startsWith('https://'))
                     ? row['ebay Image URL 1']
