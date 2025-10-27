@@ -580,7 +580,7 @@
       <strong>Category:</strong> ${catDisplay}<br>
       <strong>${quantityLabel}</strong> ${quantityValue}</p>
       <p class="price">${price} <span class="shipping-text">${shipping}</span></p>
-      ${upcomingAuctionsSelected ? `<p class="start-date">Scheduled Start: <span class="start-date-time">${new Date(row['Start Date']).toLocaleDateString('en-US', {month: '2-digit', day: '2-digit'})} ${new Date(row['Start Date']).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true, timeZoneName: 'short'})}</span></p>` : ''}
+      ${(upcomingAuctionsSelected || comingSoonSelected) ? `<p class="start-date">Start Date: <span class="start-date-time">${new Date(row['Start Date']).toLocaleDateString('en-US', {month: '2-digit', day: '2-digit'})} ${new Date(row['Start Date']).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true, timeZoneName: 'short'})}</span></p>` : ''}
       ${formatLower === 'auction' ?
                         `<p class="bid-info mb-1">${bids} <span class="auction-time">${displayTime}</span></p>
          <p class="bid-info mb-2">${row['Watch Count'] && parseInt(row['Watch Count']) > 0 ? `${row['Watch Count']} Watching` : '0 Watching'}</p>` :
