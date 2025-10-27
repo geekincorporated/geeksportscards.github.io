@@ -546,9 +546,12 @@
                 html += `
 <div class="listing-card">
   <div class="card-top">
-    ${(formatLower === 'bin' || formatLower === 'auction') ? `<a href="${link}" target="_blank" rel="noopener">` : ''}
-    <img class="lazy-img" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="${imgUrl}" alt="${title}">
-    ${(formatLower === 'bin' || formatLower === 'auction') ? `</a>` : ''}
+    <div class="image-container">
+      ${(formatLower === 'bin' || formatLower === 'auction') ? `<a href="${link}" target="_blank" rel="noopener">` : ''}
+      <img class="lazy-img" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="${imgUrl}" alt="${title}">
+      ${(formatLower === 'bin' || formatLower === 'auction') ? `</a>` : ''}
+      <small style="color: #999; text-align: center; width: 100%;">eBay Item ID: ${itemNum}</small>
+    </div>
     <div class="card-body">
       ${(formatLower === 'bin' || formatLower === 'auction') ? `<a href="${link}" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">` : ''}
       <h6>${title}</h6>
