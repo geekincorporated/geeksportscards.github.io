@@ -1081,6 +1081,13 @@
         gap: 15px;
         flex: 1;
       }
+      .image-container {
+        flex-shrink: 0;
+        width: 198px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
       .listing-card .lazy-img {
         width: 198px;
         border-radius: 4px;
@@ -1228,6 +1235,10 @@
                 border-radius: 6px;
                 box-shadow: 0 1px 0 rgba(0,0,0,0.06) inset;
                 flex-shrink: 0;
+            }
+            .image-container {
+                width: 320px;
+                max-width: 100%;
             }
             /* Body: keep left-aligned text, consistent spacing and typography */
             .card-body {
