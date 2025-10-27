@@ -1329,6 +1329,18 @@
     font-weight: normal !important;
 }
 
+.start-date {
+    font-size: 0.9rem;
+    color: black;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.start-date-time {
+    color: #007bff;
+    font-weight: normal;
+}
+
 .coming-soon-layout .bid-info.mb-2 {
     display: none;
 }
