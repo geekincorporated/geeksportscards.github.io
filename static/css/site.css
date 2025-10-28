@@ -1380,3 +1380,37 @@
     height: 100px !important;
     padding: 20px 16px !important;
 }
+
+/* PayPal container styling */
+#paypal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+}
+
+#paypal-modal {
+    background: white;
+    padding: 60px 40px 40px 40px;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+#paypal-modal #paypal-buttons {
+    min-height: 200px;
+    margin-top: 10px;
+    position: relative;
+    z-index: 1;
+}
