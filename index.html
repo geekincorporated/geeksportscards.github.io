@@ -586,6 +586,10 @@
                         actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: #0d6efd !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="window.open('${btnLink}', '_blank')">${buttonText}</button>`;
                     }
                 }
+                // Hide button for scheduled items (coming soon and upcoming auctions)
+                if (row['isScheduled']) {
+                    actionButtonHtml = '';
+                }
                 html += `
 <div class="listing-card"${row['isScheduled'] ? ' style="position:relative;"' : ''}>
   ${row['isScheduled'] ? '<i class="fa-solid fa-info-circle" style="position:absolute; top:10px; right:10px; color:#fff; font-size:1.2em; z-index:10; background:rgba(0,0,0,0.7); padding:2px; border-radius:50%;"></i>' : ''}
