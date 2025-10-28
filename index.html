@@ -35,7 +35,6 @@
     <div class="search-outer-container">
         <div id="customSearchContainer" class="search-input-wrapper">
             <input type="text" id="keywordSearch" placeholder="Search keywords...">
-            <i class="fa-solid fa-magnifying-glass search-icon-inside"></i>
             <button type="button" id="clearSearchBtn" title="Clear search">&#10006;</button>
         </div>
     </div>
@@ -537,6 +536,22 @@
                 else if (row['Category']) catDisplay = row['Category'];
                 const watchers = (formatLower === 'auction' && row['Watch Count'] && parseInt(row['Watch Count']) >= 1) ? `${row['Watch Count']}` : '';
                 const comingSoonSelected = $('#filterForm input[type=checkbox][name=filter][value=coming_soon]:checked').length > 0;
+                let formatDisplay = '';
+                if (row['isScheduled']) {
+                    if (formatLower === 'bin' || formatLower === 'fixedprice') {
+                        formatDisplay = 'Coming Soon';
+                    } else if (formatLower === 'auction') {
+                        formatDisplay = 'Upcoming Auction';
+                    } else {
+                        formatDisplay = row['Format'] || '';
+                    }
+                } else {
+                    if (formatLower === 'bin' || formatLower === 'fixedprice') {
+                        formatDisplay = 'Buy It Now';
+                    } else {
+                        formatDisplay = row['Format'] || '';
+                    }
+                }
                 // Render action button when an eBay listing URL exists.
                 // Button text depends on the selling format:
                 //  - Auction -> "Place Bid Now"
@@ -548,43 +563,55 @@
                     let btnLink = appendAffiliate(btnLinkRaw);
                     const formatLowerInner = row['Format'] ? String(row['Format']).trim().toLowerCase() : '';
                     let buttonText = 'Buy It Now';
-                    if (comingSoonSelected && row['isScheduled']) {
-                        buttonText = 'Pre-Sale Purchase';
-                    } else if (row['isScheduled']) {
-                        buttonText = 'View Listing';
-                    } else if (formatLowerInner === 'auction' || formatLowerInner.includes('auction')) {
-                        buttonText = 'Place Bid Now';
-                    } else if (formatLowerInner === 'bin' || formatLowerInner.includes('buy')) {
-                        buttonText = 'Buy It Now';
+                    if (row['isScheduled']) {
+                        if (formatLowerInner === 'bin' || formatLowerInner === 'fixedprice') {
+                            buttonText = 'Buy Now on PayPal';
+                        } else {
+                            buttonText = 'Make Offer Now';
+                        }
+                    } else {
+                        if (formatLowerInner === 'auction' || formatLowerInner.includes('auction')) {
+                            buttonText = 'Bid Now on eBay';
+                        } else if (formatLowerInner === 'bin' || formatLowerInner.includes('buy')) {
+                            buttonText = 'Buy Now on eBay';
+                        }
                     }
-                    actionButtonHtml = `<button class="btn btn-primary mt-2" onclick="window.open('${btnLink}', '_blank')">${buttonText}</button>`;
+                    if (row['isScheduled']) {
+                        if (formatLowerInner === 'bin' || formatLowerInner === 'fixedprice') {
+                            actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: #FFC439 !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="window.open('${btnLink}', '_blank')">${buttonText}</button>`;
+                        } else {
+                            actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: #1d2731 !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="window.open('${btnLink}', '_blank')">${buttonText}</button>`;
+                        }
+                    } else {
+                        actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: #0d6efd !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="window.open('${btnLink}', '_blank')">${buttonText}</button>`;
+                    }
                 }
                 html += `
 <div class="listing-card">
   <div class="card-top">
     <div class="image-container">
-      ${(formatLower === 'bin' || formatLower === 'auction') ? `<a href="${link}" target="_blank" rel="noopener">` : ''}
+      ${(!row['isScheduled'] && (formatLower === 'bin' || formatLower === 'auction')) ? `<a href="${link}" target="_blank" rel="noopener">` : ''}
       <img class="lazy-img" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="${imgUrl}" alt="${title}">
-      ${(formatLower === 'bin' || formatLower === 'auction') ? `</a>` : ''}
+      ${(!row['isScheduled'] && (formatLower === 'bin' || formatLower === 'auction')) ? `</a>` : ''}
       <small style="color: #999; text-align: center; width: 100%;">eBay Item ID: ${itemNum}</small>
     </div>
     <div class="card-body">
-      ${(formatLower === 'bin' || formatLower === 'auction') ? `<a href="${link}" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">` : ''}
+      ${(!row['isScheduled'] && (formatLower === 'bin' || formatLower === 'auction')) ? `<a href="${link}" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">` : ''}
       <h6>${title}</h6>
-      ${(formatLower === 'bin' || formatLower === 'auction') ? `</a>` : ''}
+      ${(!row['isScheduled'] && (formatLower === 'bin' || formatLower === 'auction')) ? `</a>` : ''}
       <p class="mb-1"><strong>Player:</strong> ${row['Player/Athlete'] || ''}<br>
       <strong>Team:</strong> ${row['Team'] || ''}<br>
       <strong>Card:</strong> #${row['Card Number'] || ''}<br>
       <strong>Features:</strong> ${row['Features'] || ''}<br>
-      <strong>Format:</strong> ${formatLower === 'bin' ? 'Buy It Now' : (row['Format'] || '')}<br>
+      <strong>Format:</strong> ${formatDisplay}<br>
       <strong>Category:</strong> ${catDisplay}<br>
       <strong>${quantityLabel}</strong> ${quantityValue}</p>
       <p class="price">${price} <span class="shipping-text">${shipping}</span></p>
-      ${(upcomingAuctionsSelected || comingSoonSelected) ? `<p class="start-date">Start Date: <span class="start-date-time">${new Date(row['Start Date']).toLocaleDateString('en-US', {month: '2-digit', day: '2-digit'})} ${new Date(row['Start Date']).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true, timeZoneName: 'short'})}</span></p>` : ''}
-      ${formatLower === 'auction' ?
+      ${(upcomingAuctionsSelected || comingSoonSelected || row['isScheduled']) ? `<p class="start-date">Start Date: <span class="start-date-time">${new Date(row['Start Date']).toLocaleDateString('en-US', {month: '2-digit', day: '2-digit'})} ${new Date(row['Start Date']).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true, timeZoneName: 'short'})}</span></p>` : ''}
+      ${!row['isScheduled'] && formatLower === 'auction' ?
                         `<p class="bid-info mb-1">${bids} <span class="auction-time">${displayTime}</span></p>
          <p class="bid-info mb-2">${row['Watch Count'] && parseInt(row['Watch Count']) > 0 ? `${row['Watch Count']} Watching` : '0 Watching'}</p>` :
-                        `<p class="bid-info mb-2">${bids}</p>`
+                        !row['isScheduled'] && formatLower !== 'auction' ? `<p class="bid-info mb-2">${bids}</p>` : ''
                     }
     </div>
   </div>
