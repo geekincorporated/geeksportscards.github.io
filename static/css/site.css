@@ -1372,3 +1372,11 @@
         display: none;
     }
 }
+
+/* Specific styling for regular buttons */
+.btn.btn-primary.btn-lg {
+    background-color: #0d6efd !important;  /* Bootstrap primary blue */
+    color: #fff !important;                /* White text */
+    height: 100px !important;
+    padding: 20px 16px !important;
+}
