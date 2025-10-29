@@ -149,6 +149,10 @@
                         <a href="https://www.facebook.com/geeksportscards" target="_blank" rel="noopener noreferrer">
                         <img src="static/images/facebook-logo-png-30.png" alt="Facebook" style="max-width: 100%; height: auto; margin: 0; padding: 0;">
                         </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                        <img src="static/images/cardrank-logo-png-30-1.png" alt="cardrank.ai" style="max-width: 100%; height: auto; margin: 0; padding: 0;">
+                        </a>
+
                     </div>
                 </nav>
 
@@ -560,17 +564,18 @@
                 let actionButtonHtml = '';
                 const btnLinkRaw = row['ebay listing URL'] || '';
                 const formatLowerInner = row['Format'] ? String(row['Format']).trim().toLowerCase() : '';
-                // Hide card button for upcoming auctions and coming soon scheduled items
-                if (row['isScheduled'] && ((formatLowerInner === 'bin' || formatLowerInner === 'fixedprice') || formatLowerInner === 'auction')) {
+                // Hide card button for upcoming auctions
+                if (row['isScheduled'] && formatLowerInner === 'auction') {
                     actionButtonHtml = '';
                 } else if (btnLinkRaw) {
                     let btnLink = appendAffiliate(btnLinkRaw);
                     let buttonText = 'Buy It Now';
                     if (row['isScheduled']) {
                         if (formatLowerInner === 'bin' || formatLowerInner === 'fixedprice') {
-                            buttonText = 'Make Offer';
+                            btnLink = row['PayPal Link'] || btnLink;
+                            buttonText = 'Buy Now on PayPal';
                         } else {
-                            buttonText = 'Make Offer';
+                            buttonText = 'Make Offer Now';
                         }
                     } else {
                         if (formatLowerInner === 'auction' || formatLowerInner.includes('auction')) {
@@ -581,7 +586,7 @@
                     }
                     if (row['isScheduled']) {
                         if (formatLowerInner === 'bin' || formatLowerInner === 'fixedprice') {
-                            // Do not show eBay button for coming soon BIN/fixedprice
+                            actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: #1d2731 !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="window.open('${btnLink}', '_blank')">${buttonText}</button>`;
                         } else {
                             actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: #1d2731 !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="window.open('${btnLink}', '_blank')">${buttonText}</button>`;
                         }
@@ -714,8 +719,8 @@
             return array;
         }
 
-        $.getJSON('data/ebay_active_items.json', function (activeItemsData) {
-            $.getJSON('data/ebay_scheduled_items.json', function (scheduledData) {
+        $.getJSON('data/ebay_active_items.json?t=' + Date.now(), function (activeItemsData) {
+            $.getJSON('data/ebay_scheduled_items.json?t=' + Date.now(), function (scheduledData) {
                 // Combine active and scheduled data
                 const data = [...activeItemsData, ...scheduledData.map(item => ({ ...item, isScheduled: true }))];
 
