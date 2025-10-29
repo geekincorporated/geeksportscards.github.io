@@ -1323,44 +1323,6 @@
                 display: none;
             }
 
-            /* Mobile format filters */
-            .mobile-format-filters {
-                display: block;
-                margin-top: 10px;
-                padding: 10px;
-                background-color: #f8f9fa;
-                border-radius: 8px;
-                border: 1px solid #e9ecef;
-            }
-
-            .mobile-filters-title {
-                font-weight: bold;
-                margin-bottom: 8px;
-                color: #333;
-                font-size: 0.9rem;
-            }
-
-            .mobile-filters-options {
-                display: flex;
-                flex-wrap: nowrap;
-                gap: 8px;
-            }
-
-            .mobile-filters-options div {
-                display: flex;
-                align-items: center;
-                gap: 4px;
-            }
-
-            .mobile-filters-options input[type="checkbox"] {
-                margin: 0;
-            }
-
-            .mobile-filters-options label {
-                margin: 0;
-                font-size: 0.8rem;
-                cursor: pointer;
-            }
         }
 
 .mobile-reset-btn {
@@ -1378,11 +1340,46 @@
     background-color: #5a6268;
 }
 
+/* Mobile format filters */
 .mobile-format-filters {
     display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
 }
 
-@media (min-width: 800px) {
+.mobile-filters-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.mobile-filters-options {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+}
+
+.mobile-filters-options div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.mobile-filters-options input[type="checkbox"] {
+    margin: 0;
+}
+
+.mobile-filters-options label {
+    margin: 0;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+@media (min-width: 1000px) {
     .mobile-format-filters {
         display: none !important;
     }
