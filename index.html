@@ -564,10 +564,7 @@
                 let actionButtonHtml = '';
                 const btnLinkRaw = row['ebay listing URL'] || '';
                 const formatLowerInner = row['Format'] ? String(row['Format']).trim().toLowerCase() : '';
-                // Hide card button for upcoming auctions
-                if (row['isScheduled'] && formatLowerInner === 'auction') {
-                    actionButtonHtml = '';
-                } else if (btnLinkRaw) {
+                if (btnLinkRaw) {
                     let btnLink = appendAffiliate(btnLinkRaw);
                     let buttonText = 'Buy It Now';
                     if (row['isScheduled']) {
@@ -577,20 +574,13 @@
                         } else {
                             buttonText = 'Make Offer Now';
                         }
+                        actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: #1d2731 !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;">${buttonText}</button>`;
                     } else {
                         if (formatLowerInner === 'auction' || formatLowerInner.includes('auction')) {
                             buttonText = 'Bid Now on eBay';
                         } else if (formatLowerInner === 'bin' || formatLowerInner.includes('buy')) {
                             buttonText = 'Buy Now on eBay';
                         }
-                    }
-                    if (row['isScheduled']) {
-                        if (formatLowerInner === 'bin' || formatLowerInner === 'fixedprice') {
-                            actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: #1d2731 !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="window.open('${btnLink}', '_blank')">${buttonText}</button>`;
-                        } else {
-                            actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: #1d2731 !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="window.open('${btnLink}', '_blank')">${buttonText}</button>`;
-                        }
-                    } else {
                         actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: #0d6efd !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="window.open('${btnLink}', '_blank')">${buttonText}</button>`;
                     }
                 }
