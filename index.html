@@ -135,8 +135,7 @@
                                     <div><input type="radio" name="view_filter" value="lowest_price"
                                             id="filter_view_lowest_price"> <label for="filter_view_lowest_price">Lowest
                                             Price</label></div>
-                                    <div class="sidebar-clear-btn"><button type="button" id="clearAllFilters">Clear
-                                            Filters</button></div>
+                                    <div class="sidebar-clear-btn"><button type="button" id="clearAllFilters" class="mobile-reset-btn">Clear Filters</button></div>
                                 </form>
                             </div>
                         </li>
@@ -160,6 +159,23 @@
             <div class="main-content-flex">
                 <div>
                     <div id="resultsCount"></div>
+                    <div id="mobileFormatFilters" class="mobile-format-filters">
+                        <div class="mobile-filters-title">Filters</div>
+                        <div class="mobile-filters-options">
+                            <div><input type="checkbox" name="filter" value="auction" id="mobile_filter_auction">
+                                <label for="mobile_filter_auction">Auction</label>
+                            </div>
+                            <div><input type="checkbox" name="filter" value="bin" id="mobile_filter_bin"> <label
+                                    for="mobile_filter_bin">Buy It Now</label></div>
+                            <div><input type="checkbox" name="filter" value="upcoming_auctions"
+                                    id="mobile_filter_upcoming_auctions"> <label
+                                    for="mobile_filter_upcoming_auctions">Upcoming Auctions</label></div>
+                            <div><input type="checkbox" name="filter" value="coming_soon"
+                                    id="mobile_filter_coming_soon"> <label for="mobile_filter_coming_soon">Coming Soon</label>
+                            </div>
+                        </div>
+                        <button id="mobileResetBtn" class="mobile-reset-btn">Clear Filters</button>
+                    </div>
                 </div>
                 <div id="itemsGrid"></div>
                 <!-- Message shown only for very small screens (<=499px). Hidden by default, revealed via CSS -->
@@ -892,6 +908,32 @@
                             $(`#filterForm input[type=checkbox][name=filter][value="${otherVal}"]`).prop('checked', false);
                         });
                     }
+                    // Sync mobile filters
+                    $(`#mobileFormatFilters input[type=checkbox][name=filter][value="${val}"]`).prop('checked', $(this).is(':checked'));
+                    updateFilters();
+                });
+                // Mobile filter change handlers
+                $('#mobileFormatFilters input[type=checkbox][name=filter]').on('change', function () {
+                    const val = $(this).val();
+                    if ($(this).is(':checked') && ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].includes(val)) {
+                        // Uncheck the other three in mobile
+                        const others = ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].filter(v => v !== val);
+                        others.forEach(otherVal => {
+                            $(`#mobileFormatFilters input[type=checkbox][name=filter][value="${otherVal}"]`).prop('checked', false);
+                        });
+                        // Uncheck in sidebar
+                        others.forEach(otherVal => {
+                            $(`#filterForm input[type=checkbox][name=filter][value="${otherVal}"]`).prop('checked', false);
+                        });
+                    }
+                    // Sync sidebar filters
+                    $(`#filterForm input[type=checkbox][name=filter][value="${val}"]`).prop('checked', $(this).is(':checked'));
+                    updateFilters();
+                });
+                // Mobile reset button
+                $('#mobileResetBtn').on('click', function() {
+                    $('#mobileFormatFilters input[type=checkbox][name=filter]').prop('checked', false);
+                    $('#filterForm input[type=checkbox][name=filter]').prop('checked', false);
                     updateFilters();
                 });
                 $('#filterForm input[type=checkbox][name=category_filter]').on('change', updateFilters);
@@ -918,6 +960,7 @@
                 updateClearBtn();
                 $('#clearAllFilters').on('click', function () {
                     $('#filterForm input[type=checkbox][name=filter]').prop('checked', false);
+                    $('#mobileFormatFilters input[type=checkbox][name=filter]').prop('checked', false);
                     $('#filterForm input[type=checkbox][name=category_filter]').prop('checked', false);
                     $('#filterForm input[type=checkbox][name=sport_filter]').prop('checked', false);
                     $('#filterForm input[type=radio][name=view_filter]').prop('checked', false);
