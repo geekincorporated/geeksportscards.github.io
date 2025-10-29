@@ -1316,6 +1316,12 @@
                 margin-top: 12px;
                 align-self: stretch;
             }
+
+            /* Hide footer links and social icons on small screens */
+            .custom-footer > div:nth-child(2),
+            .custom-footer .footer-social-icons {
+                display: none;
+            }
         }
 
 .auction-time {
