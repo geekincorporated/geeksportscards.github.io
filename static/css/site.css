@@ -1420,3 +1420,66 @@
     position: relative;
     z-index: 1;
 }
+
+/* Image Gallery Modal Styles */
+.gallery-thumb {
+    border: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.gallery-thumb:hover {
+    border-color: #0d6efd;
+}
+
+.gallery-thumb.active {
+    border-color: #0d6efd;
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+}
+
+/* Image Gallery Modal Scroll Buttons */
+#thumbnailContainerWrapper {
+    position: relative;
+}
+
+#thumbnailContainer {
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+}
+
+#thumbnailContainer::-webkit-scrollbar {
+    width: 6px;
+}
+
+#thumbnailContainer::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#thumbnailContainer::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+#thumbnailContainer::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+#scrollUpBtn, #scrollDownBtn {
+    padding: 2px 4px;
+    min-height: 24px;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #dee2e6;
+    color: #6c757d;
+    transition: all 0.2s ease;
+}
+
+#scrollUpBtn:hover, #scrollDownBtn:hover {
+    background-color: #f8f9fa;
+    border-color: #adb5bd;
+    color: #495057;
+}
+
+#scrollUpBtn:active, #scrollDownBtn:active {
+    background-color: #e9ecef;
+    transform: scale(0.95);
+}
