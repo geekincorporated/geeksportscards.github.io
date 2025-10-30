@@ -581,12 +581,16 @@
             const isMobile = window.innerWidth <= 800;
             const comingSoonSelected = $('#filterForm input[type=checkbox][name=filter][value=coming_soon]:checked').length > 0;
             const upcomingAuctionsSelected = $('#filterForm input[type=checkbox][name=filter][value=upcoming_auctions]:checked').length > 0;
+            const keyword = $('#keywordSearch').val().trim();
             let className = 'card-container';
             if (comingSoonSelected || upcomingAuctionsSelected) {
                 className += ' coming-soon-layout';
             }
             if (upcomingAuctionsSelected) {
                 className += ' upcoming-layout';
+            }
+            if (keyword) {
+                className += ' keyword-search-layout';
             }
             let html = `<div class="${className}">`;
             items.forEach(row => {
