@@ -1128,6 +1128,9 @@
         min-width: 623.75px;
         min-height: 369.05px;
       }
+      .keyword-search-layout .listing-card {
+        min-width: 623.75px;
+      }
     }
     @media (min-width: 1500px) {
       .card-container {
@@ -1152,6 +1155,10 @@
       .coming-soon-layout .listing-card {
         min-width: 623.75px;
         min-height: 360.05px;
+      }
+      .keyword-search-layout .listing-card {
+        width: 623.75px;
+        max-width: 623.75px;
       }
       .card-top {
         display: flex;
