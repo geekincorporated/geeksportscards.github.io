@@ -697,9 +697,10 @@
 <div class="listing-card"${row['isScheduled'] ? ' style="position:relative;"' : ''}>
     ${(row['isScheduled'] && !(formatLower === 'bin' || formatLower === 'fixedprice' || formatLower === 'auction')) ? '<i class="fa-solid fa-info-circle" style="position:absolute; top:10px; right:10px; color:#fff; font-size:1.2em; z-index:10; background:rgba(0,0,0,0.7); padding:2px; border-radius:50%;"></i>' : ''}
   <div class="card-top">
-    <div class="image-container">
+    <div class="image-container" ${row['isScheduled'] ? 'style="position: relative;"' : (!row['isScheduled'] && (formatLower === 'bin' || formatLower === 'auction')) ? 'style="position: relative;"' : ''}>
       ${(!row['isScheduled'] && (formatLower === 'bin' || formatLower === 'auction')) ? `<a href="${link}" target="_blank" rel="noopener">` : ''}
-      <img class="lazy-img" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="${imgUrl}" alt="${title}">
+      <img class="lazy-img" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="${imgUrl}" alt="${title}" ${row['isScheduled'] ? `onclick="openImageGallery('${row['ItemID']}')" title="Click To View Card"` : (!row['isScheduled'] && (formatLower === 'bin' || formatLower === 'auction')) ? `onclick="openImageGallery('${row['ItemID']}')" title="Click to View on eBay"` : ''}>
+      ${row['isScheduled'] ? `<a href="javascript:void(0)" onclick="openImageGallery('${row['ItemID']}')" style="position:absolute; top:10px; right:10px; z-index:10;" title="Click To View Card"><i class="fa-solid fa-image" style="color:#fff; font-size:1.2em; background:rgba(0,0,0,0.7); padding:2px; border-radius:50%;"></i></a>` : (!row['isScheduled'] && (formatLower === 'bin' || formatLower === 'auction')) ? `<a href="${link}" target="_blank" rel="noopener" style="position:absolute; top:10px; right:10px; z-index:10;" title="Click to View on eBay"><i class="fa-solid fa-arrow-up-right-from-square" style="color:#fff; font-size:1.2em; background:rgba(0,0,0,0.7); padding:2px; border-radius:50%;"></i></a>` : ''}
       ${(!row['isScheduled'] && (formatLower === 'bin' || formatLower === 'auction')) ? `</a>` : ''}
       <small style="color: #999; text-align: center; width: 100%;">eBay Item ID: ${itemNum}</small>
     </div>
