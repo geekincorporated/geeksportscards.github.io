@@ -702,11 +702,15 @@
                         if (formatLowerInner === 'auction') {
                             buttonColor = '#1d2731'; // Dark color for upcoming auctions
                             buttonText = 'Make Offer Now';
-                            actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: ${buttonColor} !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="openMakeOfferForm('${row['ItemID']}')">${buttonText}</button>`;
+                            if (window.siteConfig && window.siteConfig["Card Button"] && window.siteConfig["Card Button"].upcoming_auctions === true) {
+                                actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: ${buttonColor} !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="openMakeOfferForm('${row['ItemID']}')">${buttonText}</button>`;
+                            }
                         } else if (formatLowerInner === 'bin' || formatLowerInner === 'fixedprice') {
                             btnLink = row['PayPal Link'] || btnLink;
                             buttonText = 'Buy Early on PayPal';
-                            actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: ${buttonColor} !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="window.open('${btnLink}', '_blank')">${buttonText}</button>`;
+                            if (window.siteConfig && window.siteConfig["Card Button"] && window.siteConfig["Card Button"].coming_soon === true) {
+                                actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: ${buttonColor} !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="window.open('${btnLink}', '_blank')">${buttonText}</button>`;
+                            }
                         } else {
                             buttonText = 'Make Offer Now';
                             actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: ${buttonColor} !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="openMakeOfferForm('${row['ItemID']}')">${buttonText}</button>`;
@@ -719,10 +723,6 @@
                         }
                         actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: #0d6efd !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="window.open('${btnLink}', '_blank')">${buttonText}</button>`;
                     }
-                }
-                // Hide button for upcoming auctions
-                if (upcomingAuctionsSelected) {
-                    actionButtonHtml = '';
                 }
                 html += `
 <div class="listing-card"${row['isScheduled'] ? ' style="position:relative;"' : ''}>
@@ -850,13 +850,22 @@
             return array;
         }
 
-        $.getJSON('data/ebay_active_items.json?t=' + Date.now(), function (activeItemsData) {
-            $.getJSON('data/ebay_scheduled_items.json?t=' + Date.now(), function (scheduledData) {
-                // Combine active and scheduled data
-                const data = [...activeItemsData, ...scheduledData.map(item => ({ ...item, isScheduled: true }))];
+        // Load configuration and apply feature toggles
+        $.getJSON('static/config/config.json?t=' + Date.now(), function (config) {
+            // Store config globally for use in renderList
+            window.siteConfig = config;
+        }).fail(function() {
+            console.error('Failed to load config.json');
+            window.siteConfig = { "Card Button": { "upcoming_auctions": true, "coming_soon": true } }; // fallback
+        }).always(function() {
+            // Now load the data
+            $.getJSON('data/ebay_active_items.json?t=' + Date.now(), function (activeItemsData) {
+                $.getJSON('data/ebay_scheduled_items.json?t=' + Date.now(), function (scheduledData) {
+                    // Combine active and scheduled data
+                    const data = [...activeItemsData, ...scheduledData.map(item => ({ ...item, isScheduled: true }))];
 
-                // Randomize the order of cards
-                shuffleArray(data);
+                    // Randomize the order of cards
+                    shuffleArray(data);
 
                 window._ebayData = data;
                 if (!data.length) {
@@ -1008,6 +1017,7 @@
                 });
             });
         });
+    });
 
         // Improved lazy loading for images: always observe after DOM update
         (function () {
