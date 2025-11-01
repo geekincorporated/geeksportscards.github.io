@@ -1,6 +1,6 @@
 {
   "Card Button": {
     "upcoming_auctions": false,
-    "coming_soon": false
+    "coming_soon": true
   }
 }
