@@ -67,7 +67,8 @@
                                             for="filter_upcoming_auctions">Upcoming Auctions</label></div>
 
                                     <div><input type="checkbox" name="filter" value="coming_soon"
-                                            id="filter_coming_soon"> <label for="filter_coming_soon">Coming Soon (BIN)</label>
+                                            id="filter_coming_soon"> <label for="filter_coming_soon">Coming Soon
+                                            (BIN)</label>
                                     </div>
 
 
@@ -135,7 +136,8 @@
                                     <div><input type="radio" name="view_filter" value="lowest_price"
                                             id="filter_view_lowest_price"> <label for="filter_view_lowest_price">Lowest
                                             Price</label></div>
-                                    <div class="sidebar-clear-btn"><button type="button" id="clearAllFilters" class="mobile-reset-btn">Clear Filters</button></div>
+                                    <div class="sidebar-clear-btn"><button type="button" id="clearAllFilters"
+                                            class="mobile-reset-btn">Clear Filters</button></div>
                                 </form>
                             </div>
                         </li>
@@ -146,10 +148,12 @@
                     </ul>
                     <div style="text-align:left;">
                         <a href="https://www.facebook.com/geeksportscards" target="_blank" rel="noopener noreferrer">
-                        <img src="static/images/facebook_logo.png" alt="Facebook" style="max-width: 100%; height: auto; margin: 0; padding: 0;">
+                            <img src="static/images/facebook_logo.png" alt="Facebook"
+                                style="max-width: 100%; height: auto; margin: 0; padding: 0;">
                         </a>
                         <a href="https://cardrank.ai" target="_blank" rel="noopener noreferrer">
-                        <img src="static/images/cardranksitelogo.png" alt="cardrank.ai" style="max-width: 100%; height: auto; margin: 0; padding: 0;">
+                            <img src="static/images/cardranksitelogo.png" alt="cardrank.ai"
+                                style="max-width: 100%; height: auto; margin: 0; padding: 0;">
                         </a>
 
                     </div>
@@ -171,7 +175,8 @@
                                     id="mobile_filter_upcoming_auctions"> <label
                                     for="mobile_filter_upcoming_auctions">Upcoming Auctions</label></div>
                             <div><input type="checkbox" name="filter" value="coming_soon"
-                                    id="mobile_filter_coming_soon"> <label for="mobile_filter_coming_soon">Coming Soon</label>
+                                    id="mobile_filter_coming_soon"> <label for="mobile_filter_coming_soon">Coming
+                                    Soon</label>
                             </div>
                         </div>
                         <button id="mobileResetBtn" class="mobile-reset-btn">Clear Filters</button>
@@ -214,19 +219,19 @@
         // Function to open image gallery modal
         let currentItemData = null;
         let imageGalleryModal = null; // Store modal instance
-        
+
         function openImageGallery(itemId) {
             // Find the item data from the full data
             if (!window._ebayData) return;
             const itemData = window._ebayData.find(item => item.ItemID === itemId);
             if (!itemData) return;
-            
+
             const imageUrls = [];
-            
+
             // Check if this is a Lots or Sets category item
             const category = itemData['Category'] ? String(itemData['Category']).trim().toLowerCase() : '';
             const includePrimaryImage = (category === 'lots' || category === 'sets');
-            
+
             // Collect all ebay Image URLs (start from 1 for lots/sets, from 2 for singles)
             const startIndex = includePrimaryImage ? 1 : 2;
             for (let i = startIndex; ; i++) {
@@ -237,7 +242,7 @@
                     break;
                 }
             }
-            
+
             // Collect all ebay Variation Image URLs
             for (let i = 1; ; i++) {
                 const url = itemData[`ebay Variation Image URL ${i}`];
@@ -247,76 +252,76 @@
                     break;
                 }
             }
-            
+
             if (imageUrls.length === 0) {
                 return; // No images to show
             }
-            
+
             // Set main image to first available image (not ebay Image URL 1)
             const mainImageUrl = imageUrls[0].url;
             $('#mainImage').attr('src', mainImageUrl);
-            
+
             // Create thumbnails
             let thumbnailsHtml = '';
             imageUrls.forEach((img, idx) => {
                 const isActive = img.url === mainImageUrl ? 'active' : '';
                 thumbnailsHtml += `<img src="${img.url}" alt="${img.type} ${img.index}" class="img-thumbnail gallery-thumb ${isActive}" style="width: 80px; height: 80px; object-fit: contain; cursor: pointer; margin: 2px;" onclick="changeMainImage('${img.url.replace(/'/g, "\\'")}')">`;
             });
-            
+
             $('#thumbnailContainer').html(thumbnailsHtml);
-            
+
             // Show/hide scroll buttons based on thumbnail count
             const thumbnailCount = imageUrls.length;
             if (thumbnailCount > 3) {
                 $('#scrollUpBtn, #scrollDownBtn').removeClass('d-none');
                 // Add scroll functionality
-                $('#scrollUpBtn').off('click').on('click', function() {
+                $('#scrollUpBtn').off('click').on('click', function () {
                     const container = $('#thumbnailContainer')[0];
                     container.scrollBy({ top: -100, behavior: 'smooth' });
                 });
-                $('#scrollDownBtn').off('click').on('click', function() {
+                $('#scrollDownBtn').off('click').on('click', function () {
                     const container = $('#thumbnailContainer')[0];
                     container.scrollBy({ top: 100, behavior: 'smooth' });
                 });
             } else {
                 $('#scrollUpBtn, #scrollDownBtn').addClass('d-none');
             }
-            
+
             // Set modal title to card name
             $('#imageGalleryModalLabel').text(itemData['Card Name'] || 'Card Images');
-            
+
             // Create or reuse modal instance
             if (!imageGalleryModal) {
                 imageGalleryModal = new bootstrap.Modal(document.getElementById('imageGalleryModal'));
             }
             imageGalleryModal.show();
         }
-        
+
         // Function to open make offer modal for upcoming auctions
         let makeOfferModal = null; // Store modal instance
-        
+
         function openMakeOfferForm(itemId) {
             // Find the item data from the full data
             if (!window._ebayData) return;
             const itemData = window._ebayData.find(item => item.ItemID === itemId);
             if (!itemData) return;
-            
+
             // Pre-fill the subject with card information
             const cardName = itemData['Card Name'] || 'Card';
             const player = itemData['Player/Athlete'] || '';
             const team = itemData['Team'] || '';
             const cardNumber = itemData['Card Number'] || '';
             const subject = `Inquiry about ${cardName}${player ? ` - ${player}` : ''}${team ? ` (${team})` : ''}${cardNumber ? ` #${cardNumber}` : ''}`;
-            
+
             $('#contactSubject').val(subject);
-            
+
             // Create or reuse modal instance
             if (!makeOfferModal) {
                 makeOfferModal = new bootstrap.Modal(document.getElementById('makeOfferModal'));
             }
             makeOfferModal.show();
         }
-        
+
         // Function to change main image when thumbnail is clicked
         function changeMainImage(url) {
             $('#mainImage').attr('src', url);
@@ -324,161 +329,6 @@
             $('.gallery-thumb').removeClass('active');
             $(`.gallery-thumb[src="${url}"]`).addClass('active');
         }
-
-
-        // Show about info in main content, full width, when About link is clicked
-        $(document).on('click', '.custom-footer a:contains("About")', function (e) {
-            e.preventDefault();
-            if (window.location.pathname !== '/about') {
-                window.history.pushState({ page: 'about' }, '', '/about');
-            }
-            // Add cache-busting parameter to force fresh data
-            const timestamp = new Date().getTime();
-            $.getJSON(`static/site_content/site.json?_=${timestamp}`, function (siteData) {
-                if (siteData && siteData.about) {
-                    const a = siteData.about;
-                    let html = `<div class='shipping-info-box'>`;
-                    html += `<a href="#" id="aboutBackLink" style="display:inline-flex;align-items:center;font-size:1.35em;color:#0d6efd;text-decoration:none;margin-bottom:18px;padding-left:5px;"><i class='fas fa-arrow-circle-left' style='margin-right:10px;font-size:1.4em;'></i><span style='font-weight:bold;font-size:1.1em;'>Back</span></a>`;
-                    html += `<h2 class='shipping-info-title'>About</h2>`;
-                    html += `<div class='shipping-info-section' style='display:flex;align-items:flex-start;gap:16px;padding-left:5px;'>`;
-                    html += `<div style='display:flex;flex-direction:column;align-items:center;justify-content:flex-start;min-width:90px;max-width:90px;'>`;
-                    if (a.sellericon) {
-                        html += `<img src='${a.sellericon}' alt='Seller Icon' style='max-width:90px;max-height:90px;display:block;'>`;
-                    }
-                    html += `</div>`;
-                    html += `<div style='flex:1;display:flex;flex-direction:column;justify-content:flex-start;'>`;
-                    html += `<div>${a.description || ''}</div>`;
-                    if (a.ebayrating) {
-                        html += `<div style='margin-top:6px;'>${a.ebayrating}</div>`;
-                    }
-                    html += `</div></div>`;
-
-                    if (a.ssnicon || a.rating || a.ebayfeedbackurl) html += `
-                        <div class='shipping-info-section' style='margin-bottom:10px;'>
-                            <div style='font-size:1.5em;font-weight:bold;margin-bottom:8px;text-align:left;'>on 
-                                <span style="color:#e53238;">e</span><span style="color:#0064d2;">B</span><span style="color:#f5af02;">a</span><span style="color:#86b817;">y</span>
-                            </div>
-                            <div style='display:flex;flex-direction:column;align-items:flex-start;gap:10px;'>
-                                <div style='display:flex;flex-direction:row;align-items:center;justify-content:flex-start;min-width:360px;max-width:360px;margin-left:-4px;gap:5px;'>
-                                    <img src='static/images/GEEKSPORTSCARDS_BIN.png' alt='BIN Icon' style='max-width:90px;max-height:90px;display:block;'>
-                                    <img src='static/images/GEEKSPORTSCARDS_AUCTIONS.png' alt='Auctions Icon' style='max-width:90px;max-height:90px;display:block;'>
-                                    <img src='static/images/GEEKSPORTSCARDS_SLABS.png' alt='Slabs Icon' style='max-width:90px;max-height:90px;display:block;'>
-                                    <img src='static/images/GEEKSPORTSCARDS_COLLECTABLES.png' alt='Collectables Icon' style='max-width:90px;max-height:90px;display:block;'>
-                                </div>
-                                <div style='display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:left;'>
-                                    <span style='font-size:1.08em;font-weight:bold;margin-bottom:2px;'>GEEK SPORTS CARDS &amp; COLLECTABLES</span>
-                                    <span style='font-size:0.98em;margin-bottom:4px;'>100% Positive Seller Feedback (last 12 months)</span>
-                                    <a href='https://www.ebay.com/fdbk/feedback_profile/lotsofcards-gsc' target='_blank' rel='noopener' style='color:#0d6efd;text-decoration:underline;font-weight:bold;display:inline-block;'>eBay Seller Feedback</a>
-                                </div>
-                            </div>
-                        </div>`;
-                    html += `</div>`;
-                    $('#itemsGrid').html(html);
-                    $('#resultsCount').html('');
-                    $('.search-outer-container').hide();
-                } else {
-                    $('#itemsGrid').html('<div class="shipping-info-box">About information not available.</div>');
-                    $('#resultsCount').html('');
-                    $('.search-outer-container').show();
-                }
-            }).fail(function () {
-                $('#itemsGrid').html('<div class="shipping-info-box">About information could not be loaded.</div>');
-                $('#resultsCount').html('');
-                $('.search-outer-container').show();
-            });
-        });
-
-        // Show shipping info in main content, full width, when Shipping link is clicked
-        $(document).on('click', '.custom-footer a:contains("Shipping")', function (e) {
-            e.preventDefault();
-            if (window.location.pathname !== '/shipping') {
-                window.history.pushState({ page: 'shipping' }, '', '/shipping');
-            }
-            // Add cache-busting parameter to force fresh data
-            const timestamp = new Date().getTime();
-            $.getJSON(`static/site_content/site.json?_=${timestamp}`, function (siteData) {
-                if (siteData && siteData.shipping) {
-                    const s = siteData.shipping;
-                    let html = `<div class='shipping-info-box'>`;
-                    html += `<a href="#" id="shippingBackLink" style="display:inline-flex;align-items:center;font-size:1.25em;color:#0d6efd;text-decoration:none;margin-bottom:18px;padding-left:5px;"><i class='fas fa-arrow-circle-left' style='margin-right:10px;font-size:1.4em;'></i><span style='font-weight:bold;font-size:1.1em;'>Back</span></a>`;
-                    html += `<h2 class='shipping-info-title'>Shipping Policy</h2>`;
-                    html += `<div class='shipping-info-section'>${s.description || ''}</div>`;
-                    if (s.policy) html += `<div class='shipping-info-section'>${s.policy}</div>`;
-
-                    if (s.freeshipping) html += `<div class='shipping-info-section'><strong>Free Shipping:</strong> ${s.freeshipping}</div>`;
-
-                    if (s.standardshipping) html += `<div class='shipping-info-section'><strong>Standard Shipping Raw / Singles:</strong> ${s.standardshipping}</div>`;
-
-                    if (s.combinedshipping) html += `<div class='shipping-info-section'><strong>Combined Shipping Raw / Singles:</strong> ${s.combinedshipping}</div>`;
-
-                    if (s.standardshippingslabs) html += `<div class='shipping-info-section'><strong>Standard Shipping Slabs:</strong> ${s.standardshippingslabs}</div>`;
-
-                    if (s.lotsnsetsshipping) html += `<div class='shipping-info-section'><strong>Lots and Sets 20 Items or Less Standard Shipping:</strong> ${s.lotsnsetsshipping}</div>`;
-
-                    if (s.lotsnsetsshipping20plus) html += `<div class='shipping-info-section'><strong>Lots and Sets More 20 Items Standard Shipping:</strong> ${s.lotsnsetsshipping20plus}</div>`;
-
-
-
-                    if (s.shippingMethod) html += `<div class='shipping-info-section'><strong>Shipping Method:</strong> ${s.shippingMethod}</div>`;
-                    if (s.ebayshippinglink) html += `<div class='shipping-info-section'><a href='${s.ebayshippinglink}' target='_blank' rel='noopener'>eBay Shipping Help</a></div>`;
-                    html += `</div>`;
-                    $('#itemsGrid').html(html);
-                    $('#resultsCount').html('');
-                    $('.search-outer-container').hide();
-                } else {
-                    $('#itemsGrid').html('<div class="shipping-info-box">Shipping information not available.</div>');
-                    $('#resultsCount').html('');
-                    $('.search-outer-container').show();
-                }
-            }).fail(function () {
-                $('#itemsGrid').html('<div class="shipping-info-box">Shipping information could not be loaded.</div>');
-                $('#resultsCount').html('');
-                $('.search-outer-container').show();
-            });
-        });
-
-        // Restore main content (shared by multiple back links)
-        function restoreMainContent() {
-            if (window.location.pathname !== '/') {
-                window.history.pushState({}, '', '/');
-            }
-            if (window._ebayData) {
-                renderList(window._ebayData);
-                updateResultsCount(window._ebayData.length);
-                $('.search-outer-container').show();
-            } else {
-                window.location.reload();
-            }
-        }
-
-        // Click handlers for back links
-        $(document).on('click', '#shippingBackLink', function (e) {
-            e.preventDefault();
-            restoreMainContent();
-        });
-        $(document).on('click', '#aboutBackLink', function (e) {
-            e.preventDefault();
-            restoreMainContent();
-        });
-
-        // Handle browser navigation for /about and /shipping - attach once
-        window.addEventListener('popstate', function (event) {
-            if (window.location.pathname === '/about') {
-                // Only load About if not already showing
-                if (!$('#itemsGrid .shipping-info-title').text().includes('About')) {
-                    $('.custom-footer a:contains("About")').trigger('click');
-                }
-            } else if (window.location.pathname === '/shipping') {
-                if (!$('#itemsGrid .shipping-info-title').text().includes('Shipping')) {
-                    $('.custom-footer a:contains("Shipping")').trigger('click');
-                }
-            } else {
-                // Restore main content if not /about or /shipping
-                restoreMainContent();
-            }
-        });
-
-
 
 
         function updateResultsCount(count) {
@@ -750,7 +600,7 @@
       <strong>Category:</strong> ${catDisplay}<br>
       <strong>${quantityLabel}</strong> ${quantityValue}</p>
       <p class="price">${price} <span class="shipping-text">${shipping}</span></p>
-      ${(upcomingAuctionsSelected || comingSoonSelected || row['isScheduled']) ? `<p class="start-date">Start Date: <span class="start-date-time">${new Date(row['Start Date']).toLocaleDateString('en-US', {month: '2-digit', day: '2-digit'})} ${new Date(row['Start Date']).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: true, timeZoneName: 'short'})}</span></p>` : ''}
+      ${(upcomingAuctionsSelected || comingSoonSelected || row['isScheduled']) ? `<p class="start-date">Start Date: <span class="start-date-time">${new Date(row['Start Date']).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' })} ${new Date(row['Start Date']).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true, timeZoneName: 'short' })}</span></p>` : ''}
       ${!row['isScheduled'] && formatLower === 'auction' ?
                         `<p class="bid-info mb-1">${bids} <span class="auction-time">${displayTime}</span></p>
          <p class="bid-info mb-2">${row['Watch Count'] && parseInt(row['Watch Count']) > 0 ? `${row['Watch Count']} Watching` : '0 Watching'}</p>` :
@@ -855,13 +705,13 @@
         }
 
         // Load configuration and apply feature toggles
-        $.getJSON('static/config/config.json?t=' + Date.now(), function (config) {
+        $.getJSON('static/site_config/config.json?t=' + Date.now(), function (config) {
             // Store config globally for use in renderList
             window.siteConfig = config;
-        }).fail(function() {
+        }).fail(function () {
             console.error('Failed to load config.json');
             window.siteConfig = { "Card Button": { "upcoming_auctions": true, "coming_soon": true } }; // fallback
-        }).always(function() {
+        }).always(function () {
             // Now load the data
             $.getJSON('data/ebay_active_items.json?t=' + Date.now(), function (activeItemsData) {
                 $.getJSON('data/ebay_scheduled_items.json?t=' + Date.now(), function (scheduledData) {
@@ -871,157 +721,157 @@
                     // Randomize the order of cards
                     shuffleArray(data);
 
-                window._ebayData = data;
-                if (!data.length) {
-                    $('#itemsGrid').html('<div>No data found.</div>');
-                    updateResultsCount(0);
-                    return;
-                }
-                $('#listViewBtn').addClass('active');
-                $('#gridViewBtn').remove();
-                // Default to showing active items
-                const activeData = data.filter(row => !row['isScheduled']);
-                renderList(activeData);
-                updateResultsCount(activeData.length);
-                function updateFilters() {
-                    let filtered = filterData(data);
-                    const selectedViews = $('#filterForm input[type=radio][name=view_filter]:checked').map(function () { return this.value; }).get();
-                    if (selectedViews.length > 0) {
-                        const sortBy = selectedViews[0]; // take the first one
-                        if (sortBy === 'most_bids') {
-                            filtered = filtered.filter(item => {
-                                const bids = parseInt(item['Bid Count'] || 0);
-                                return bids > 0;
-                            });
-                        } else if (sortBy === 'most_watchers') {
-                            filtered = filtered.filter(item => {
-                                const watchers = parseInt(item['Watch Count'] || 0);
-                                return watchers >= 1;
-                            });
-                        } else if (sortBy === 'ending_today') {
-                            const today = new Date();
-                            const todayStr = today.toDateString();
-                            filtered = filtered.filter(item => {
-                                const endDate = new Date(item['End Date']);
-                                return endDate.toDateString() === todayStr;
-                            });
-                        } else if (sortBy === 'ending_soonest') {
-                            filtered = filtered.filter(item => {
-                                return item['Format'] === 'Auction' && !item['isScheduled'];
+                    window._ebayData = data;
+                    if (!data.length) {
+                        $('#itemsGrid').html('<div>No data found.</div>');
+                        updateResultsCount(0);
+                        return;
+                    }
+                    $('#listViewBtn').addClass('active');
+                    $('#gridViewBtn').remove();
+                    // Default to showing active items
+                    const activeData = data.filter(row => !row['isScheduled']);
+                    renderList(activeData);
+                    updateResultsCount(activeData.length);
+                    function updateFilters() {
+                        let filtered = filterData(data);
+                        const selectedViews = $('#filterForm input[type=radio][name=view_filter]:checked').map(function () { return this.value; }).get();
+                        if (selectedViews.length > 0) {
+                            const sortBy = selectedViews[0]; // take the first one
+                            if (sortBy === 'most_bids') {
+                                filtered = filtered.filter(item => {
+                                    const bids = parseInt(item['Bid Count'] || 0);
+                                    return bids > 0;
+                                });
+                            } else if (sortBy === 'most_watchers') {
+                                filtered = filtered.filter(item => {
+                                    const watchers = parseInt(item['Watch Count'] || 0);
+                                    return watchers >= 1;
+                                });
+                            } else if (sortBy === 'ending_today') {
+                                const today = new Date();
+                                const todayStr = today.toDateString();
+                                filtered = filtered.filter(item => {
+                                    const endDate = new Date(item['End Date']);
+                                    return endDate.toDateString() === todayStr;
+                                });
+                            } else if (sortBy === 'ending_soonest') {
+                                filtered = filtered.filter(item => {
+                                    return item['Format'] === 'Auction' && !item['isScheduled'];
+                                });
+                            }
+                            filtered.sort((a, b) => {
+                                if (sortBy === 'most_bids') {
+                                    const aBids = parseInt(a['Bid Count'] || 0);
+                                    const bBids = parseInt(b['Bid Count'] || 0);
+                                    return bBids - aBids;
+                                } else if (sortBy === 'ending_soonest') {
+                                    const aDate = new Date(a['End Date']);
+                                    const bDate = new Date(b['End Date']);
+                                    return aDate - bDate;
+                                } else if (sortBy === 'most_recent') {
+                                    // Assuming higher ItemID is more recent
+                                    const aId = parseInt(a['ItemID'] || 0);
+                                    const bId = parseInt(b['ItemID'] || 0);
+                                    return bId - aId;
+                                } else if (sortBy === 'highest_price') {
+                                    const aPrice = parseFloat(a['Current Price'] || 0);
+                                    const bPrice = parseFloat(b['Current Price'] || 0);
+                                    return bPrice - aPrice;
+                                } else if (sortBy === 'lowest_price') {
+                                    const aPrice = parseFloat(a['Current Price'] || 0);
+                                    const bPrice = parseFloat(b['Current Price'] || 0);
+                                    return aPrice - bPrice;
+                                } else if (sortBy === 'most_watchers') {
+                                    const aWatchers = parseInt(a['Watch Count'] || 0);
+                                    const bWatchers = parseInt(b['Watch Count'] || 0);
+                                    return bWatchers - aWatchers;
+                                } else if (sortBy === 'ending_today') {
+                                    const aDate = new Date(a['End Date']);
+                                    const bDate = new Date(b['End Date']);
+                                    return aDate - bDate;
+                                }
+                                return 0;
                             });
                         }
-                        filtered.sort((a, b) => {
-                            if (sortBy === 'most_bids') {
-                                const aBids = parseInt(a['Bid Count'] || 0);
-                                const bBids = parseInt(b['Bid Count'] || 0);
-                                return bBids - aBids;
-                            } else if (sortBy === 'ending_soonest') {
-                                const aDate = new Date(a['End Date']);
-                                const bDate = new Date(b['End Date']);
-                                return aDate - bDate;
-                            } else if (sortBy === 'most_recent') {
-                                // Assuming higher ItemID is more recent
-                                const aId = parseInt(a['ItemID'] || 0);
-                                const bId = parseInt(b['ItemID'] || 0);
-                                return bId - aId;
-                            } else if (sortBy === 'highest_price') {
-                                const aPrice = parseFloat(a['Current Price'] || 0);
-                                const bPrice = parseFloat(b['Current Price'] || 0);
-                                return bPrice - aPrice;
-                            } else if (sortBy === 'lowest_price') {
-                                const aPrice = parseFloat(a['Current Price'] || 0);
-                                const bPrice = parseFloat(b['Current Price'] || 0);
-                                return aPrice - bPrice;
-                            } else if (sortBy === 'most_watchers') {
-                                const aWatchers = parseInt(a['Watch Count'] || 0);
-                                const bWatchers = parseInt(b['Watch Count'] || 0);
-                                return bWatchers - aWatchers;
-                            } else if (sortBy === 'ending_today') {
-                                const aDate = new Date(a['End Date']);
-                                const bDate = new Date(b['End Date']);
-                                return aDate - bDate;
-                            }
-                            return 0;
-                        });
+                        updateResultsCount(filtered.length);
+                        renderList(filtered);
                     }
-                    updateResultsCount(filtered.length);
-                    renderList(filtered);
-                }
-                $('#filterForm input[type=checkbox][name=filter]').on('change', function () {
-                    const val = $(this).val();
-                    if ($(this).is(':checked') && ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].includes(val)) {
-                        // Uncheck the other three
-                        const others = ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].filter(v => v !== val);
-                        others.forEach(otherVal => {
-                            $(`#filterForm input[type=checkbox][name=filter][value="${otherVal}"]`).prop('checked', false);
-                        });
+                    $('#filterForm input[type=checkbox][name=filter]').on('change', function () {
+                        const val = $(this).val();
+                        if ($(this).is(':checked') && ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].includes(val)) {
+                            // Uncheck the other three
+                            const others = ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].filter(v => v !== val);
+                            others.forEach(otherVal => {
+                                $(`#filterForm input[type=checkbox][name=filter][value="${otherVal}"]`).prop('checked', false);
+                            });
+                        }
+                        // Sync mobile filters
+                        $(`#mobileFormatFilters input[type=checkbox][name=filter][value="${val}"]`).prop('checked', $(this).is(':checked'));
+                        updateFilters();
+                    });
+                    // Mobile filter change handlers
+                    $('#mobileFormatFilters input[type=checkbox][name=filter]').on('change', function () {
+                        const val = $(this).val();
+                        if ($(this).is(':checked') && ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].includes(val)) {
+                            // Uncheck the other three in mobile
+                            const others = ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].filter(v => v !== val);
+                            others.forEach(otherVal => {
+                                $(`#mobileFormatFilters input[type=checkbox][name=filter][value="${otherVal}"]`).prop('checked', false);
+                            });
+                            // Uncheck in sidebar
+                            others.forEach(otherVal => {
+                                $(`#filterForm input[type=checkbox][name=filter][value="${otherVal}"]`).prop('checked', false);
+                            });
+                        }
+                        // Sync sidebar filters
+                        $(`#filterForm input[type=checkbox][name=filter][value="${val}"]`).prop('checked', $(this).is(':checked'));
+                        updateFilters();
+                    });
+                    // Mobile reset button
+                    $('#mobileResetBtn').on('click', function () {
+                        $('#mobileFormatFilters input[type=checkbox][name=filter]').prop('checked', false);
+                        $('#filterForm input[type=checkbox][name=filter]').prop('checked', false);
+                        updateFilters();
+                    });
+                    $('#filterForm input[type=checkbox][name=category_filter]').on('change', updateFilters);
+                    $('#filterForm input[type=checkbox][name=sport_filter]').on('change', updateFilters);
+                    $('#filterForm input[type=radio][name=view_filter]').on('change', updateFilters);
+                    function updateClearBtn() {
+                        const val = $('#keywordSearch').val();
+                        if (val) {
+                            $('#clearSearchBtn').show();
+                        } else {
+                            $('#clearSearchBtn').hide();
+                        }
                     }
-                    // Sync mobile filters
-                    $(`#mobileFormatFilters input[type=checkbox][name=filter][value="${val}"]`).prop('checked', $(this).is(':checked'));
-                    updateFilters();
-                });
-                // Mobile filter change handlers
-                $('#mobileFormatFilters input[type=checkbox][name=filter]').on('change', function () {
-                    const val = $(this).val();
-                    if ($(this).is(':checked') && ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].includes(val)) {
-                        // Uncheck the other three in mobile
-                        const others = ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].filter(v => v !== val);
-                        others.forEach(otherVal => {
-                            $(`#mobileFormatFilters input[type=checkbox][name=filter][value="${otherVal}"]`).prop('checked', false);
-                        });
-                        // Uncheck in sidebar
-                        others.forEach(otherVal => {
-                            $(`#filterForm input[type=checkbox][name=filter][value="${otherVal}"]`).prop('checked', false);
-                        });
-                    }
-                    // Sync sidebar filters
-                    $(`#filterForm input[type=checkbox][name=filter][value="${val}"]`).prop('checked', $(this).is(':checked'));
-                    updateFilters();
-                });
-                // Mobile reset button
-                $('#mobileResetBtn').on('click', function() {
-                    $('#mobileFormatFilters input[type=checkbox][name=filter]').prop('checked', false);
-                    $('#filterForm input[type=checkbox][name=filter]').prop('checked', false);
-                    updateFilters();
-                });
-                $('#filterForm input[type=checkbox][name=category_filter]').on('change', updateFilters);
-                $('#filterForm input[type=checkbox][name=sport_filter]').on('change', updateFilters);
-                $('#filterForm input[type=radio][name=view_filter]').on('change', updateFilters);
-                function updateClearBtn() {
-                    const val = $('#keywordSearch').val();
-                    if (val) {
-                        $('#clearSearchBtn').show();
-                    } else {
-                        $('#clearSearchBtn').hide();
-                    }
-                }
-                $('#keywordSearch').on('input', function () {
-                    updateFilters();
+                    $('#keywordSearch').on('input', function () {
+                        updateFilters();
+                        updateClearBtn();
+                    });
+                    $('#clearSearchBtn').on('click', function () {
+                        $('#keywordSearch').val('');
+                        updateFilters();
+                        updateClearBtn();
+                        $('#keywordSearch').focus();
+                    });
                     updateClearBtn();
-                });
-                $('#clearSearchBtn').on('click', function () {
-                    $('#keywordSearch').val('');
-                    updateFilters();
-                    updateClearBtn();
-                    $('#keywordSearch').focus();
-                });
-                updateClearBtn();
-                $('#clearAllFilters').on('click', function () {
-                    $('#filterForm input[type=checkbox][name=filter]').prop('checked', false);
-                    $('#mobileFormatFilters input[type=checkbox][name=filter]').prop('checked', false);
-                    $('#filterForm input[type=checkbox][name=category_filter]').prop('checked', false);
-                    $('#filterForm input[type=checkbox][name=sport_filter]').prop('checked', false);
-                    $('#filterForm input[type=radio][name=view_filter]').prop('checked', false);
-                    $('#keywordSearch').val('');
-                    updateClearBtn();
-                    // Show active items when all filters are cleared
-                    const activeData = data.filter(row => !row['isScheduled']);
-                    updateResultsCount(activeData.length);
-                    renderList(activeData);
+                    $('#clearAllFilters').on('click', function () {
+                        $('#filterForm input[type=checkbox][name=filter]').prop('checked', false);
+                        $('#mobileFormatFilters input[type=checkbox][name=filter]').prop('checked', false);
+                        $('#filterForm input[type=checkbox][name=category_filter]').prop('checked', false);
+                        $('#filterForm input[type=checkbox][name=sport_filter]').prop('checked', false);
+                        $('#filterForm input[type=radio][name=view_filter]').prop('checked', false);
+                        $('#keywordSearch').val('');
+                        updateClearBtn();
+                        // Show active items when all filters are cleared
+                        const activeData = data.filter(row => !row['isScheduled']);
+                        updateResultsCount(activeData.length);
+                        renderList(activeData);
+                    });
                 });
             });
         });
-    });
 
         // Improved lazy loading for images: always observe after DOM update
         (function () {
@@ -1061,88 +911,34 @@
             });
         })();
     </script>
-    <div class="custom-footer">
-
-        <div style="display:flex;justify-content:center;align-items:center;gap:0;flex-wrap:wrap;margin-bottom:6px;">
-            <a href="https://www.ebay.com/sch/i.html?rt=nc&_ssn=geeksportscardsandcollectables&_dmd=2&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001"
-                target=_blank"
-                style="color:#fff;text-decoration:none;display:flex;align-items:center;gap:6px;font-size:1em;"><i
-                    class="fa-brands fa-ebay fa-xl" style="font-size:2em;"></i></a>
-            <span style="color:#fff;font-size:1.3em;padding:0 16px;">|</span>
-            <a href="#"
-                style="color:#fff;text-decoration:none;display:flex;align-items:center;gap:6px;font-size:1em;"><i
-                    class="fas fa-shipping-fast"></i> Shipping</a>
-            <span style="color:#fff;font-size:1.3em;padding:0 16px;">|</span>
-            <a href="#"
-                style="color:#fff;text-decoration:none;display:flex;align-items:center;gap:6px;font-size:1em;"><i
-                    class="fas fa-info-circle"></i> About</a>
-        </div>
-        <div>
-            <p style="font-weight:bold;color:#fff;font-size:0.80em;margin:10px 0 0 0;">
-
-
-                <a href="https://www.ebay.com/sch/i.html?rt=nc&_ssn=geeksportscardsandcollectables&_dmd=2&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001&LH_Auction=1"
-                    target="_blank" style="text-decoration:none;font-weight:bold;">
-                    <span style="color:#ffff;">AUCTION</span>
-                </a> |
-
-
-                <a href="https://www.ebay.com/sch/i.html?rt=nc&_ssn=geeksportscardsandcollectables&_dmd=2&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001&LH_BIN=1"
-                    target="_blank" style="text-decoration:none;font-weight:bold;">
-                    <span style="color:#ffff;">BUY IT NOW</span>
-                </a> |
-
-                <a href="#" style="text-decoration:none;font-weight:bold;">
-                    <span style="color:#ffff;">SLABS</span>
-                </a> |
-                <a href="#" style="text-decoration:none;font-weight:bold;">
-                    <span style="color:#ffff;">COLLECTABLES</span>
-                </a>
-            </p>
-        </div>
-        <div class="footer-social-icons">
-            <a href="https://www.facebook.com/geeksportscards" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-facebook fa-xl"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/geek-sports-cards" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-linkedin fa-xl"></i>
-            </a>
-            <a href="https://www.instagram.com/geek_sports_cards/" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-instagram fa-xl"></i>
-            </a>
-            <a href="mailto:info@geeksportscards.com" title="Email info@geeksportscards.com">
-                <i class="fa-solid fa-envelope" style="font-size:1.40em; padding-top:2px;"></i>
-            </a>
-        </div>
-
-        <span style="display:block;font-size:0.80em;margin-top:2px;">&copy; 2025 Geek Sports Cards and
-            Collectables</span>
-        <button id="backToTopBtn" aria-label="Back to Top" type="button"><i class="fas fa-arrow-up"
-                style="font-size:1.1em;color:#fff;"></i></button>
-    </div>
 
     <!-- Image Gallery Modal -->
     <div class="modal fade" id="imageGalleryModal" tabindex="-1" aria-labelledby="imageGalleryModalLabel">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="imageGalleryModalLabel" style="font-weight: 600; text-align: center; width: 100%;">Card Images</h5>
+                    <h5 class="modal-title" id="imageGalleryModalLabel"
+                        style="font-weight: 600; text-align: center; width: 100%;">Card Images</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body d-flex gap-3">
                     <div id="thumbnailContainerWrapper" class="d-flex flex-column" style="max-width: 120px;">
-                        <button id="scrollUpBtn" class="btn btn-sm btn-outline-secondary mb-1 d-none" style="width: 100%; font-size: 0.8em;" title="Scroll Up">
+                        <button id="scrollUpBtn" class="btn btn-sm btn-outline-secondary mb-1 d-none"
+                            style="width: 100%; font-size: 0.8em;" title="Scroll Up">
                             <i class="fas fa-chevron-up"></i>
                         </button>
-                        <div id="thumbnailContainer" class="d-flex flex-column gap-2" style="max-height: 300px; overflow-y: auto;">
+                        <div id="thumbnailContainer" class="d-flex flex-column gap-2"
+                            style="max-height: 300px; overflow-y: auto;">
                             <!-- Thumbnails will be populated here -->
                         </div>
-                        <button id="scrollDownBtn" class="btn btn-sm btn-outline-secondary mt-1 d-none" style="width: 100%; font-size: 0.8em;" title="Scroll Down">
+                        <button id="scrollDownBtn" class="btn btn-sm btn-outline-secondary mt-1 d-none"
+                            style="width: 100%; font-size: 0.8em;" title="Scroll Down">
                             <i class="fas fa-chevron-down"></i>
                         </button>
                     </div>
                     <div id="mainImageContainer" class="flex-grow-1 text-center">
-                        <img id="mainImage" src="" alt="Main Image" class="img-fluid d-block" style="max-height: 400px;">
+                        <img id="mainImage" src="" alt="Main Image" class="img-fluid d-block"
+                            style="max-height: 400px;">
                     </div>
                 </div>
             </div>
@@ -1154,7 +950,8 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="makeOfferModalLabel" style="font-weight: 600; text-align: center; width: 100%;">Make Offer</h5>
+                    <h5 class="modal-title" id="makeOfferModalLabel"
+                        style="font-weight: 600; text-align: center; width: 100%;">Make Offer</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -1177,7 +974,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="contactMessage" class="form-label">Message *</label>
-                            <textarea class="form-control" id="contactMessage" rows="4" required placeholder="Please enter your offer or inquiry about this item..."></textarea>
+                            <textarea class="form-control" id="contactMessage" rows="4" required
+                                placeholder="Please enter your offer or inquiry about this item..."></textarea>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Send Message</button>
@@ -1246,96 +1044,31 @@
                 initBackToTop();
             }
         })();
-        // Auto-scroll to top when the user scrolls past half the document height
-        (function () {
-            function initAutoScroll() {
-                let autoTriggered = false;
-                let lastScroll = 0;
-                const resetThreshold = 50; // px from top to reset
-
-                function onScroll() {
-                    const scrollY = window.scrollY || window.pageYOffset;
-                    const docHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
-                    const half = docHeight / 2;
-                    const scrollingDown = scrollY > lastScroll;
-                    lastScroll = scrollY;
-
-                    if (!autoTriggered && scrollingDown && scrollY > half) {
-                        autoTriggered = true;
-                        // smooth scroll to top
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }
-
-                    // reset so the auto-scroll can trigger again after user returns near top
-                    if (autoTriggered && scrollY < resetThreshold) {
-                        autoTriggered = false;
-                    }
-                }
-
-                window.addEventListener('scroll', onScroll, { passive: true });
-            }
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initAutoScroll);
-            } else {
-                initAutoScroll();
-            }
-        })();
-    </script>
-
-    <script>
-        // Ensure --footer-height CSS variable matches the rendered footer height.
-        (function syncFooterHeightVar() {
-            const footer = document.querySelector('.custom-footer');
-            if (!footer) return;
-            function setVar() {
-                const h = footer.offsetHeight || 64;
-                // set on the footer itself (fallback) and on :root for global use
-                footer.style.setProperty('--footer-height', h + 'px');
-                document.documentElement.style.setProperty('--footer-height', h + 'px');
-            }
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', setVar);
-            } else {
-                setVar();
-            }
-
-            // Prefer ResizeObserver for precise updates; fall back to window resize
-            if (window.ResizeObserver) {
-                try {
-                    const ro = new ResizeObserver(() => setVar());
-                    ro.observe(footer);
-                } catch (e) {
-                    window.addEventListener('resize', setVar);
-                }
-            } else {
-                window.addEventListener('resize', setVar);
-            }
-        })();
     </script>
 
     <script>
         // Handle make offer form submission
-        document.getElementById('makeOfferForm').addEventListener('submit', function(e) {
+        document.getElementById('makeOfferForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const name = document.getElementById('contactName').value;
             const email = document.getElementById('contactEmail').value;
             const phone = document.getElementById('contactPhone').value;
             const subject = document.getElementById('contactSubject').value;
             const message = document.getElementById('contactMessage').value;
-            
+
             // Create mailto link with form data
             const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`;
             const mailtoLink = `mailto:geeksportscards@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
+
             // Open email client
             window.location.href = mailtoLink;
-            
+
             // Close modal
             if (makeOfferModal) {
                 makeOfferModal.hide();
             }
-            
+
             // Reset form
             this.reset();
         });
@@ -1344,6 +1077,42 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <footer class="py-3 border-top">
+        <div class="container footer-inner d-flex flex-column justify-content-center align-items-center gap-3">
+            <div class="d-flex align-items-center justify-content-center text-center footer-social">
+                <ul class="nav justify-content-center list-unstyled d-flex align-items-center mx-auto">
+                    <li class="ms-0"><a href="https://www.ebay.com/sch/i.html?rt=nc&_ssn=geeksportscardsandcollectables&_dmd=2&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001"
+                        target="_blank" rel="noopener noreferrer"
+                        style="color:#fff;text-decoration:none;font-size:1em;"><i
+                            class="fab fa-ebay" style="font-size:2em; line-height:1; vertical-align: middle;"></i></a></li>
+                    <li class="ms-3"> <a href="https://www.linkedin.com/company/geek-sports-cards" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fab fa-linkedin fa-lg"></i>
+                        </a></li>
+                    <li class="ms-3"> <a href="https://www.instagram.com/geek_sports_cards/" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a></li>
+                    <li class="ms-3"><a href="https://www.facebook.com/geeksportscards" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="fab fa-facebook fa-lg"></i>
+                        </a></li>
+                    <li class="ms-3"><a href="mailto:info@geeksportscards.com" title="Email info@geeksportscards.com">
+                            <i class="fa-solid fa-envelope fa-lg" style="font-size:1.40em; padding-top:2px;"></i>
+                        </a></li>
+                </ul>
+            </div>
+            <div class="d-flex flex-column align-items-center justify-content-center text-center footer-copy">
+                <span class="text-white">&copy; 2025 GEEK<span
+                        style="color: #D9B310;">SPORTS</span>CARDS</span>
+                <span class="text-white-50" style="font-size: 0.9em;">All Rights Reserved</span>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTopBtn" aria-label="Back to Top" type="button"><i class="fas fa-arrow-up"
+            style="font-size:1.1em;color:#fff;"></i></button>
 
 </body>
 
