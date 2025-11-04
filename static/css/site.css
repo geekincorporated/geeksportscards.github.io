@@ -277,9 +277,6 @@
             }
 
             /* Removed all #backToTopBtn logic for small/mobile screens */
-            .custom-footer {
-                display: block;
-            }
 
             #shippingModalContent {
                 position: fixed !important;
@@ -420,20 +417,9 @@
             }
         }
 
-        @media (max-width: 500px) {
-
-            .custom-footer,
-            .footer-bar,
-            .footer-p,
-            .footer-copyright {
-                font-size: 1.50em !important;
-            }
-        }
-
         @media (max-width: 600px) {
             #backToTopBtn {
                 bottom: 35vh !important;
-                /* Force much higher above footer for small screens */
                 right: 10vw !important;
                 z-index: 9999 !important;
                 width: 40px !important;
@@ -533,9 +519,6 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            /* Reserve space at the bottom equal to footer height so fixed footer doesn't overlap content
-                    This uses the CSS variable defined on .custom-footer which may be adjusted via JS. */
-            padding-bottom: var(--footer-height, 64px);
         }
 
         img,
@@ -552,9 +535,7 @@
             max-width: 1600px;
             width: 100%;
             margin: 0 auto;
-            /* Use the footer height CSS variable so the fixed footer does not cover content
-               and allow a small extra gap (16px) for breathing room */
-            padding: 0 18px calc(var(--footer-height, 64px) + 16px) 18px;
+            padding: 0 18px 16px 18px;
             box-sizing: border-box;
             display: block;
             flex: 1 0 auto;
@@ -760,22 +741,6 @@
             flex: 1;
         }
 
-        .custom-footer {
-            background: #1d2731;
-            color: #fff;
-            text-align: center;
-            font-size: 1em;
-            padding: 16px 0 12px 0;
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 200;
-            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.10);
-            /* expose a footer height variable so floating elements can position relative to it */
-            --footer-height: 64px;
-        }
-
         #shippingModal {
             display: none;
             position: fixed;
@@ -831,21 +796,9 @@
             }
         }
 
-        /* On very small screens increase bottom padding to ensure fixed footer doesn't cover content
-           and give extra space for mobile browser UI (address bar / soft nav) */
-        @media (max-width: 600px) {
-            .container-main {
-                padding-bottom: calc(var(--footer-height, 64px) + 32px) !important;
-            }
-
-            body {
-                padding-bottom: calc(var(--footer-height, 64px) + 32px) !important;
-            }
-        }
-
         @media (max-width: 600px) {
             #backToTopBtn {
-                bottom: calc(var(--footer-height, 64px) + 5px) !important;
+                bottom: 5px !important;
                 right: 10vw !important;
                 width: 40px !important;
                 height: 40px !important;
@@ -864,7 +817,7 @@
                 height: 40px !important;
                 font-size: 1.0em !important;
                 right: 12vw !important;
-                bottom: calc(var(--footer-height, 64px) + 5px) !important;
+                bottom: 5px !important;
             }
 
             #backToTopBtn i {
@@ -886,30 +839,6 @@
             border: none;
             border-radius: 6px;
             cursor: pointer;
-        }
-
-        .footer-social-icons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-            margin-top: 5px;
-        }
-
-        .footer-social-icons a {
-            color: #fff !important;
-            text-decoration: none !important;
-            font-size: .90em;
-            padding: 0 6px;
-            transition: color 0.2s;
-        }
-
-        .footer-social-icons a i,
-        .footer-social-icons a:visited i,
-        .footer-social-icons a:active i,
-        .footer-social-icons a:focus i {
-            color: #fff !important;
         }
 
         .header-subtitle {
@@ -1324,12 +1253,6 @@
                 align-self: stretch;
             }
 
-            /* Hide footer links and social icons on small screens */
-            .custom-footer > div:nth-child(2),
-            .custom-footer .footer-social-icons {
-                display: none;
-            }
-
         }
 
 .mobile-reset-btn {
@@ -1552,4 +1475,102 @@
 #scrollUpBtn:active, #scrollDownBtn:active {
     background-color: #e9ecef;
     transform: scale(0.95);
+}
+
+/* Footer styling */
+footer {
+    background-color: #1d2731 !important;
+    color: #fff !important;
+}
+
+footer a {
+    color: #fff !important;
+}
+
+footer a:hover {
+    color: #ccc !important;
+}
+
+/* Push footer to bottom of screen */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    margin-top: auto;
+    margin-bottom: 0 !important;
+}
+
+/* Additional mobile tightening for footer */
+@media (max-width: 799px) {
+    /* Compress vertical rhythm of each row */
+    .footer-inner .footer-nav .nav,
+    .footer-inner .footer-nav .nav a,
+    .footer-inner .footer-nav span,
+    .footer-inner .footer-social ul,
+    .footer-inner .footer-social li,
+    .footer-inner .footer-social a,
+    .footer-inner .footer-copy span {
+        line-height: 1 !important;
+    }
+
+    /* Reduce overall footer padding on mobile */
+    footer.py-3 {
+        padding-top: 6px !important;
+        padding-bottom: 6px !important;
+    }
+}
+
+/* Stack footer groups on small screens */
+@media (max-width: 799px) {
+    .footer-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 0 !important; /* remove space between footer groups on mobile */
+        text-align: center;
+    }
+    /* Order the rows: 1) About/Shipping 2) Social Icons 3) Copyright */
+    .footer-inner .footer-nav { order: 1; }
+    .footer-inner .footer-social { order: 2; }
+    .footer-inner .footer-copy { order: 3; }
+    .footer-inner > div {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: center;
+    }
+    .footer-inner ul.nav {
+        justify-content: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    /* Remove the small bootstrap icon link on mobile to tighten vertical space */
+    .footer-inner .footer-copy a {
+        display: none !important;
+    }
+    /* Tighten line-height and remove margins for copyright text */
+    .footer-inner .footer-copy span {
+        line-height: 1.15 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: inline-block;
+    }
+    /* Ensure social icon list items don't add vertical margins */
+    .footer-inner .footer-social li {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    /* Remove extra bottom margins introduced by Bootstrap utility classes */
+    .footer-inner .footer-copy a.mb-3,
+    .footer-inner .footer-copy span.mb-3 {
+        margin-bottom: 0 !important;
+    }
 }
