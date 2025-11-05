@@ -290,36 +290,21 @@
             // Set modal title to card name
             $('#imageGalleryModalLabel').text(itemData['Card Name'] || 'Card Images');
 
+            // Check if item is scheduled (coming soon) and show Buy Now button
+            const isScheduled = itemData['isScheduled'];
+            const format = itemData['Format'];
+            if (isScheduled && itemData['PayPal Link'] && format && format.toLowerCase() !== 'auction') {
+                $('#galleryBuyNowBtn').attr('onclick', `window.open('${itemData['PayPal Link']}', '_blank')`);
+                $('#imageGalleryModalFooter').removeClass('d-none');
+            } else {
+                $('#imageGalleryModalFooter').addClass('d-none');
+            }
+
             // Create or reuse modal instance
             if (!imageGalleryModal) {
                 imageGalleryModal = new bootstrap.Modal(document.getElementById('imageGalleryModal'));
             }
             imageGalleryModal.show();
-        }
-
-        // Function to open make offer modal for upcoming auctions
-        let makeOfferModal = null; // Store modal instance
-
-        function openMakeOfferForm(itemId) {
-            // Find the item data from the full data
-            if (!window._ebayData) return;
-            const itemData = window._ebayData.find(item => item.ItemID === itemId);
-            if (!itemData) return;
-
-            // Pre-fill the subject with card information
-            const cardName = itemData['Card Name'] || 'Card';
-            const player = itemData['Player/Athlete'] || '';
-            const team = itemData['Team'] || '';
-            const cardNumber = itemData['Card Number'] || '';
-            const subject = `Inquiry about ${cardName}${player ? ` - ${player}` : ''}${team ? ` (${team})` : ''}${cardNumber ? ` #${cardNumber}` : ''}`;
-
-            $('#contactSubject').val(subject);
-
-            // Create or reuse modal instance
-            if (!makeOfferModal) {
-                makeOfferModal = new bootstrap.Modal(document.getElementById('makeOfferModal'));
-            }
-            makeOfferModal.show();
         }
 
         // Function to change main image when thumbnail is clicked
@@ -555,19 +540,18 @@
                         let buttonColor = '#1d2731'; // Default dark color
                         if (formatLowerInner === 'auction') {
                             buttonColor = '#1d2731'; // Dark color for upcoming auctions
-                            buttonText = 'Make Offer Now';
+                            buttonText = 'Make Offer';
                             if (window.siteConfig && window.siteConfig["Card Button"] && window.siteConfig["Card Button"].upcoming_auctions === true) {
-                                actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: ${buttonColor} !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="openMakeOfferForm('${row['ItemID']}')">${buttonText}</button>`;
+                                actionButtonHtml = `<div class="mt-2 text-center" style="height: 55px; background-color: ${buttonColor}; color: white; font-size: 18px; border: none; font-weight: 600; display: flex; align-items: center; justify-content: center; border-radius: 5px;">${buttonText}</div>`;
                             }
                         } else if (formatLowerInner === 'bin' || formatLowerInner === 'fixedprice') {
                             btnLink = row['PayPal Link'] || btnLink;
-                            buttonText = 'Buy Early on PayPal';
+                            buttonText = 'Buy Now';
                             if (window.siteConfig && window.siteConfig["Card Button"] && window.siteConfig["Card Button"].coming_soon === true) {
                                 actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: ${buttonColor} !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="window.open('${btnLink}', '_blank')">${buttonText}</button>`;
                             }
                         } else {
-                            buttonText = 'Make Offer Now';
-                            actionButtonHtml = `<button class="btn btn-primary mt-2" style="height: 55px; background-color: ${buttonColor} !important; color: white !important; font-size: 18px !important; border: none !important; font-weight: 600 !important;" onclick="openMakeOfferForm('${row['ItemID']}')">${buttonText}</button>`;
+                            // No button for other scheduled formats
                         }
                     } else {
                         if (formatLowerInner === 'auction' || formatLowerInner.includes('auction')) {
@@ -587,7 +571,7 @@
       <img class="lazy-img" loading="lazy" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-src="${imgUrl}" alt="${title}" ${row['isScheduled'] ? `onclick="openImageGallery('${row['ItemID']}')" title="Click To View Card" style="cursor: pointer;"` : `title="Click to View on eBay"`}>
       ${row['isScheduled'] ? `<a href="javascript:void(0)" onclick="openImageGallery('${row['ItemID']}')" style="position:absolute; top:10px; right:10px; z-index:10;" title="Click To View Card"></a>` : ''}
       ${(!row['isScheduled'] && (formatLower === 'bin' || formatLower === 'auction')) ? `</a>` : ''}
-      <small style="color: #999; text-align: center; width: 100%;">eBay Item ID: ${itemNum}</small>
+      <small style="color: #999; text-align: center; width: 100%;">Item ID: ${itemNum}</small>
     </div>
     <div class="card-body">
       ${(!row['isScheduled'] && (formatLower === 'bin' || formatLower === 'auction')) ? `<a href="${link}" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">` : ''}
@@ -941,46 +925,8 @@
                             style="max-height: 400px;">
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Make Offer Modal -->
-    <div class="modal fade" id="makeOfferModal" tabindex="-1" aria-labelledby="makeOfferModalLabel">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="makeOfferModalLabel"
-                        style="font-weight: 600; text-align: center; width: 100%;">Make Offer</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="makeOfferForm">
-                        <div class="mb-3">
-                            <label for="contactName" class="form-label">Name *</label>
-                            <input type="text" class="form-control" id="contactName" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="contactEmail" class="form-label">Email *</label>
-                            <input type="email" class="form-control" id="contactEmail" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="contactPhone" class="form-label">Phone (optional)</label>
-                            <input type="tel" class="form-control" id="contactPhone">
-                        </div>
-                        <div class="mb-3">
-                            <label for="contactSubject" class="form-label">Subject</label>
-                            <input type="text" class="form-control" id="contactSubject" readonly>
-                        </div>
-                        <div class="mb-3">
-                            <label for="contactMessage" class="form-label">Message *</label>
-                            <textarea class="form-control" id="contactMessage" rows="4" required
-                                placeholder="Please enter your offer or inquiry about this item..."></textarea>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </div>
-                    </form>
+                <div class="modal-footer d-none justify-content-center" id="imageGalleryModalFooter">
+                    <button type="button" class="btn btn-primary" id="galleryBuyNowBtn" style="width: 100%; max-width: 400px; background-color: black; border-color: black;">Buy Now</button>
                 </div>
             </div>
         </div>
@@ -1044,34 +990,6 @@
                 initBackToTop();
             }
         })();
-    </script>
-
-    <script>
-        // Handle make offer form submission
-        document.getElementById('makeOfferForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const name = document.getElementById('contactName').value;
-            const email = document.getElementById('contactEmail').value;
-            const phone = document.getElementById('contactPhone').value;
-            const subject = document.getElementById('contactSubject').value;
-            const message = document.getElementById('contactMessage').value;
-
-            // Create mailto link with form data
-            const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`;
-            const mailtoLink = `mailto:geeksportscards@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            // Open email client
-            window.location.href = mailtoLink;
-
-            // Close modal
-            if (makeOfferModal) {
-                makeOfferModal.hide();
-            }
-
-            // Reset form
-            this.reset();
-        });
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
