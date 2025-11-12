@@ -115,6 +115,9 @@
                                     <div><input type="checkbox" name="filter" value="cor" id="filter_cor"> <label
                                             for="filter_cor">Corrected</label></div>
                                     <div class="sidebar-section-title">Quick View</div>
+                                    <div><input type="radio" name="view_filter" value="free_shipping"
+                                            id="filter_view_free_shipping"> <label for="filter_view_free_shipping">Free
+                                            Shipping</label></div>
                                     <div><input type="radio" name="view_filter" value="most_bids"
                                             id="filter_view_most_bids"> <label for="filter_view_most_bids">Most
                                             Bids</label></div>
@@ -717,144 +720,171 @@
                     const activeData = data.filter(row => !row['isScheduled']);
                     renderList(activeData);
                     updateResultsCount(activeData.length);
-                    function updateFilters() {
-                        let filtered = filterData(data);
-                        const selectedViews = $('#filterForm input[type=radio][name=view_filter]:checked').map(function () { return this.value; }).get();
-                        if (selectedViews.length > 0) {
-                            const sortBy = selectedViews[0]; // take the first one
-                            if (sortBy === 'most_bids') {
-                                filtered = filtered.filter(item => {
-                                    const bids = parseInt(item['Bid Count'] || 0);
-                                    return bids > 0;
-                                });
-                            } else if (sortBy === 'most_watchers') {
-                                filtered = filtered.filter(item => {
-                                    const watchers = parseInt(item['Watch Count'] || 0);
-                                    return watchers >= 1;
-                                });
-                            } else if (sortBy === 'ending_today') {
-                                const today = new Date();
-                                const todayStr = today.toDateString();
-                                filtered = filtered.filter(item => {
-                                    const endDate = new Date(item['End Date']);
-                                    return endDate.toDateString() === todayStr;
-                                });
-                            } else if (sortBy === 'ending_soonest') {
-                                filtered = filtered.filter(item => {
-                                    return item['Format'] === 'Auction' && !item['isScheduled'];
-                                });
-                            }
-                            filtered.sort((a, b) => {
-                                if (sortBy === 'most_bids') {
-                                    const aBids = parseInt(a['Bid Count'] || 0);
-                                    const bBids = parseInt(b['Bid Count'] || 0);
-                                    return bBids - aBids;
-                                } else if (sortBy === 'ending_soonest') {
-                                    const aDate = new Date(a['End Date']);
-                                    const bDate = new Date(b['End Date']);
-                                    return aDate - bDate;
-                                } else if (sortBy === 'most_recent') {
-                                    // Assuming higher ItemID is more recent
-                                    const aId = parseInt(a['ItemID'] || 0);
-                                    const bId = parseInt(b['ItemID'] || 0);
-                                    return bId - aId;
-                                } else if (sortBy === 'highest_price') {
-                                    const aPrice = parseFloat(a['Current Price'] || 0);
-                                    const bPrice = parseFloat(b['Current Price'] || 0);
-                                    return bPrice - aPrice;
-                                } else if (sortBy === 'lowest_price') {
-                                    const aPrice = parseFloat(a['Current Price'] || 0);
-                                    const bPrice = parseFloat(b['Current Price'] || 0);
-                                    return aPrice - bPrice;
-                                } else if (sortBy === 'most_watchers') {
-                                    const aWatchers = parseInt(a['Watch Count'] || 0);
-                                    const bWatchers = parseInt(b['Watch Count'] || 0);
-                                    return bWatchers - aWatchers;
-                                } else if (sortBy === 'ending_today') {
-                                    const aDate = new Date(a['End Date']);
-                                    const bDate = new Date(b['End Date']);
-                                    return aDate - bDate;
-                                }
-                                return 0;
-                            });
-                        }
-                        updateResultsCount(filtered.length);
-                        renderList(filtered);
+                }).fail(function () {
+                    console.log('Scheduled items data not available, loading active items only');
+                    // Load active items only if scheduled items fail
+                    const data = [...activeItemsData];
+
+                    // Randomize the order of cards
+                    shuffleArray(data);
+
+                    window._ebayData = data;
+                    if (!data.length) {
+                        $('#itemsGrid').html('<div>No data found.</div>');
+                        updateResultsCount(0);
+                        return;
                     }
-                    $('#filterForm input[type=checkbox][name=filter]').on('change', function () {
-                        const val = $(this).val();
-                        if ($(this).is(':checked') && ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].includes(val)) {
-                            // Uncheck the other three
-                            const others = ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].filter(v => v !== val);
-                            others.forEach(otherVal => {
-                                $(`#filterForm input[type=checkbox][name=filter][value="${otherVal}"]`).prop('checked', false);
-                            });
-                        }
-                        // Sync mobile filters
-                        $(`#mobileFormatFilters input[type=checkbox][name=filter][value="${val}"]`).prop('checked', $(this).is(':checked'));
-                        updateFilters();
-                    });
-                    // Mobile filter change handlers
-                    $('#mobileFormatFilters input[type=checkbox][name=filter]').on('change', function () {
-                        const val = $(this).val();
-                        if ($(this).is(':checked') && ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].includes(val)) {
-                            // Uncheck the other three in mobile
-                            const others = ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].filter(v => v !== val);
-                            others.forEach(otherVal => {
-                                $(`#mobileFormatFilters input[type=checkbox][name=filter][value="${otherVal}"]`).prop('checked', false);
-                            });
-                            // Uncheck in sidebar
-                            others.forEach(otherVal => {
-                                $(`#filterForm input[type=checkbox][name=filter][value="${otherVal}"]`).prop('checked', false);
-                            });
-                        }
-                        // Sync sidebar filters
-                        $(`#filterForm input[type=checkbox][name=filter][value="${val}"]`).prop('checked', $(this).is(':checked'));
-                        updateFilters();
-                    });
-                    // Mobile reset button
-                    $('#mobileResetBtn').on('click', function () {
-                        $('#mobileFormatFilters input[type=checkbox][name=filter]').prop('checked', false);
-                        $('#filterForm input[type=checkbox][name=filter]').prop('checked', false);
-                        updateFilters();
-                    });
-                    $('#filterForm input[type=checkbox][name=category_filter]').on('change', updateFilters);
-                    $('#filterForm input[type=checkbox][name=sport_filter]').on('change', updateFilters);
-                    $('#filterForm input[type=radio][name=view_filter]').on('change', updateFilters);
-                    function updateClearBtn() {
-                        const val = $('#keywordSearch').val();
-                        if (val) {
-                            $('#clearSearchBtn').show();
-                        } else {
-                            $('#clearSearchBtn').hide();
-                        }
-                    }
-                    $('#keywordSearch').on('input', function () {
-                        updateFilters();
-                        updateClearBtn();
-                    });
-                    $('#clearSearchBtn').on('click', function () {
-                        $('#keywordSearch').val('');
-                        updateFilters();
-                        updateClearBtn();
-                        $('#keywordSearch').focus();
-                    });
-                    updateClearBtn();
-                    $('#clearAllFilters').on('click', function () {
-                        $('#filterForm input[type=checkbox][name=filter]').prop('checked', false);
-                        $('#mobileFormatFilters input[type=checkbox][name=filter]').prop('checked', false);
-                        $('#filterForm input[type=checkbox][name=category_filter]').prop('checked', false);
-                        $('#filterForm input[type=checkbox][name=sport_filter]').prop('checked', false);
-                        $('#filterForm input[type=radio][name=view_filter]').prop('checked', false);
-                        $('#keywordSearch').val('');
-                        updateClearBtn();
-                        // Show active items when all filters are cleared
-                        const activeData = data.filter(row => !row['isScheduled']);
-                        updateResultsCount(activeData.length);
-                        renderList(activeData);
-                    });
+                    $('#listViewBtn').addClass('active');
+                    $('#gridViewBtn').remove();
+                    // Default to showing active items
+                    const activeData = data.filter(row => !row['isScheduled']);
+                    renderList(activeData);
+                    updateResultsCount(activeData.length);
                 });
             });
+        });
+
+        function updateFilters() {
+            let filtered = filterData(window._ebayData);
+            const selectedViews = $('#filterForm input[type=radio][name=view_filter]:checked').map(function () { return this.value; }).get();
+            if (selectedViews.length > 0) {
+                const sortBy = selectedViews[0]; // take the first one
+                if (sortBy === 'most_bids') {
+                    filtered = filtered.filter(item => {
+                        const bids = parseInt(item['Bid Count'] || 0);
+                        return bids > 0;
+                    });
+                } else if (sortBy === 'most_watchers') {
+                    filtered = filtered.filter(item => {
+                        const watchers = parseInt(item['Watch Count'] || 0);
+                        return watchers >= 1;
+                    });
+                } else if (sortBy === 'ending_today') {
+                    const today = new Date();
+                    const todayStr = today.toDateString();
+                    filtered = filtered.filter(item => {
+                        const endDate = new Date(item['End Date']);
+                        return endDate.toDateString() === todayStr;
+                    });
+                } else if (sortBy === 'ending_soonest') {
+                    filtered = filtered.filter(item => {
+                        return item['Format'] === 'Auction' && !item['isScheduled'];
+                    });
+                } else if (sortBy === 'free_shipping') {
+                    filtered = filtered.filter(item => {
+                        const shippingCost = parseFloat(item['Shipping Cost'] || 0);
+                        return shippingCost === 0.00;
+                    });
+                }
+                filtered.sort((a, b) => {
+                    if (sortBy === 'most_bids') {
+                        const aBids = parseInt(a['Bid Count'] || 0);
+                        const bBids = parseInt(b['Bid Count'] || 0);
+                        return bBids - aBids;
+                    } else if (sortBy === 'ending_soonest') {
+                        const aDate = new Date(a['End Date']);
+                        const bDate = new Date(b['End Date']);
+                        return aDate - bDate;
+                    } else if (sortBy === 'most_recent') {
+                        // Assuming higher ItemID is more recent
+                        const aId = parseInt(a['ItemID'] || 0);
+                        const bId = parseInt(b['ItemID'] || 0);
+                        return bId - aId;
+                    } else if (sortBy === 'highest_price') {
+                        const aPrice = parseFloat(a['Current Price'] || 0);
+                        const bPrice = parseFloat(b['Current Price'] || 0);
+                        return bPrice - aPrice;
+                    } else if (sortBy === 'lowest_price') {
+                        const aPrice = parseFloat(a['Current Price'] || 0);
+                        const bPrice = parseFloat(b['Current Price'] || 0);
+                        return aPrice - bPrice;
+                    } else if (sortBy === 'most_watchers') {
+                        const aWatchers = parseInt(a['Watch Count'] || 0);
+                        const bWatchers = parseInt(b['Watch Count'] || 0);
+                        return bWatchers - aWatchers;
+                    } else if (sortBy === 'ending_today') {
+                        const aDate = new Date(a['End Date']);
+                        const bDate = new Date(b['End Date']);
+                        return aDate - bDate;
+                    }
+                    return 0;
+                });
+            }
+            updateResultsCount(filtered.length);
+            renderList(filtered);
+        }
+
+        $('#filterForm input[type=checkbox][name=filter]').on('change', function () {
+            const val = $(this).val();
+            if ($(this).is(':checked') && ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].includes(val)) {
+                // Uncheck the other three
+                const others = ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].filter(v => v !== val);
+                others.forEach(otherVal => {
+                    $(`#filterForm input[type=checkbox][name=filter][value="${otherVal}"]`).prop('checked', false);
+                });
+            }
+            // Sync mobile filters
+            $(`#mobileFormatFilters input[type=checkbox][name=filter][value="${val}"]`).prop('checked', $(this).is(':checked'));
+            updateFilters();
+        });
+        // Mobile filter change handlers
+        $('#mobileFormatFilters input[type=checkbox][name=filter]').on('change', function () {
+            const val = $(this).val();
+            if ($(this).is(':checked') && ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].includes(val)) {
+                // Uncheck the other three in mobile
+                const others = ['auction', 'bin', 'coming_soon', 'upcoming_auctions'].filter(v => v !== val);
+                others.forEach(otherVal => {
+                    $(`#mobileFormatFilters input[type=checkbox][name=filter][value="${otherVal}"]`).prop('checked', false);
+                });
+                // Uncheck in sidebar
+                others.forEach(otherVal => {
+                    $(`#filterForm input[type=checkbox][name=filter][value="${otherVal}"]`).prop('checked', false);
+                });
+            }
+            // Sync sidebar filters
+            $(`#filterForm input[type=checkbox][name=filter][value="${val}"]`).prop('checked', $(this).is(':checked'));
+            updateFilters();
+        });
+        // Mobile reset button
+        $('#mobileResetBtn').on('click', function () {
+            $('#mobileFormatFilters input[type=checkbox][name=filter]').prop('checked', false);
+            $('#filterForm input[type=checkbox][name=filter]').prop('checked', false);
+            updateFilters();
+        });
+        $('#filterForm input[type=checkbox][name=category_filter]').on('change', updateFilters);
+        $('#filterForm input[type=checkbox][name=sport_filter]').on('change', updateFilters);
+        $('#filterForm input[type=radio][name=view_filter]').on('change', updateFilters);
+        function updateClearBtn() {
+            const val = $('#keywordSearch').val();
+            if (val) {
+                $('#clearSearchBtn').show();
+            } else {
+                $('#clearSearchBtn').hide();
+            }
+        }
+        $('#keywordSearch').on('input', function () {
+            updateFilters();
+            updateClearBtn();
+        });
+        $('#clearSearchBtn').on('click', function () {
+            $('#keywordSearch').val('');
+            updateFilters();
+            updateClearBtn();
+            $('#keywordSearch').focus();
+        });
+        updateClearBtn();
+        $('#clearAllFilters').on('click', function () {
+            $('#filterForm input[type=checkbox][name=filter]').prop('checked', false);
+            $('#mobileFormatFilters input[type=checkbox][name=filter]').prop('checked', false);
+            $('#filterForm input[type=checkbox][name=category_filter]').prop('checked', false);
+            $('#filterForm input[type=checkbox][name=sport_filter]').prop('checked', false);
+            $('#filterForm input[type=radio][name=view_filter]').prop('checked', false);
+            $('#keywordSearch').val('');
+            updateClearBtn();
+            // Show active items when all filters are cleared
+            const activeData = window._ebayData.filter(row => !row['isScheduled']);
+            updateResultsCount(activeData.length);
+            renderList(activeData);
         });
 
         // Improved lazy loading for images: always observe after DOM update
@@ -926,7 +956,9 @@
                     </div>
                 </div>
                 <div class="modal-footer d-none justify-content-center" id="imageGalleryModalFooter">
-                    <button type="button" class="btn btn-primary" id="galleryBuyNowBtn" style="width: 100%; max-width: 400px; background-color: black; border-color: black;">Buy Now</button>
+                    <button type="button" class="btn btn-primary" id="galleryBuyNowBtn"
+                        style="width: 100%; max-width: 400px; background-color: black; border-color: black;">Buy
+                        Now</button>
                 </div>
             </div>
         </div>
@@ -1000,10 +1032,11 @@
         <div class="container footer-inner d-flex flex-column justify-content-center align-items-center gap-3">
             <div class="d-flex align-items-center justify-content-center text-center footer-social">
                 <ul class="nav justify-content-center list-unstyled d-flex align-items-center mx-auto">
-                    <li class="ms-0"><a href="https://www.ebay.com/sch/i.html?rt=nc&_ssn=geeksportscardsandcollectables&_dmd=2&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001"
-                        target="_blank" rel="noopener noreferrer"
-                        style="color:#fff;text-decoration:none;font-size:1em;"><i
-                            class="fab fa-ebay" style="font-size:2em; line-height:1; vertical-align: middle;"></i></a></li>
+                    <li class="ms-0"><a
+                            href="https://www.ebay.com/sch/i.html?rt=nc&_ssn=geeksportscardsandcollectables&_dmd=2&mkcid=1&mkrid=711-53200-19255-0&siteid=0&campid=5339025312&customid=&toolid=10001"
+                            target="_blank" rel="noopener noreferrer"
+                            style="color:#fff;text-decoration:none;font-size:1em;"><i class="fab fa-ebay"
+                                style="font-size:2em; line-height:1; vertical-align: middle;"></i></a></li>
                     <li class="ms-3"> <a href="https://www.linkedin.com/company/geek-sports-cards" target="_blank"
                             rel="noopener noreferrer">
                             <i class="fab fa-linkedin fa-lg"></i>
@@ -1022,8 +1055,7 @@
                 </ul>
             </div>
             <div class="d-flex flex-column align-items-center justify-content-center text-center footer-copy">
-                <span class="text-white">&copy; 2025 GEEK<span
-                        style="color: #D9B310;">SPORTS</span>CARDS</span>
+                <span class="text-white">&copy; 2025 GEEK<span style="color: #D9B310;">SPORTS</span>CARDS</span>
                 <span class="text-white-50" style="font-size: 0.9em;">All Rights Reserved</span>
             </div>
         </div>
