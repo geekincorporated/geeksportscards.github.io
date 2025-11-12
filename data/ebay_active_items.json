@@ -26,7 +26,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.50",
+    "Current Price": "1.75",
     "Shipping Cost": "0.75",
     "Quantity Available": "3",
     "Variation": 1,
@@ -55,7 +55,20 @@
       "BIN Value": "1.75",
       "BIN Value +Ship": "2.25"
     },
-    "Update Timestamp": "2025-11-12T13:05:27.008448"
+    "Update Timestamp": "2025-11-12T15:40:36.727895",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:14:21,042",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer%22+%22Michael+Jordan%22+%22%23102%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 201,
+        "Position": 17
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer%22+%22Michael+Jordan%22+%22%23102%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 200,
+        "Position": 8
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:04:50 MST",
@@ -82,7 +95,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.60",
+    "Current Price": "1.95",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -111,7 +124,20 @@
       "BIN Value": "1.95",
       "BIN Value +Ship": "2.32"
     },
-    "Update Timestamp": "2025-11-12T13:05:37.178086"
+    "Update Timestamp": "2025-11-12T15:40:43.467142",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:27:49,389",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set%22+%22Barry+Sanders%22+%22%23413%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 243,
+        "Position": 37
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set%22+%22Barry+Sanders%22+%22%23413%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 242,
+        "Position": 32
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:04:51 MST",
@@ -138,7 +164,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.80",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -167,7 +193,20 @@
       "BIN Value": "1.97",
       "BIN Value +Ship": "2.54"
     },
-    "Update Timestamp": "2025-11-12T13:05:43.336807"
+    "Update Timestamp": "2025-11-12T15:40:49.737937",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:18:53,665",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Impel+U.S.+Olympic+Hopefuls%22+%22Chris+Mullin%22+%22%2314%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 9,
+        "Position": 3
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Impel+U.S.+Olympic+Hopefuls%22+%22Chris+Mullin%22+%22%2314%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 9,
+        "Position": 3
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:04:52 MST",
@@ -195,7 +234,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.75",
+    "Current Price": "2.15",
     "Shipping Cost": "0.75",
     "Quantity Available": "2",
     "Variation": 1,
@@ -224,7 +263,20 @@
       "BIN Value": "2.12",
       "BIN Value +Ship": "2.50"
     },
-    "Update Timestamp": "2025-11-12T13:05:52.153246"
+    "Update Timestamp": "2025-11-12T15:40:56.289367",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:17:49,419",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Impel+U.S.+Olympic+Hopefuls%22+%22Patrick+Ewing%22+%22%2310%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 15,
+        "Position": 5
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Impel+U.S.+Olympic+Hopefuls%22+%22Patrick+Ewing%22+%22%2310%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 15,
+        "Position": 5
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:04:53 MST",
@@ -252,7 +304,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.60",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "2",
     "Variation": 1,
@@ -281,7 +333,20 @@
       "BIN Value": "1.97",
       "BIN Value +Ship": "2.34"
     },
-    "Update Timestamp": "2025-11-12T13:05:57.309647"
+    "Update Timestamp": "2025-11-12T15:41:03.161156",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:02:31,022",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Impel+U.S.+Olympic+Hopefuls%22+%22John+Stockton%22+%22%2317%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 9,
+        "Position": 1
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Impel+U.S.+Olympic+Hopefuls%22+%22John+Stockton%22+%22%2317%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 9,
+        "Position": 1
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:04:54 MST",
@@ -308,7 +373,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "3.80",
+    "Current Price": "3.50",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -337,7 +402,20 @@
       "BIN Value": "3.49",
       "BIN Value +Ship": "4.53"
     },
-    "Update Timestamp": "2025-11-12T13:06:02.472745"
+    "Update Timestamp": "2025-11-12T15:41:07.679808",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:23:09,047",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Impel+U.S.+Olympic+Hopefuls%22+%22Larry+Bird%22+%22%239%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 9,
+        "Position": 3
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Impel+U.S.+Olympic+Hopefuls%22+%22Larry+Bird%22+%22%239%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 9,
+        "Position": 3
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:04:55 MST",
@@ -364,7 +442,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "3.60",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -393,7 +471,20 @@
       "BIN Value": "2.00",
       "BIN Value +Ship": "4.31"
     },
-    "Update Timestamp": "2025-11-12T13:06:09.209442"
+    "Update Timestamp": "2025-11-12T15:41:14.297584",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:19:25,466",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Impel+U.S.+Olympic+Hopefuls%22+%22Charles+Barkley%22+%22%238%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 9,
+        "Position": 2
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Impel+U.S.+Olympic+Hopefuls%22+%22Charles+Barkley%22+%22%238%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 8,
+        "Position": 2
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:04:56 MST",
@@ -449,7 +540,20 @@
       "BIN Value": "2.00",
       "BIN Value +Ship": "2.75"
     },
-    "Update Timestamp": "2025-11-12T13:06:17.580965"
+    "Update Timestamp": "2025-11-12T15:41:18.549668",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:21:55,194",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Impel+U.S.+Olympic+Hopefuls%22+%22Karl+Malone%22+%22%2313%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 8,
+        "Position": 1
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Impel+U.S.+Olympic+Hopefuls%22+%22Karl+Malone%22+%22%2313%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 8,
+        "Position": 1
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:04:57 MST",
@@ -476,7 +580,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "2.60",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -505,7 +609,20 @@
       "BIN Value": "1.97",
       "BIN Value +Ship": "3.34"
     },
-    "Update Timestamp": "2025-11-12T13:06:23.703515"
+    "Update Timestamp": "2025-11-12T15:41:24.156379",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:15:48,301",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Impel+U.S.+Olympic+Hopefuls%22+%22Scottie+Pippen%22+%22%2315%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 19,
+        "Position": 5
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Impel+U.S.+Olympic+Hopefuls%22+%22Scottie+Pippen%22+%22%2315%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 19,
+        "Position": 5
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:04:58 MST",
@@ -532,7 +649,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.40",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -561,7 +678,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.12"
     },
-    "Update Timestamp": "2025-11-12T13:06:29.495683"
+    "Update Timestamp": "2025-11-12T15:41:30.118467",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:25:03,888",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer+Stickers%22+%22Isiah+Thomas%22+%22%236%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 102,
+        "Position": 43
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer+Stickers%22+%22Isiah+Thomas%22+%22%236%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 102,
+        "Position": 45
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:04:59 MST",
@@ -588,7 +718,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.50",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -617,7 +747,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "3.25"
     },
-    "Update Timestamp": "2025-11-12T13:06:37.484658"
+    "Update Timestamp": "2025-11-12T15:41:37.521193",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:07:10,485",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer+Stickers%22+%22Karl+Malone%22+%22%231%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 85,
+        "Position": 33
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer+Stickers%22+%22Karl+Malone%22+%22%231%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 85,
+        "Position": 33
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:00 MST",
@@ -644,7 +787,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "3.00",
+    "Current Price": "2.50",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -673,7 +816,20 @@
       "BIN Value": "2.50",
       "BIN Value +Ship": "3.75"
     },
-    "Update Timestamp": "2025-11-12T13:06:44.599728"
+    "Update Timestamp": "2025-11-12T15:41:43.365802",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:19:10,116",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer+Stickers%22+%22Patrick+Ewing%22+%22%237%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 91,
+        "Position": 24
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer+Stickers%22+%22Patrick+Ewing%22+%22%237%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 91,
+        "Position": 20
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:01 MST",
@@ -700,7 +856,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "4.25",
+    "Current Price": "3.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -729,7 +885,20 @@
       "BIN Value": "2.99",
       "BIN Value +Ship": "4.99"
     },
-    "Update Timestamp": "2025-11-12T13:06:55.046764"
+    "Update Timestamp": "2025-11-12T15:41:47.697164",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:01:07,410",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer+Stickers%22+%22Magic+Johnson%22+%22%235%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 131,
+        "Position": 48
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer+Stickers%22+%22Magic+Johnson%22+%22%235%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 130,
+        "Position": 49
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:02 MST",
@@ -756,7 +925,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "3.05",
+    "Current Price": "2.50",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -785,7 +954,20 @@
       "BIN Value": "2.50",
       "BIN Value +Ship": "3.78"
     },
-    "Update Timestamp": "2025-11-12T13:07:03.141037"
+    "Update Timestamp": "2025-11-12T15:41:55.200526",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:03:53,898",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer+Stickers%22+%22Charles+Barkley%22+%22%234%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 122,
+        "Position": 38
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer+Stickers%22+%22Charles+Barkley%22+%22%234%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 121,
+        "Position": 32
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:03 MST",
@@ -812,7 +994,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.50",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -841,7 +1023,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "3.24"
     },
-    "Update Timestamp": "2025-11-12T13:07:10.020838"
+    "Update Timestamp": "2025-11-12T15:42:01.544395",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:10:13,101",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer+Stickers%22+%22Akeem+Olajuwon%22+%22%232%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 73,
+        "Position": 28
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer+Stickers%22+%22Akeem+Olajuwon%22+%22%232%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 73,
+        "Position": 28
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:04 MST",
@@ -868,7 +1063,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.35",
+    "Current Price": "1.75",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -897,7 +1092,20 @@
       "BIN Value": "1.74",
       "BIN Value +Ship": "3.08"
     },
-    "Update Timestamp": "2025-11-12T13:07:17.089828"
+    "Update Timestamp": "2025-11-12T15:42:07.923087",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:09:56,889",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer+Stickers%22+%22Tom+Chambers%22+%22%2311%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 62,
+        "Position": 20
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer+Stickers%22+%22Tom+Chambers%22+%22%2311%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 62,
+        "Position": 21
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:05 MST",
@@ -924,7 +1132,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.50",
+    "Current Price": "1.80",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -953,7 +1161,20 @@
       "BIN Value": "1.79",
       "BIN Value +Ship": "2.24"
     },
-    "Update Timestamp": "2025-11-12T13:07:22.526348"
+    "Update Timestamp": "2025-11-12T15:42:12.977131",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:20:16,007",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops%22+%22Patrick+Ewing%22+%22%23577%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 77,
+        "Position": 6
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops%22+%22Patrick+Ewing%22+%22%23577%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 76,
+        "Position": 5
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:07 MST",
@@ -980,7 +1201,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.50",
+    "Current Price": "1.80",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -1009,7 +1230,20 @@
       "BIN Value": "1.79",
       "BIN Value +Ship": "2.25"
     },
-    "Update Timestamp": "2025-11-12T13:07:29.726268"
+    "Update Timestamp": "2025-11-12T15:42:20.456977",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 13:56:57,386",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops%22+%22Karl+Malone%22+%22%23580%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 85,
+        "Position": 8
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops%22+%22Karl+Malone%22+%22%23580%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 84,
+        "Position": 6
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:08 MST",
@@ -1036,7 +1270,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.60",
+    "Current Price": "1.85",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -1065,7 +1299,20 @@
       "BIN Value": "1.84",
       "BIN Value +Ship": "2.35"
     },
-    "Update Timestamp": "2025-11-12T13:07:37.286492"
+    "Update Timestamp": "2025-11-12T15:42:26.037277",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:03:31,732",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops%22+%22Scottie+Pippen%22+%22%23582%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 137,
+        "Position": 26
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops%22+%22Scottie+Pippen%22+%22%23582%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 136,
+        "Position": 25
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:09 MST",
@@ -1093,7 +1340,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.60",
+    "Current Price": "1.80",
     "Shipping Cost": "0.75",
     "Quantity Available": "2",
     "Variation": 1,
@@ -1122,7 +1369,20 @@
       "BIN Value": "1.79",
       "BIN Value +Ship": "2.35"
     },
-    "Update Timestamp": "2025-11-12T13:07:45.257269"
+    "Update Timestamp": "2025-11-12T15:42:31.582037",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:15:15,731",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops%22+%22John+Stockton%22+%22%23584%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 84,
+        "Position": 6
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops%22+%22John+Stockton%22+%22%23584%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 83,
+        "Position": 6
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:10 MST",
@@ -1178,7 +1438,20 @@
       "BIN Value": "2.00",
       "BIN Value +Ship": "2.75"
     },
-    "Update Timestamp": "2025-11-12T13:07:52.763180"
+    "Update Timestamp": "2025-11-12T15:42:36.636586",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:18:40,778",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Impel+U.S.+Olympic+Hopefuls%22+%22David+Robinson%22+%22%2316%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 10,
+        "Position": 3
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Impel+U.S.+Olympic+Hopefuls%22+%22David+Robinson%22+%22%2316%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 10,
+        "Position": 3
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:11 MST",
@@ -1206,7 +1479,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.50",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "2",
     "Variation": 1,
@@ -1235,7 +1508,20 @@
       "BIN Value": "1.79",
       "BIN Value +Ship": "2.25"
     },
-    "Update Timestamp": "2025-11-12T13:08:01.241060"
+    "Update Timestamp": "2025-11-12T15:42:43.471765",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:07:47,275",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops+McDonald%27s%22+%22Charles+Barkley%22+%22%2351%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 77,
+        "Position": 18
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops+McDonald%27s%22+%22Charles+Barkley%22+%22%2351%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 77,
+        "Position": 18
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:12 MST",
@@ -1262,7 +1548,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.50",
+    "Current Price": "1.80",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -1291,7 +1577,20 @@
       "BIN Value": "1.75",
       "BIN Value +Ship": "2.25"
     },
-    "Update Timestamp": "2025-11-12T13:08:06.575427"
+    "Update Timestamp": "2025-11-12T15:42:50.597149",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:06:02,383",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops+McDonald%27s%22+%22Patrick+Ewing%22+%22%2353%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 80,
+        "Position": 16
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops+McDonald%27s%22+%22Patrick+Ewing%22+%22%2353%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 78,
+        "Position": 15
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:13 MST",
@@ -1318,7 +1617,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.95",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -1347,7 +1646,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.66"
     },
-    "Update Timestamp": "2025-11-12T13:08:14.287008"
+    "Update Timestamp": "2025-11-12T15:42:57.457915",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:01:39,536",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops+McDonald%27s%22+%22Magic+Johnson%22+%22%2354%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 99,
+        "Position": 34
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops+McDonald%27s%22+%22Magic+Johnson%22+%22%2354%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 99,
+        "Position": 35
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:14 MST",
@@ -1375,7 +1687,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.45",
+    "Current Price": "1.80",
     "Shipping Cost": "0.75",
     "Quantity Available": "2",
     "Variation": 1,
@@ -1404,7 +1716,20 @@
       "BIN Value": "1.79",
       "BIN Value +Ship": "2.17"
     },
-    "Update Timestamp": "2025-11-12T13:08:30.964336"
+    "Update Timestamp": "2025-11-12T15:43:04.453305",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:17:34,685",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops+Mcdonald%27s%22+%22Karl+Malone%22+%22%2356%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 70,
+        "Position": 7
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops+Mcdonald%27s%22+%22Karl+Malone%22+%22%2356%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 69,
+        "Position": 7
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:15 MST",
@@ -1432,7 +1757,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.65",
+    "Current Price": "1.80",
     "Shipping Cost": "0.75",
     "Quantity Available": "2",
     "Variation": 1,
@@ -1461,7 +1786,20 @@
       "BIN Value": "1.79",
       "BIN Value +Ship": "2.38"
     },
-    "Update Timestamp": "2025-11-12T13:08:38.332681"
+    "Update Timestamp": "2025-11-12T15:43:09.956588",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:19:59,749",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops+Mcdonald%27s%22+%22David+Robinson%22+%22%2359%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 73,
+        "Position": 18
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops+Mcdonald%27s%22+%22David+Robinson%22+%22%2359%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 72,
+        "Position": 16
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:16 MST",
@@ -1489,7 +1827,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.75",
+    "Current Price": "1.80",
     "Shipping Cost": "0.75",
     "Quantity Available": "2",
     "Variation": 1,
@@ -1518,7 +1856,20 @@
       "BIN Value": "1.79",
       "BIN Value +Ship": "2.49"
     },
-    "Update Timestamp": "2025-11-12T13:08:44.071719"
+    "Update Timestamp": "2025-11-12T15:43:14.784986",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:01:23,928",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops+McDonald%27s%22+%22John+Stockton%22+%22%2360%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 47,
+        "Position": 5
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops+McDonald%27s%22+%22John+Stockton%22+%22%2360%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 46,
+        "Position": 4
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:17 MST",
@@ -1546,7 +1897,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.50",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "2",
     "Variation": 1,
@@ -1575,7 +1926,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.25"
     },
-    "Update Timestamp": "2025-11-12T13:08:49.202735"
+    "Update Timestamp": "2025-11-12T15:43:21.161936",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:11:52,412",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops+McDonald%27s%22+%22Chuck+Daly%22+%22%2361%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 56,
+        "Position": 6
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+Hoops+McDonald%27s%22+%22Chuck+Daly%22+%22%2361%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 56,
+        "Position": 6
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:18 MST",
@@ -1630,7 +1994,7 @@
     "Number of Cards": "18",
     "Year": "1991",
     "Category": "Lots",
-    "Update Timestamp": "2025-11-12T13:08:58.126358"
+    "Update Timestamp": "2025-11-12T15:43:40.045825"
   },
   {
     "Created Timestamp": "2025-11-12 08:05:19 MST",
@@ -1657,7 +2021,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.90",
+    "Current Price": "1.85",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -1686,7 +2050,20 @@
       "BIN Value": "1.85",
       "BIN Value +Ship": "2.64"
     },
-    "Update Timestamp": "2025-11-12T13:09:04.627399"
+    "Update Timestamp": "2025-11-12T15:43:44.581851",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 13:59:59,686",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22John+Stockton%22+%22%239%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 188,
+        "Position": 26
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22John+Stockton%22+%22%239%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 181,
+        "Position": 19
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:20 MST",
@@ -1713,7 +2090,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.90",
+    "Current Price": "1.85",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -1742,7 +2119,20 @@
       "BIN Value": "1.85",
       "BIN Value +Ship": "2.64"
     },
-    "Update Timestamp": "2025-11-12T13:09:12.758133"
+    "Update Timestamp": "2025-11-12T15:43:49.301066",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 13:59:37,884",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22Tom+Chambers%22+%22%238%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 113,
+        "Position": 20
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22Tom+Chambers%22+%22%238%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 111,
+        "Position": 19
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:21 MST",
@@ -1769,7 +2159,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.25",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -1798,7 +2188,20 @@
       "BIN Value": "1.97",
       "BIN Value +Ship": "2.98"
     },
-    "Update Timestamp": "2025-11-12T13:09:19.772378"
+    "Update Timestamp": "2025-11-12T15:43:55.216718",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:12:13,251",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22Karl+Malone%22+%22%237%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 208,
+        "Position": 55
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22Karl+Malone%22+%22%237%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 205,
+        "Position": 52
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:22 MST",
@@ -1825,7 +2228,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.25",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -1854,7 +2257,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "3.00"
     },
-    "Update Timestamp": "2025-11-12T13:09:26.211035"
+    "Update Timestamp": "2025-11-12T15:43:59.282350",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:00:21,381",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22Isiah+Thomas%22+%22%236%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 157,
+        "Position": 42
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22Isiah+Thomas%22+%22%236%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 156,
+        "Position": 42
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:23 MST",
@@ -1881,7 +2297,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.50",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -1910,7 +2326,20 @@
       "BIN Value": "2.00",
       "BIN Value +Ship": "3.25"
     },
-    "Update Timestamp": "2025-11-12T13:09:33.363203"
+    "Update Timestamp": "2025-11-12T15:44:06.073028",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:04:18,214",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22Magic+Johnson%22+%22%234%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 193,
+        "Position": 59
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22Magic+Johnson%22+%22%234%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 183,
+        "Position": 52
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:24 MST",
@@ -1937,7 +2366,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.25",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -1966,7 +2395,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.99"
     },
-    "Update Timestamp": "2025-11-12T13:09:42.326875"
+    "Update Timestamp": "2025-11-12T15:44:12.303181",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:13:42,683",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22Akeem+Olajuwon%22+%22%233%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 104,
+        "Position": 19
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22Akeem+Olajuwon%22+%22%233%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 103,
+        "Position": 24
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:25 MST",
@@ -1993,7 +2435,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.05",
+    "Current Price": "1.95",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -2022,7 +2464,20 @@
       "BIN Value": "1.94",
       "BIN Value +Ship": "2.77"
     },
-    "Update Timestamp": "2025-11-12T13:09:48.118783"
+    "Update Timestamp": "2025-11-12T15:44:17.179004",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:16:07,606",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22Patrick+Ewing%22+%22%2312%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 195,
+        "Position": 53
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22Patrick+Ewing%22+%22%2312%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 191,
+        "Position": 52
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:26 MST",
@@ -2049,7 +2504,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.25",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -2078,7 +2533,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "3.00"
     },
-    "Update Timestamp": "2025-11-12T13:09:53.728039"
+    "Update Timestamp": "2025-11-12T15:44:23.235582",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:02:50,724",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22David+Robinson%22+%22%2310%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 239,
+        "Position": 42
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22David+Robinson%22+%22%2310%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 240,
+        "Position": 37
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:27 MST",
@@ -2105,7 +2573,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.75",
+    "Current Price": "1.95",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -2134,7 +2602,20 @@
       "BIN Value": "1.95",
       "BIN Value +Ship": "3.49"
     },
-    "Update Timestamp": "2025-11-12T13:10:00.786559"
+    "Update Timestamp": "2025-11-12T15:44:30.030229",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:26:17,272",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22Charles+Barkley%22+%22%231%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 239,
+        "Position": 74
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+All-Stars%22+%22Charles+Barkley%22+%22%231%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 240,
+        "Position": 72
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:28 MST",
@@ -2162,7 +2643,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.20",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "2",
     "Variation": 1,
@@ -2191,7 +2672,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.93"
     },
-    "Update Timestamp": "2025-11-12T13:10:06.857044"
+    "Update Timestamp": "2025-11-12T15:44:34.364563",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 13:56:19,381",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+Rookie+Sensations%22+%22Pooh+Richardson%22+%22%236%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 40,
+        "Position": 12
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+Rookie+Sensations%22+%22Pooh+Richardson%22+%22%236%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 39,
+        "Position": 11
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:29 MST",
@@ -2218,7 +2712,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.75",
+    "Current Price": "3.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -2247,7 +2741,20 @@
       "BIN Value": "2.99",
       "BIN Value +Ship": "3.49"
     },
-    "Update Timestamp": "2025-11-12T13:10:13.702636"
+    "Update Timestamp": "2025-11-12T15:44:41.417136",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:18:27,885",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+Rookie+Sensations%22+%22Vlade+Divac%22+%22%239%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 32,
+        "Position": 6
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+Rookie+Sensations%22+%22Vlade+Divac%22+%22%239%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 32,
+        "Position": 6
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:30 MST",
@@ -2274,7 +2781,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.25",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -2303,7 +2810,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "3.00"
     },
-    "Update Timestamp": "2025-11-12T13:10:21.306840"
+    "Update Timestamp": "2025-11-12T15:44:47.121186",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:13:11,065",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+Rookie+Sensations%22+%22Nick+Anderson%22+%22%237%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 40,
+        "Position": 10
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+Rookie+Sensations%22+%22Nick+Anderson%22+%22%237%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 40,
+        "Position": 10
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:31 MST",
@@ -2330,7 +2850,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.75",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -2359,7 +2879,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "3.49"
     },
-    "Update Timestamp": "2025-11-12T13:10:27.093314"
+    "Update Timestamp": "2025-11-12T15:44:51.742303",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:09:25,501",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+Rookie+Sensations%22+%22Sherman+Douglas%22+%22%2310%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 28,
+        "Position": 6
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+Rookie+Sensations%22+%22Sherman+Douglas%22+%22%2310%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 28,
+        "Position": 6
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:32 MST",
@@ -2386,7 +2919,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.10",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -2415,7 +2948,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.83"
     },
-    "Update Timestamp": "2025-11-12T13:10:35.826114"
+    "Update Timestamp": "2025-11-12T15:44:57.956045",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:13:59,925",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+Rookie+Sensations%22+%22J.R.+Reid%22+%22%234%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 26,
+        "Position": 12
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+Rookie+Sensations%22+%22J.R.+Reid%22+%22%234%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 26,
+        "Position": 12
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:33 MST",
@@ -2442,7 +2988,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.75",
+    "Current Price": "2.25",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -2471,7 +3017,20 @@
       "BIN Value": "2.25",
       "BIN Value +Ship": "3.48"
     },
-    "Update Timestamp": "2025-11-12T13:10:43.256512"
+    "Update Timestamp": "2025-11-12T15:45:06.455383",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:24:46,725",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+Rookie+Sensations%22+%22Glen+Rice%22+%22%233%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 43,
+        "Position": 8
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990-91+Fleer+Rookie+Sensations%22+%22Glen+Rice%22+%22%233%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 42,
+        "Position": 7
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:34 MST",
@@ -2498,7 +3057,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.35",
+    "Current Price": "1.70",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -2527,7 +3086,20 @@
       "BIN Value": "1.70",
       "BIN Value +Ship": "2.10"
     },
-    "Update Timestamp": "2025-11-12T13:10:50.040018"
+    "Update Timestamp": "2025-11-12T15:45:14.122079",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 13:57:11,223",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+NBA+Hoops%22+%22Jeff+Grayer%22+%22%23568%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 40,
+        "Position": 2
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+NBA+Hoops%22+%22Jeff+Grayer%22+%22%23568%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 40,
+        "Position": 2
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:35 MST",
@@ -2554,7 +3126,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.50",
+    "Current Price": "1.90",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -2583,7 +3155,20 @@
       "BIN Value": "1.88",
       "BIN Value +Ship": "3.23"
     },
-    "Update Timestamp": "2025-11-12T13:10:55.580022"
+    "Update Timestamp": "2025-11-12T15:45:21.218057",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:21:41,269",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+NBA+Hoops%22+%22Jeff+Turner%22+%22%23564%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 45,
+        "Position": 3
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+NBA+Hoops%22+%22Jeff+Turner%22+%22%23564%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 45,
+        "Position": 4
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:36 MST",
@@ -2610,7 +3195,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.95",
+    "Current Price": "1.90",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -2639,7 +3224,20 @@
       "BIN Value": "1.87",
       "BIN Value +Ship": "2.66"
     },
-    "Update Timestamp": "2025-11-12T13:11:04.850941"
+    "Update Timestamp": "2025-11-12T15:45:28.591908",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:25:20,580",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+NBA+Hoops%22+%22Alvin+Robertson%22+%22%23562%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 44,
+        "Position": 4
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+NBA+Hoops%22+%22Alvin+Robertson%22+%22%23562%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 43,
+        "Position": 3
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:37 MST",
@@ -2666,7 +3264,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.35",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -2695,7 +3293,20 @@
       "BIN Value": "2.00",
       "BIN Value +Ship": "3.07"
     },
-    "Update Timestamp": "2025-11-12T13:11:11.526303"
+    "Update Timestamp": "2025-11-12T15:45:35.059487",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:03:12,147",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+NBA+Hoops%22+%22Joe+Kleine%22+%22%23559%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 43,
+        "Position": 3
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+NBA+Hoops%22+%22Joe+Kleine%22+%22%23559%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 43,
+        "Position": 3
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:38 MST",
@@ -2751,7 +3362,20 @@
       "BIN Value": "2.00",
       "BIN Value +Ship": "2.75"
     },
-    "Update Timestamp": "2025-11-12T13:11:19.558157"
+    "Update Timestamp": "2025-11-12T15:45:42.384679",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:25:52,793",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+NBA+Hoops%22+%22Walter+Davis%22+%22%23557%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 57,
+        "Position": 3
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+NBA+Hoops%22+%22Walter+Davis%22+%22%23557%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 55,
+        "Position": 2
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:39 MST",
@@ -2779,7 +3403,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.85",
+    "Current Price": "1.25",
     "Shipping Cost": "0.75",
     "Quantity Available": "2",
     "Variation": 1,
@@ -2808,7 +3432,20 @@
       "BIN Value": "1.25",
       "BIN Value +Ship": "2.57"
     },
-    "Update Timestamp": "2025-11-12T13:11:40.294869"
+    "Update Timestamp": "2025-11-12T15:45:50.671193",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:07:29,184",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+NBA+Hoops%22+%22Mitch+Richmond%22+%22%23573%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 72,
+        "Position": 4
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+NBA+Hoops%22+%22Mitch+Richmond%22+%22%23573%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 71,
+        "Position": 3
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:40 MST",
@@ -2836,7 +3473,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.30",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "2",
     "Variation": 1,
@@ -2865,7 +3502,20 @@
       "BIN Value": "2.00",
       "BIN Value +Ship": "3.01"
     },
-    "Update Timestamp": "2025-11-12T13:11:45.921936"
+    "Update Timestamp": "2025-11-12T15:45:56.974728",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:27:25,619",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+NBA+Hoops%22+%22Danny+Manning%22+%22%23571%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 66,
+        "Position": 2
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+NBA+Hoops%22+%22Danny+Manning%22+%22%23571%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 66,
+        "Position": 2
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:41 MST",
@@ -2893,7 +3543,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.70",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "2",
     "Variation": 1,
@@ -2922,7 +3572,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.42"
     },
-    "Update Timestamp": "2025-11-12T13:11:51.115894"
+    "Update Timestamp": "2025-11-12T15:46:03.726578",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:02:18,256",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+NBA+Hoops%22+%22Willie+Anderson%22+%22%23565%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 55,
+        "Position": 4
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221991-92+NBA+Hoops%22+%22Willie+Anderson%22+%22%23565%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 53,
+        "Position": 1
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:42 MST",
@@ -2949,7 +3612,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.35",
+    "Current Price": "1.80",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -2978,7 +3641,20 @@
       "BIN Value": "1.79",
       "BIN Value +Ship": "2.08"
     },
-    "Update Timestamp": "2025-11-12T13:11:58.242487"
+    "Update Timestamp": "2025-11-12T15:46:10.500548",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:17:17,206",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Skybox+USA%22+%22Mike+Krzyzewski%22+%22%2395%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 110,
+        "Position": 21
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Skybox+USA%22+%22Mike+Krzyzewski%22+%22%2395%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 110,
+        "Position": 11
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:43 MST",
@@ -3005,7 +3681,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.60",
+    "Current Price": "1.95",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -3034,7 +3710,20 @@
       "BIN Value": "1.94",
       "BIN Value +Ship": "2.33"
     },
-    "Update Timestamp": "2025-11-12T13:12:04.837307"
+    "Update Timestamp": "2025-11-12T15:46:16.255987",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:18:08,092",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Skybox+USA%22+%22Scottie+Pippen%22+%22%2366%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 151,
+        "Position": 29
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Skybox+USA%22+%22Scottie+Pippen%22+%22%2366%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 148,
+        "Position": 27
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:44 MST",
@@ -3061,7 +3750,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.50",
+    "Current Price": "1.85",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -3090,7 +3779,20 @@
       "BIN Value": "1.85",
       "BIN Value +Ship": "2.20"
     },
-    "Update Timestamp": "2025-11-12T13:12:09.460814"
+    "Update Timestamp": "2025-11-12T15:46:23.194453",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:26:44,378",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Skybox+USA%22+%22Magic+Johnson%22+%22%2333%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 189,
+        "Position": 23
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Skybox+USA%22+%22Magic+Johnson%22+%22%2333%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 187,
+        "Position": 25
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:45 MST",
@@ -3117,7 +3819,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.25",
+    "Current Price": "1.70",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -3146,7 +3848,20 @@
       "BIN Value": "1.69",
       "BIN Value +Ship": "1.99"
     },
-    "Update Timestamp": "2025-11-12T13:12:18.154945"
+    "Update Timestamp": "2025-11-12T15:46:38.961835",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:05:12,577",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Skybox+USA%22+%22Chris+Mullin%22+%22%2363%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 105,
+        "Position": 5
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Skybox+USA%22+%22Chris+Mullin%22+%22%2363%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 104,
+        "Position": 5
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:46 MST",
@@ -3173,7 +3888,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.35",
+    "Current Price": "1.75",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -3202,7 +3917,20 @@
       "BIN Value": "1.74",
       "BIN Value +Ship": "2.06"
     },
-    "Update Timestamp": "2025-11-12T13:12:25.964972"
+    "Update Timestamp": "2025-11-12T15:46:50.529877",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:06:21,359",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Skybox+USA%22+%22John+Stockton%22+%22%2382%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 119,
+        "Position": 6
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Skybox+USA%22+%22John+Stockton%22+%22%2382%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 119,
+        "Position": 6
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:47 MST",
@@ -3229,7 +3957,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Dream Team",
-    "Current Price": "1.65",
+    "Current Price": "1.30",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -3258,7 +3986,20 @@
       "BIN Value": "1.29",
       "BIN Value +Ship": "2.39"
     },
-    "Update Timestamp": "2025-11-12T13:12:31.725263"
+    "Update Timestamp": "2025-11-12T15:47:01.164844",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:19:41,476",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Skybox+USA%22+%22Magic+Johnson%22+%22%23110%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 119,
+        "Position": 5
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221992+Skybox+USA%22+%22Magic+Johnson%22+%22%23110%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 119,
+        "Position": 5
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:48 MST",
@@ -3301,7 +4042,7 @@
     "Number of Cards": "9",
     "Year": "1990",
     "Category": "Lots",
-    "Update Timestamp": "2025-11-12T13:12:37.596672"
+    "Update Timestamp": "2025-11-12T15:47:07.677907"
   },
   {
     "Created Timestamp": "2025-11-12 08:05:49 MST",
@@ -3349,7 +4090,7 @@
     "Number of Cards": "58",
     "Year": "1990",
     "Category": "Lots",
-    "Update Timestamp": "2025-11-12T13:12:45.174489"
+    "Update Timestamp": "2025-11-12T15:47:13.634374"
   },
   {
     "Created Timestamp": "2025-11-12 08:05:50 MST",
@@ -3394,7 +4135,7 @@
     "Number of Cards": "24",
     "Year": "1990",
     "Category": "Sets",
-    "Update Timestamp": "2025-11-12T13:12:53.345254"
+    "Update Timestamp": "2025-11-12T15:47:21.139129"
   },
   {
     "Created Timestamp": "2025-11-12 08:05:50 MST",
@@ -3421,7 +4162,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Super Bowl XX",
-    "Current Price": "1.25",
+    "Current Price": "1.70",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -3450,7 +4191,20 @@
       "BIN Value": "1.66",
       "BIN Value +Ship": "2.00"
     },
-    "Update Timestamp": "2025-11-12T13:12:58.948023"
+    "Update Timestamp": "2025-11-12T15:47:27.847903",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:16:30,619",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Richard+Dent%22+%22%2320%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 67,
+        "Position": 0
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Richard+Dent%22+%22%2320%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 67,
+        "Position": 0
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:51 MST",
@@ -3477,7 +4231,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Super Bowl XXII",
-    "Current Price": "1.50",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -3506,7 +4260,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.21"
     },
-    "Update Timestamp": "2025-11-12T13:13:06.786129"
+    "Update Timestamp": "2025-11-12T15:47:36.179340",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:12:35,031",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Doug+Williams%22+%22%2322%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 44,
+        "Position": 0
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Doug+Williams%22+%22%2322%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 44,
+        "Position": 0
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:52 MST",
@@ -3533,7 +4300,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Super Bowl XIV",
-    "Current Price": "1.50",
+    "Current Price": "3.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -3562,7 +4329,20 @@
       "BIN Value": "1.65",
       "BIN Value +Ship": "2.20"
     },
-    "Update Timestamp": "2025-11-12T13:13:14.279901"
+    "Update Timestamp": "2025-11-12T15:47:41.254746",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:27:07,886",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Terry+Bradshaw%22+%22%2314%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 98,
+        "Position": 0
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Terry+Bradshaw%22+%22%2314%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 98,
+        "Position": 0
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:53 MST",
@@ -3589,7 +4369,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Super Bowl IV",
-    "Current Price": "1.75",
+    "Current Price": "1.90",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -3618,7 +4398,20 @@
       "BIN Value": "1.89",
       "BIN Value +Ship": "2.46"
     },
-    "Update Timestamp": "2025-11-12T13:13:22.271704"
+    "Update Timestamp": "2025-11-12T15:47:48.096193",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:09:40,578",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Len+Dawson%22+%22%234%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 65,
+        "Position": 0
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Len+Dawson%22+%22%234%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 63,
+        "Position": 0
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:54 MST",
@@ -3645,7 +4438,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Super Bowl XXIV",
-    "Current Price": "1.85",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -3674,7 +4467,20 @@
       "BIN Value": "1.97",
       "BIN Value +Ship": "2.60"
     },
-    "Update Timestamp": "2025-11-12T13:13:30.152794"
+    "Update Timestamp": "2025-11-12T15:47:53.808179",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 13:58:22,915",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Joe+Montana%22+%22%2324%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 146,
+        "Position": 0
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Joe+Montana%22+%22%2324%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 144,
+        "Position": 0
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:55 MST",
@@ -3701,7 +4507,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Super Bowl XII",
-    "Current Price": "1.25",
+    "Current Price": "1.65",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -3730,7 +4536,20 @@
       "BIN Value": "1.65",
       "BIN Value +Ship": "2.00"
     },
-    "Update Timestamp": "2025-11-12T13:13:37.180034"
+    "Update Timestamp": "2025-11-12T15:47:59.173061",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:15:33,185",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Harvey+Martin%22+%22%2312%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 53,
+        "Position": 0
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Harvey+Martin%22+%22%2312%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 53,
+        "Position": 0
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:56 MST",
@@ -3757,7 +4576,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Super Bowl III",
-    "Current Price": "1.40",
+    "Current Price": "1.90",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -3786,7 +4605,20 @@
       "BIN Value": "1.87",
       "BIN Value +Ship": "2.12"
     },
-    "Update Timestamp": "2025-11-12T13:13:43.626398"
+    "Update Timestamp": "2025-11-12T15:48:05.840178",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 13:57:48,625",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Joe+Namath%22+%22%233%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 94,
+        "Position": 0
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Joe+Namath%22+%22%233%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 92,
+        "Position": 0
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:57 MST",
@@ -3813,7 +4645,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Super Bowl XXI",
-    "Current Price": "1.25",
+    "Current Price": "1.75",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -3842,7 +4674,20 @@
       "BIN Value": "1.58",
       "BIN Value +Ship": "2.00"
     },
-    "Update Timestamp": "2025-11-12T13:13:52.347063"
+    "Update Timestamp": "2025-11-12T15:48:12.444317",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:25:36,094",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Phil+Simms%22+%22%2321%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 53,
+        "Position": 0
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Phil+Simms%22+%22%2321%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 53,
+        "Position": 0
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:58 MST",
@@ -3869,7 +4714,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Super Bowl XIX",
-    "Current Price": "1.70",
+    "Current Price": "1.90",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -3898,7 +4743,20 @@
       "BIN Value": "1.87",
       "BIN Value +Ship": "2.44"
     },
-    "Update Timestamp": "2025-11-12T13:13:59.007780"
+    "Update Timestamp": "2025-11-12T15:48:16.978432",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:08:07,876",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Joe+Montana%22+%22%2319%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 136,
+        "Position": 0
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Joe+Montana%22+%22%2319%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 132,
+        "Position": 0
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:05:59 MST",
@@ -3925,7 +4783,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Super Bowl XIII",
-    "Current Price": "1.30",
+    "Current Price": "2.05",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -3954,7 +4812,20 @@
       "BIN Value": "1.77",
       "BIN Value +Ship": "2.03"
     },
-    "Update Timestamp": "2025-11-12T13:14:06.132676"
+    "Update Timestamp": "2025-11-12T15:48:23.843210",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:24:10,617",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Terry+Bradshaw%22+%22%2313%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 100,
+        "Position": 0
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Terry+Bradshaw%22+%22%2313%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 99,
+        "Position": 0
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:00 MST",
@@ -3981,7 +4852,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Super Bowl XXIII",
-    "Current Price": "1.55",
+    "Current Price": "1.95",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -4010,7 +4881,20 @@
       "BIN Value": "1.95",
       "BIN Value +Ship": "2.30"
     },
-    "Update Timestamp": "2025-11-12T13:14:14.585319"
+    "Update Timestamp": "2025-11-12T15:48:29.568092",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:23:49,906",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Jerry+Rice%22+%22%2323%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 125,
+        "Position": 0
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Jerry+Rice%22+%22%2323%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 123,
+        "Position": 0
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:02 MST",
@@ -4037,7 +4921,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Super Bowl XVIII",
-    "Current Price": "1.25",
+    "Current Price": "1.90",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -4066,7 +4950,20 @@
       "BIN Value": "1.87",
       "BIN Value +Ship": "1.99"
     },
-    "Update Timestamp": "2025-11-12T13:14:23.916803"
+    "Update Timestamp": "2025-11-12T15:48:35.863416",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:28:14,864",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Marcus+Allen%22+%22%2318%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 88,
+        "Position": 0
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set+Super+Bowl+MVP%22+%22Marcus+Allen%22+%22%2318%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 87,
+        "Position": 0
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:03 MST",
@@ -4106,7 +5003,7 @@
     "Number of Cards": "50",
     "Year": "1990",
     "Category": "Lots",
-    "Update Timestamp": "2025-11-12T13:14:41.331979"
+    "Update Timestamp": "2025-11-12T15:48:43.651629"
   },
   {
     "Created Timestamp": "2025-11-12 08:06:04 MST",
@@ -4133,7 +5030,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.75",
+    "Current Price": "1.85",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -4162,7 +5059,20 @@
       "BIN Value": "1.83",
       "BIN Value +Ship": "2.50"
     },
-    "Update Timestamp": "2025-11-12T13:14:50.006525"
+    "Update Timestamp": "2025-11-12T15:48:50.327821",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:09:03,645",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Dominique+Wilkins%22+%22%23165%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 240,
+        "Position": 4
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Dominique+Wilkins%22+%22%23165%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 240,
+        "Position": 4
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:05 MST",
@@ -4189,7 +5099,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Bio says Nance had 204 blocks should be 206",
-    "Current Price": "1.45",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -4218,7 +5128,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.19"
     },
-    "Update Timestamp": "2025-11-12T13:14:56.762275"
+    "Update Timestamp": "2025-11-12T15:48:57.308953",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:23:27,962",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Brad+Daugherty%22+%22%23166%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 150,
+        "Position": 17
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Brad+Daugherty%22+%22%23166%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 148,
+        "Position": 17
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:06 MST",
@@ -4245,7 +5168,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Free Throw % Average Leader",
-    "Current Price": "3.20",
+    "Current Price": "3.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -4274,7 +5197,20 @@
       "BIN Value": "2.99",
       "BIN Value +Ship": "3.95"
     },
-    "Update Timestamp": "2025-11-12T13:15:03.263108"
+    "Update Timestamp": "2025-11-12T15:49:03.294767",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 13:58:45,881",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Magic+Johnson%22+%22%2377%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 244,
+        "Position": 47
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Magic+Johnson%22+%22%2377%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 246,
+        "Position": 41
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:07 MST",
@@ -4301,7 +5237,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.75",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -4330,7 +5266,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.49"
     },
-    "Update Timestamp": "2025-11-12T13:15:10.651126"
+    "Update Timestamp": "2025-11-12T15:49:09.099639",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:00:45,298",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22%23168%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 239,
+        "Position": 17
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22%23168%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 240,
+        "Position": 8
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:08 MST",
@@ -4357,7 +5306,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.25",
+    "Current Price": "2.30",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -4386,7 +5335,20 @@
       "BIN Value": "2.29",
       "BIN Value +Ship": "2.99"
     },
-    "Update Timestamp": "2025-11-12T13:15:18.834959"
+    "Update Timestamp": "2025-11-12T15:49:16.346080",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:05:38,025",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Dennis+Rodman%22+%22%2349%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 242,
+        "Position": 7
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Dennis+Rodman%22+%22%2349%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 241,
+        "Position": 7
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:09 MST",
@@ -4413,7 +5375,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.95",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -4442,7 +5404,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.70"
     },
-    "Update Timestamp": "2025-11-12T13:15:24.302499"
+    "Update Timestamp": "2025-11-12T15:49:23.481879",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:10:33,074",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Robert+Parish%22+%22%2312%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 162,
+        "Position": 6
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Robert+Parish%22+%22%2312%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 161,
+        "Position": 6
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:10 MST",
@@ -4469,7 +5444,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.75",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -4498,7 +5473,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.49"
     },
-    "Update Timestamp": "2025-11-12T13:15:32.874104"
+    "Update Timestamp": "2025-11-12T15:49:31.153493",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:01:58,495",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Mark+Jackson%22+%22%23167%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 240,
+        "Position": 29
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Mark+Jackson%22+%22%23167%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 240,
+        "Position": 28
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:11 MST",
@@ -4525,7 +5513,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.25",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -4554,7 +5542,20 @@
       "BIN Value": "2.00",
       "BIN Value +Ship": "2.99"
     },
-    "Update Timestamp": "2025-11-12T13:15:38.739503"
+    "Update Timestamp": "2025-11-12T15:49:37.104269",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:08:33,367",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Mitch+Richmond%22+%22%2356%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 240,
+        "Position": 21
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Mitch+Richmond%22+%22%2356%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 240,
+        "Position": 21
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:12 MST",
@@ -4581,7 +5582,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.65",
+    "Current Price": "1.85",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -4610,7 +5611,20 @@
       "BIN Value": "1.82",
       "BIN Value +Ship": "2.37"
     },
-    "Update Timestamp": "2025-11-12T13:15:46.878110"
+    "Update Timestamp": "2025-11-12T15:49:45.270473",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:06:46,314",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22John+Stockton%22+%22%23163%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 231,
+        "Position": 4
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22John+Stockton%22+%22%23163%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 229,
+        "Position": 4
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:13 MST",
@@ -4666,7 +5680,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.75"
     },
-    "Update Timestamp": "2025-11-12T13:15:52.880266"
+    "Update Timestamp": "2025-11-12T15:49:49.847457",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 13:57:28,778",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Akeem+Olajuwon%22+%22%2361%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 241,
+        "Position": 31
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Akeem+Olajuwon%22+%22%2361%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 241,
+        "Position": 28
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:14 MST",
@@ -4693,7 +5720,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Offensive Rebound Leader",
-    "Current Price": "2.25",
+    "Current Price": "2.85",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -4722,7 +5749,20 @@
       "BIN Value": "2.00",
       "BIN Value +Ship": "2.99"
     },
-    "Update Timestamp": "2025-11-12T13:15:58.972506"
+    "Update Timestamp": "2025-11-12T15:49:56.102824",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 13:59:15,074",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Charles+Barkley%22+%22%23113%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 242,
+        "Position": 24
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Charles+Barkley%22+%22%23113%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 242,
+        "Position": 22
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:15 MST",
@@ -4749,7 +5789,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.60",
+    "Current Price": "1.95",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -4778,7 +5818,20 @@
       "BIN Value": "1.95",
       "BIN Value +Ship": "2.35"
     },
-    "Update Timestamp": "2025-11-12T13:16:05.321609"
+    "Update Timestamp": "2025-11-12T15:50:03.493808",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:11:29,435",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Chris+Mullin%22+%22%2355%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 240,
+        "Position": 7
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Chris+Mullin%22+%22%2355%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 240,
+        "Position": 6
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:16 MST",
@@ -4805,7 +5858,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "2.25",
+    "Current Price": "2.40",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -4834,7 +5887,20 @@
       "BIN Value": "1.85",
       "BIN Value +Ship": "2.40"
     },
-    "Update Timestamp": "2025-11-12T13:16:12.962470"
+    "Update Timestamp": "2025-11-12T15:50:09.423678",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:20:38,406",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Clyde+Drexler%22+%22%23164%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 236,
+        "Position": 8
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Clyde+Drexler%22+%22%23164%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 232,
+        "Position": 7
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:17 MST",
@@ -4861,7 +5927,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.90",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -4890,7 +5956,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.62"
     },
-    "Update Timestamp": "2025-11-12T13:16:18.819450"
+    "Update Timestamp": "2025-11-12T15:50:15.072184",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:22:17,050",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Patrick+Ewing%22+%22%23100%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 240,
+        "Position": 5
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Patrick+Ewing%22+%22%23100%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 240,
+        "Position": 4
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:18 MST",
@@ -4946,7 +6025,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.75"
     },
-    "Update Timestamp": "2025-11-12T13:16:26.682865"
+    "Update Timestamp": "2025-11-12T15:50:22.420040",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:10:59,338",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Dominique+Wilkins%22+%22%237%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 240,
+        "Position": 7
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Dominique+Wilkins%22+%22%237%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 240,
+        "Position": 7
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:19 MST",
@@ -4973,7 +6065,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "Assist Leader",
-    "Current Price": "2.05",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -5002,7 +6094,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.78"
     },
-    "Update Timestamp": "2025-11-12T13:16:34.248712"
+    "Update Timestamp": "2025-11-12T15:50:29.519826",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 13:56:38,289",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22John+Stockton%22+%22%23156%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 241,
+        "Position": 6
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22John+Stockton%22+%22%23156%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 240,
+        "Position": 4
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:20 MST",
@@ -5058,7 +6163,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.75"
     },
-    "Update Timestamp": "2025-11-12T13:16:40.865494"
+    "Update Timestamp": "2025-11-12T15:50:36.958030",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:04:47,683",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Isiah+Thomas%22+%22%2350%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 240,
+        "Position": 7
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Isiah+Thomas%22+%22%2350%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 240,
+        "Position": 7
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:21 MST",
@@ -5085,7 +6203,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.85",
+    "Current Price": "2.00",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 0,
@@ -5114,7 +6232,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.57"
     },
-    "Update Timestamp": "2025-11-12T13:16:46.780163"
+    "Update Timestamp": "2025-11-12T15:50:43.980395",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:14:51,016",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Karl+Malone%22+%22%23155%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 240,
+        "Position": 39
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Karl+Malone%22+%22%23155%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 240,
+        "Position": 39
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:22 MST",
@@ -5170,7 +6301,20 @@
       "BIN Value": "1.99",
       "BIN Value +Ship": "2.75"
     },
-    "Update Timestamp": "2025-11-12T13:16:54.416913"
+    "Update Timestamp": "2025-11-12T15:50:51.050110",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:22:47,917",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Clyde+Drexler%22+%22%23128%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 240,
+        "Position": 8
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221989-90+Fleer%22+%22Clyde+Drexler%22+%22%23128%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 240,
+        "Position": 8
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:24 MST",
@@ -5207,7 +6351,7 @@
     "Number of Cards": "26",
     "Year": "1990",
     "Category": "Lots",
-    "Update Timestamp": "2025-11-12T13:17:04.323248"
+    "Update Timestamp": "2025-11-12T15:50:59.084312"
   },
   {
     "Created Timestamp": "2025-11-12 08:06:25 MST",
@@ -5234,7 +6378,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.25",
+    "Current Price": "1.60",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -5263,7 +6407,20 @@
       "BIN Value": "1.60",
       "BIN Value +Ship": "1.98"
     },
-    "Update Timestamp": "2025-11-12T13:17:11.352386"
+    "Update Timestamp": "2025-11-12T15:51:04.236878",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 13:58:05,018",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set%22+%22%23795%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 130,
+        "Position": 4
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set%22+%22%23795%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 129,
+        "Position": 4
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:26 MST",
@@ -5301,7 +6458,7 @@
     "Number of Cards": "4",
     "Year": "1990",
     "Category": "Lots",
-    "Update Timestamp": "2025-11-12T13:17:17.385173"
+    "Update Timestamp": "2025-11-12T15:51:10.671386"
   },
   {
     "Created Timestamp": "2025-11-12 08:06:27 MST",
@@ -5339,7 +6496,7 @@
     "Number of Cards": "4",
     "Year": "1990",
     "Category": "Lots",
-    "Update Timestamp": "2025-11-12T13:17:22.878890"
+    "Update Timestamp": "2025-11-12T15:51:17.355912"
   },
   {
     "Created Timestamp": "2025-11-12 08:06:28 MST",
@@ -5366,7 +6523,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.25",
+    "Current Price": "1.60",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -5395,7 +6552,20 @@
       "BIN Value": "1.60",
       "BIN Value +Ship": "1.99"
     },
-    "Update Timestamp": "2025-11-12T13:17:31.026365"
+    "Update Timestamp": "2025-11-12T15:51:24.293318",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:21:05,286",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set%22+%22Ronnie+Lott%22+%22%23793%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 143,
+        "Position": 16
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set%22+%22Ronnie+Lott%22+%22%23793%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 143,
+        "Position": 16
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:29 MST",
@@ -5422,7 +6592,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.25",
+    "Current Price": "1.55",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -5451,7 +6621,20 @@
       "BIN Value": "1.55",
       "BIN Value +Ship": "1.98"
     },
-    "Update Timestamp": "2025-11-12T13:17:50.328810"
+    "Update Timestamp": "2025-11-12T15:51:29.866906",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:21:25,217",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set%22+%22Bobby+Humphrey%22+%22%23791%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 62,
+        "Position": 6
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set%22+%22Bobby+Humphrey%22+%22%23791%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 61,
+        "Position": 6
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:29 MST",
@@ -5478,7 +6661,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.10",
+    "Current Price": "1.60",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -5507,7 +6690,20 @@
       "BIN Value": "1.60",
       "BIN Value +Ship": "1.85"
     },
-    "Update Timestamp": "2025-11-12T13:17:58.110178"
+    "Update Timestamp": "2025-11-12T15:51:37.484312",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:24:30,720",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set%22+%22Mike+Mularkey%22+%22%23790%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 72,
+        "Position": 3
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set%22+%22Mike+Mularkey%22+%22%23790%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 72,
+        "Position": 3
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:30 MST",
@@ -5534,7 +6730,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.10",
+    "Current Price": "1.60",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -5563,7 +6759,20 @@
       "BIN Value": "1.60",
       "BIN Value +Ship": "1.85"
     },
-    "Update Timestamp": "2025-11-12T13:18:05.463478"
+    "Update Timestamp": "2025-11-12T15:51:44.471627",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:12:53,154",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set%22+%22Cris+Carter%22+%22%23798%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 122,
+        "Position": 3
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set%22+%22Cris+Carter%22+%22%23798%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 120,
+        "Position": 3
+      }
+    }
   },
   {
     "Created Timestamp": "2025-11-12 08:06:31 MST",
@@ -5601,7 +6810,7 @@
     "Number of Cards": "4",
     "Year": "1990",
     "Category": "Lots",
-    "Update Timestamp": "2025-11-12T13:18:10.981207"
+    "Update Timestamp": "2025-11-12T15:51:51.766586"
   },
   {
     "Created Timestamp": "2025-11-12 08:06:32 MST",
@@ -5639,7 +6848,7 @@
     "Number of Cards": "4",
     "Year": "1990",
     "Category": "Lots",
-    "Update Timestamp": "2025-11-12T13:18:18.987415"
+    "Update Timestamp": "2025-11-12T15:51:59.142220"
   },
   {
     "Created Timestamp": "2025-11-12 08:06:33 MST",
@@ -5676,7 +6885,7 @@
     "Number of Cards": "3",
     "Year": "1990",
     "Category": "Lots",
-    "Update Timestamp": "2025-11-12T13:18:25.427322"
+    "Update Timestamp": "2025-11-12T15:52:05.847659"
   },
   {
     "Created Timestamp": "2025-11-12 08:06:35 MST",
@@ -5703,7 +6912,7 @@
     "Seller": "Geek Sports Cards",
     "SSN": "GSC Buy It Now",
     "Additional Information": "",
-    "Current Price": "1.35",
+    "Current Price": "1.85",
     "Shipping Cost": "0.75",
     "Quantity Available": "1",
     "Variation": 1,
@@ -5732,6 +6941,19 @@
       "BIN Value": "1.85",
       "BIN Value +Ship": "2.09"
     },
-    "Update Timestamp": "2025-11-12T13:18:32.166679"
+    "Update Timestamp": "2025-11-12T15:52:13.793947",
+    "ebay rank": {
+      "Update Timestamp": "2025-11-12 14:16:54,020",
+      "All Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set%22+%22Jack+Lambert%22+%22%2327%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_All=1",
+        "Total items": 231,
+        "Position": 2
+      },
+      "Buy It Now Search": {
+        "Search URL": "https://www.ebay.com/sch/i.html?_nkw=%221990+Pro+Set%22+%22Jack+Lambert%22+%22%2327%22&_sacat=0&_from=R40&_sop=12&rt=nc&_ipg=240&LH_BIN=1",
+        "Total items": 228,
+        "Position": 2
+      }
+    }
   }
 ]
